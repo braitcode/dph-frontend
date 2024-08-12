@@ -1,6 +1,6 @@
 ## Project Description 
 
-Cuatro Energy is an emerging leader in Ghana's energy sector. We specialize in engineering design, project management, procurement, construction supervision, operations optimization, training programs, and renewables integration. 
+Digital Presence Hub is a leading digital presence platform for multi-location brands which provides the following services to small scale businesses in enhancing their online presence and client base; website development, domain hosting, creation and management instagram accounts.
 
 ## Folder Structure
 
@@ -75,7 +75,7 @@ When naming your branch, follow this convention:
 
 ### Avoiding Conflicts
 
-To avoid conflicts when pushing changes to your branch, make sure to pull any changes from the main repository's `main` branch into your local branch before pushing:
+To avoid conflicts when pushing changes to your branch, make sure to pull any changes from the development repository's `development` branch into your local branch before pushing:
 
 ```bash
 git pull origin development
