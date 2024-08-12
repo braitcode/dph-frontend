@@ -7,7 +7,7 @@ Digital Presence Hub is a leading digital presence platform for multi-location b
 The folder structure of the project is as follows:
 
 ```
-AUGUST2023/
+AUGUST2024/
 │
 ├── node_module/            
 ├── public/            
