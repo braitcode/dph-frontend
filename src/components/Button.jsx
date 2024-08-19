@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 const Button = ({ type, size, color, onClick, disabled, children }) => {
   // Define base styles
   const baseStyles = 'font-bold py-2 px-4 rounded focus:outline-none focus:ring';
-  
+
   // Size variations
   const sizeStyles = {
-    small: 'text-sm py-1 px-2',
-    medium: 'text-base py-2 px-4',
-    large: 'text-lg py-3 px-5',
+    small: 'text-sm py-1 px-2 font-spaceGrotesk',
+    medium: 'text-base py-2 px-4 font-spaceGrotesk',
+    large: 'text-lg py-3 px-5 w-full rounded-lg font-spaceGrotesk',
   };
 
   // Color variations
   const colorStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300',
-    secondary: 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-300',
-    danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-300',
+    darkGreen: 'bg-[#034D2B] text-white hover:bg-green-900',
+    dark: 'bg-[#292D32] text-white hover:bg-black',
+    success: 'bg-[#02864A] text-white hover:bg-green-800',
   };
 
   return (
