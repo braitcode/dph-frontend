@@ -9,7 +9,7 @@ const Button = ({ type, size, color, onClick, disabled, children }) => {
   const sizeStyles = {
     small: 'text-sm py-1 px-2',
     medium: 'text-base py-2 px-4',
-    large: 'text-lg py-3 px-5',
+    large: 'text-lg py-3 px-5 w-full rounded-lg',
   };
 
   // Color variations
