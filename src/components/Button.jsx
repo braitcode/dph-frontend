@@ -14,9 +14,9 @@ const Button = ({ type, size, color, onClick, disabled, children }) => {
 
   // Color variations
   const colorStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300',
-    secondary: 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-300',
-    danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-300',
+    darkGreen: 'bg-[#034D2B] text-white hover:bg-green-900',
+    dark: 'bg-[#292D32] text-white hover:bg-black',
+    success: 'bg-[#02864A] text-white hover:bg-green-800',
   };
 
   return (
