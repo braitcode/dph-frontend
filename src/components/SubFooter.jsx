@@ -8,15 +8,15 @@ const SubFooter = () => {
         <div className="bg-white w-full h-[500px] flex justify-center items-center">
               <div className="flex flex-col items-center gap-[32px]">
                   <div className="">
-                      <h1 className='text-[85px] font-bold'>Let's Create Together</h1>
+                      <h1 className='text-[85px] font-bold font-spaceGrotesk'>Let's Create Together</h1>
                   </div>
                   <div className="w-[847px]">
-                      <p className='text-[22px] text-center font-medium'>Ready to elevate your digital presence? Contact us to discuss how DPH can turn your ideas into visually captivating realities that drive results</p>
+                      <p className='text-[22px] text-center font-medium font-spaceGrotesk'>Ready to elevate your digital presence? Contact us to discuss how DPH can turn your ideas into visually captivating realities that drive results</p>
                   </div>
                   <div className="flex">
                       <Button color="darkGreen">
                         <div className="flex gap-2">
-                          <p>Get in Touch Now</p> <img src={arrowRight} alt="" />
+                          <p className='font-spaceGrotesk'>Get in Touch Now</p> <img src={arrowRight} alt="" />
                         </div>
                       </Button>
                   </div>
