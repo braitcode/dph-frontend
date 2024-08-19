@@ -1,5 +1,8 @@
 import React from 'react'
 import Button from "../components/Button"
+import phone from "../assets/icons/phone icon.png"
+import sms from "../assets/icons/sms.png"
+import location from "../assets/icons/location.png"
 
 const ContactForm = () => {
   return (
@@ -12,9 +15,9 @@ const ContactForm = () => {
                         <p className='text-white text-[18px] font-medium'>Book a no-cost consultation to discuss your brand, our team or experienced professionals are ready to give you maximum and professional advice.</p>
                     </div>
                     <div className="flex flex-col gap-[23px]">
-                        <p className='text-white text-[18px] font-bold'>+234 998 890 4847</p>
-                        <p className='text-white text-[18px] font-bold'>Dph@gmail.com</p>
-                        <p className='text-white text-[18px] font-bold'>1, Dph cresent, lagos Nigeria</p>
+                        <p className='text-white text-[18px] font-bold flex gap-4'><img src={phone} alt="" /> +234 998 890 4847</p>
+                        <p className='text-white text-[18px] font-bold flex gap-4'><img src={sms} alt="" />Dph@gmail.com</p>
+                        <p className='text-white text-[18px] font-bold flex gap-4'><img src={location} alt="" />1, Dph cresent, lagos Nigeria</p>
                     </div>
                 </div>
                 <div className="bg-white w-[45%] h-[517px] rounded-xl p-6">
