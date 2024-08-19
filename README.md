@@ -7,7 +7,7 @@ Digital Presence Hub is a leading digital presence platform for multi-location b
 The folder structure of the project is as follows:
 
 ```
-AUGUST2023/
+AUGUST2024/
 │
 ├── node_module/            
 ├── public/            
@@ -89,6 +89,6 @@ Follow the existing code style and conventions in the project. Use meaningful va
 
 ## Issues and Feedback
 
-If you encounter any issues or have feedback, please [open an issue](<issue-tracker-url>) on the GitHub repository, or reach out to BLARD.
+If you encounter any issues or have feedback, please [open an issue](<issue-tracker-url>) on the GitHub repository, or reach out to the Team Lead, Bright.
 
 ---
