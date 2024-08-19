@@ -19,24 +19,24 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col gap-[23px]">
                   <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Company</h2>
-                  <p className='text-white text-[18px] font-spaceGrotesk'>About</p>
-                  <p className='text-white text-[18px] font-spaceGrotesk'>Press</p>
-                  <p className='text-white text-[18px] font-spaceGrotesk'>Blog</p>
-                  <p className='text-white text-[18px] font-spaceGrotesk'>Careers</p>
+                  <p className='text-white text-[18px] font-medium font-spaceGrotesk'>About</p>
+                  <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Press</p>
+                  <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Blog</p>
+                  <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Careers</p>
                 </div>
                 <div className="flex flex-col gap-[23px]">
                     <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Locations</h2>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Africa</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Asia</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>South America</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Europe</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Africa</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Asia</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>South America</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Europe</p>
                 </div>
                 <div className="flex flex-col gap-[23px]">
                     <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Support</h2>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Help Center</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Contact Us</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Term of Use</p>
-                    <p className='text-white text-[18px] font-spaceGrotesk'>Privacy</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Help Center</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Contact Us</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Term of Use</p>
+                    <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Privacy</p>
                 </div>
                 <div className="flex flex-col gap-[23px]">
                     <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
