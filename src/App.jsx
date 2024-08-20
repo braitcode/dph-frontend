@@ -1,15 +1,11 @@
 import './App.css'
-import ContactForm from './components/ContactForm'
-import Footer from './components/Footer'
-import SubFooter from './components/SubFooter'
+import Home from './pages/Home'
 
 function App() {
 
   return (
     <>
-     <ContactForm/>
-     <SubFooter/>
-     <Footer/>
+     <Home/>
     </>
   )
 }
