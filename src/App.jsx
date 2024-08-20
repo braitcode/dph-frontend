@@ -1,13 +1,13 @@
 
 import './App.css'
 import About from './pages/About'
+import Portfolio from './pages/Portfolio'
 
 function App() {
 
   return (
     <>
-     <h1 className=''>Welcome to Digital Presence Hub</h1>
-     <About/>
+     <Portfolio/>
      
     </>
   )
