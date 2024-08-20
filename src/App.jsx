@@ -1,14 +1,19 @@
-
 import './App.css'
 import About from './pages/About'
-import Portfolio from './pages/Portfolio'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
+import SubFooter from './components/SubFooter'
+import Tailor from './components/Tailor'
 
 function App() {
 
   return (
     <>
-     <Portfolio/>
-     
+      <Tailor />
+     <About/>
+     <ContactForm/>
+     <SubFooter/>
+     <Footer/>
     </>
   )
 }
