@@ -1,4 +1,5 @@
 import './App.css'
+import About from './pages/About'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import SubFooter from './components/SubFooter'
@@ -9,9 +10,10 @@ function App() {
   return (
     <>
       <Tailor />
-      {/* <ContactForm /> */}
-      {/* <SubFooter /> */}
-      {/* <Footer /> */}
+     <About/>
+     <ContactForm/>
+     <SubFooter/>
+     <Footer/>
     </>
   )
 }
