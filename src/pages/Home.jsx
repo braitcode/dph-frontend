@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
     return (
-        <div>Helllo world</div>
+        <div>Helllo world Welcome to DPH</div>
     )
 }
 
