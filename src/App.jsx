@@ -1,14 +1,17 @@
-
 import './App.css'
 import About from './pages/About'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
+import SubFooter from './components/SubFooter'
 
 function App() {
 
   return (
     <>
-     <h1 className=''>Welcome to Digital Presence Hub</h1>
      <About/>
-     
+     <ContactForm/>
+     <SubFooter/>
+     <Footer/>
     </>
   )
 }
