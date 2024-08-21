@@ -6,6 +6,7 @@ import Footer from "../components/Footer"
 import Testimonial from "../components/Testimonial"
 import Portfolio from "../pages/Portfolio"
 
+
 const Home = () => {
     return (
         <>
