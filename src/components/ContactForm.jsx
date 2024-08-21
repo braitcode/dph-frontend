@@ -3,8 +3,19 @@ import Button from "../components/Button"
 import phone from "../assets/icons/phone icon.png"
 import sms from "../assets/icons/sms.png"
 import location from "../assets/icons/location.png"
+import { useForm } from 'react-hook-form'
 
 const ContactForm = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+    
+      const onSubmit = (data) => {
+        console.log('Form Data:', data);
+        alert('Form Submitted Successfully!');
+      };
     return (
         <div className="bg-[#034D2B] w-full xl:h-[741px] flex justify-center items-center py-12 px-4">
             <div className="w-full flex flex-col xl:flex-row justify-center items-center gap-12">
@@ -37,55 +48,80 @@ const ContactForm = () => {
                 </div>
 
                 <div className="bg-white xl:w-[45%] w-full h-auto rounded-xl p-6">
-                    <form className="flex flex-col gap-6">
+                    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
                         <div className="flex flex-col sm:flex-row justify-between gap-4">
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                                <label className='text-[18px] font-bold font-spaceGrotesk'>First Name</label>
+                                <label className="text-[18px] font-bold font-spaceGrotesk">First Name</label>
                                 <input
                                     type="text"
-                                    placeholder='First name'
-                                    className='border text-[14px] p-2 rounded-lg font-spaceGrotesk' />
+                                    placeholder="First name"
+                                    className={`border text-[14px] p-2 rounded-lg font-spaceGrotesk ${errors.firstName ? 'border-red-500' : ''}`}
+                                    {...register('firstName', { required: 'First name is required' })}
+                                />
+                                {errors.firstName && <span className="text-red-500 text-sm">{errors.firstName.message}</span>}
                             </div>
 
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                                <label className='text-[18px] font-bold font-spaceGrotesk'>Last Name</label>
+                                <label className="text-[18px] font-bold font-spaceGrotesk">Last Name</label>
                                 <input
                                     type="text"
-                                    placeholder='Last Name'
-                                    className='border text-[14px] p-2 rounded-lg font-spaceGrotesk' />
+                                    placeholder="Last Name"
+                                    className={`border text-[14px] p-2 rounded-lg font-spaceGrotesk ${errors.lastName ? 'border-red-500' : ''}`}
+                                    {...register('lastName', { required: 'Last name is required' })}
+                                />
+                                {errors.lastName && <span className="text-red-500 text-sm">{errors.lastName.message}</span>}
                             </div>
                         </div>
-                        
+
                         <div className="flex flex-col sm:flex-row justify-between gap-4">
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                                <label className='text-[18px] font-bold font-spaceGrotesk'>Email</label>
+                                <label className="text-[18px] font-bold font-spaceGrotesk">Email</label>
                                 <input
                                     type="email"
-                                    placeholder='johndoe@gmail.com'
-                                    className='border text-[14px] p-2 rounded-lg font-spaceGrotesk' />
+                                    placeholder="johndoe@gmail.com"
+                                    className={`border text-[14px] p-2 rounded-lg font-spaceGrotesk ${errors.email ? 'border-red-500' : ''}`}
+                                    {...register('email', {
+                                        required: 'Email is required',
+                                        pattern: {
+                                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                                            message: 'Invalid email address',
+                                        },
+                                    })}
+                                />
+                                {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
                             </div>
 
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                                <label className='text-[18px] font-bold font-spaceGrotesk'>Phone</label>
+                                <label className="text-[18px] font-bold font-spaceGrotesk">Phone</label>
                                 <input
                                     type="tel"
-                                    placeholder='123-456-7890'
-                                    className='border text-[14px] p-2 rounded-lg font-spaceGrotesk'
-                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                                    placeholder="123-456-7890"
+                                    className={`border text-[14px] p-2 rounded-lg font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
+                                    {...register('phone', {
+                                        required: 'Phone number is required',
+                                        pattern: {
+                                            value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
+                                            message: 'Phone number must be in the format 123-456-7890',
+                                        },
+                                    })}
+                                />
+                                {errors.phone && <span className="text-red-500 text-sm">{errors.phone.message}</span>}
                             </div>
                         </div>
-                        
+
                         <div className="flex flex-col gap-2">
-                            <label className='text-[18px] font-bold font-spaceGrotesk'>Message</label>
+                            <label className="text-[18px] font-bold font-spaceGrotesk">Message</label>
                             <textarea
-                                placeholder='Type your message'
-                                className='text-[14px] border rounded-lg p-2 font-spaceGrotesk'
-                                rows="5">
-                            </textarea>
+                                placeholder="Type your message"
+                                className={`text-[14px] border rounded-lg p-2 font-spaceGrotesk ${errors.message ? 'border-red-500' : ''}`}
+                                rows="5"
+                                {...register('message', { required: 'Message is required' })}
+                            />
+                            {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
                         </div>
 
                         <div className="flex justify-center xl:justify-start">
-                            <Button size="large" color="success">
+                            <Button size="large" color="success" type="submit">
                                 Send a message
                             </Button>
                         </div>
