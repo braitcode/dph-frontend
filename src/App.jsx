@@ -4,6 +4,8 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import SubFooter from './components/SubFooter'
 import Tailor from './components/Tailor'
+import Portfolio from './pages/Portfolio'
+import Testimonial from './components/Testimonial'
 
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
     <>
       <Tailor />
      <About/>
+     <Portfolio/>
+     <Testimonial/>
      <ContactForm/>
      <SubFooter/>
      <Footer/>
