@@ -12,12 +12,15 @@ const Footer = () => {
   return (
     <div className="bg-black w-full p-8 md:p-16">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
-        <div className="flex flex-col items-center md:items-start gap-[23px]">
+        <div className="xl:w-[175px] flex flex-col items-center md:items-start gap-[23px]">
+          <div className="">
+
           <div className="flex items-center justify-center md:justify-start text-[32.14px] gap-2">
             <img src={logodph} alt="Logo" />
             <p className='text-white font-bold'>DPH</p>
           </div>
           <p className='text-white font-spaceGrotesk text-[12px]'>Digital Presence Hub</p>
+          </div>
           <p className='text-white text-[17px] font-spaceGrotesk font-medium'>
             444 St. Yellow Street California, USA +1 556 767
           </p>
