@@ -7,11 +7,12 @@ import Testimonial from "../components/Testimonial"
 import Portfolio from "../pages/Portfolio"
 import Info from "../components/Info"
 import Seam from '../components/Seam'
-
+import Hero from '../components/Hero'
 
 const Home = () => {
     return (
         <>
+            <Hero/>
             <Info />
             <Tailor />
             <Seam />
