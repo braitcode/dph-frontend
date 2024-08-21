@@ -113,7 +113,7 @@ const ContactForm = () => {
                                     <input
                                         type="tel"
                                         placeholder="123-456-7890"
-                                        className={`border rounded-r-lg text-[14px] p-2 font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
+                                        className={`border rounded-r-lg text-[14px] w-full p-2 font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
                                         {...register('phone', {
                                             required: 'Phone number is required',
                                             pattern: {
