@@ -5,11 +5,13 @@ import SubFooter from "../components/SubFooter"
 import Footer from "../components/Footer"
 import Testimonial from "../components/Testimonial"
 import Portfolio from "../pages/Portfolio"
+import Info from "../components/Info"
 
 
 const Home = () => {
     return (
         <>
+        <Info/>
         <Tailor/>
         <Portfolio/>
         <Testimonial/>

@@ -99,15 +99,15 @@ const ContactForm = () => {
                                         className={`border-l border-t border-b rounded-l-lg bg-gray-50 text-[14px] p-2 font-spaceGrotesk ${errors.countryCode ? 'border-red-500' : ''}`}
                                         {...register('countryCode', { required: 'Country code is required' })}
                                     >
-                                        <option value="+234">+234 (Nigeria)</option>
+                                        <option value="+234">+234</option>
                                         {/* <option value="">Code</option> */}
-                                        <option value="+1">+1 (USA)</option>
-                                        <option value="+44">+44 (UK)</option>
-                                        <option value="+91">+91 (India)</option>
-                                        <option value="+235">+235 (Chad)</option>
-                                        <option value="+241">+241 (Gabon)</option>
-                                        <option value="+244">+244 (Angola)</option>
-                                        <option value="+1">+1 (Canada)</option>
+                                        <option value="+1">+1</option>
+                                        <option value="+44">+44</option>
+                                        <option value="+91">+91</option>
+                                        <option value="+235">+235</option>
+                                        <option value="+241">+241</option>
+                                        <option value="+244">+244</option>
+                                        <option value="+1">+1</option>
                                         {/* Add more country codes as needed */}
                                     </select>
                                     <input
