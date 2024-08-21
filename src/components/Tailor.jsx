@@ -23,9 +23,9 @@ const Tailor = () => {
                                     </h2>
                                     <p className='text-[10px] font-spaceGrotesk font-medium group-hover:text-white md:text-[12px] lg:text-[16px]'>
                                         {description}
-                                        {/* <a href="#" className='ml-1 text-[10px] text-[#028A4C] group-hover:text-white md:text-[12px] lg:text-[16px]'>
+                                        <a href="#" className='ml-1 text-[10px] text-[#028A4C] group-hover:text-white md:text-[12px] lg:text-[16px]'>
                                             _____Find Out More
-                                        </a> */}
+                                        </a>
                                     </p>
                                 </div>
                             )
