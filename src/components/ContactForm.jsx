@@ -10,12 +10,13 @@ const ContactForm = () => {
         register,
         handleSubmit,
         formState: { errors },
-      } = useForm();
-    
-      const onSubmit = (data) => {
-        console.log('Form Data:', data);
-        alert('Form Submitted Successfully!');
-      };
+    } = useForm();
+
+    const onSubmit = (data) => {
+        const fullPhoneNumber = `${data.countryCode}${data.phone}`;
+        console.log('Form Data:', { ...data, fullPhoneNumber });
+        alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
+    };
     return (
         <div className="bg-[#034D2B] w-full xl:h-[741px] flex justify-center items-center py-12 px-4">
             <div className="w-full flex flex-col xl:flex-row justify-center items-center gap-12">
@@ -93,18 +94,36 @@ const ContactForm = () => {
 
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
                                 <label className="text-[18px] font-bold font-spaceGrotesk">Phone</label>
-                                <input
-                                    type="tel"
-                                    placeholder="123-456-7890"
-                                    className={`border text-[14px] p-2 rounded-lg font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
-                                    {...register('phone', {
-                                        required: 'Phone number is required',
-                                        pattern: {
-                                            value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
-                                            message: 'Phone number must be in the format 123-456-7890',
-                                        },
-                                    })}
-                                />
+                                <div className="flex">
+                                    <select
+                                        className={`border-l border-t border-b rounded-l-lg bg-gray-50 text-[14px] p-2 font-spaceGrotesk ${errors.countryCode ? 'border-red-500' : ''}`}
+                                        {...register('countryCode', { required: 'Country code is required' })}
+                                    >
+                                        <option value="+234">+234 (Nigeria)</option>
+                                        {/* <option value="">Code</option> */}
+                                        <option value="+1">+1 (USA)</option>
+                                        <option value="+44">+44 (UK)</option>
+                                        <option value="+91">+91 (India)</option>
+                                        <option value="+235">+235 (Chad)</option>
+                                        <option value="+241">+241 (Gabon)</option>
+                                        <option value="+244">+244 (Angola)</option>
+                                        <option value="+1">+1 (Canada)</option>
+                                        {/* Add more country codes as needed */}
+                                    </select>
+                                    <input
+                                        type="tel"
+                                        placeholder="123-456-7890"
+                                        className={`border rounded-r-lg text-[14px] p-2 font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
+                                        {...register('phone', {
+                                            required: 'Phone number is required',
+                                            pattern: {
+                                                value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
+                                                message: 'Phone number must be in the format 123-456-7890',
+                                            },
+                                        })}
+                                    />
+                                </div>
+                                {errors.countryCode && <span className="text-red-500 text-sm">{errors.countryCode.message}</span>}
                                 {errors.phone && <span className="text-red-500 text-sm">{errors.phone.message}</span>}
                             </div>
                         </div>
