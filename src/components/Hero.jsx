@@ -62,7 +62,7 @@ const Hero = () => {
             <img src={drive} alt="" />
           </div>
          
-              <p className=" text-[12px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2">
+              <p className=" text-[12px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 md:hidden block">
                 Driven by a passion for innovative designs, we craft mobile and
                 web designs that captivate and resonate with users.
               </p>
