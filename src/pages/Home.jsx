@@ -6,18 +6,20 @@ import Footer from "../components/Footer"
 import Testimonial from "../components/Testimonial"
 import Portfolio from "../pages/Portfolio"
 import Info from "../components/Info"
+import Seam from '../components/Seam'
 
 
 const Home = () => {
     return (
         <>
-        <Info/>
-        <Tailor/>
-        <Portfolio/>
-        <Testimonial/>
-        <ContactForm/>
-        <SubFooter/>
-        <Footer/>
+            <Info />
+            <Tailor />
+            <Seam />
+            <Portfolio />
+            <Testimonial />
+            <ContactForm />
+            <SubFooter />
+            <Footer />
         </>
     )
 }
