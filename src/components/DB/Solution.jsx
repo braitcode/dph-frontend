@@ -19,7 +19,7 @@ const solution = [
             "Our designs combines of stunning visuals with seamless functionality, ensuring a consistent and enjoyable experience across all devices",
     },
     {
-        _id: 13,
+        _id: 3,
         image: img3,
         title: "Branding",
         description:
