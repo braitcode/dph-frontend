@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <>
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className="w-full  md:flex justify-center items-center gap-12 md:mb-[2rem] p-5 mt-[5rem]">
           {/* left div */}
           <div className="md:w-[45%] flex flex-col gap-[36px]">
@@ -47,20 +47,25 @@ const Hero = () => {
                   <img src={elevateimg} alt="" className="w-[90px] " />
                 </div>
               </div>
-              <div className="bg-[#F0F0F0]  rounded-xl text-center   font-spaceGrotesk  w-[350px]">
-                <h1 className="text-[40px] sm:text-[40px] md:text-[70px] text-[#02864A] font-bold">
-                  230+
-                </h1>
-                <p className="text-[10px]  mb-3  text-start  font-spaceGrotesk ">
-                  Some big companies that we work with, and trust us very much.
-                </p>
+              <div className="bg-[#F0F0F0] flex flex-col justify-center  rounded-xl text-center   font-spaceGrotesk  w-[350px]">
+                <div className="w-full flex justify-center">
+                  <div className="w-[80%]">
+
+                    <h1 className="xl:text-[84px] text-[40px] md:text-[70px] text-[#02864A] font-bold">
+                      230+
+                    </h1>
+                    <p className="xl:text-[16px] text-[10px]  mb-3  text-start  font-spaceGrotesk ">
+                      Some big companies that we work with, and trust us very much.
+                    </p>
+                  </div>
+                </div>
                 <div className="p-2 md:p-7">
                   <FlowComponent users={230} />
                 </div>
               </div>
             </div>
 
-            <img src={drive} alt="" />
+            <img src={drive} alt="" className="w-full" />
           </div>
          
               <p className=" text-[12px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 md:hidden block">
