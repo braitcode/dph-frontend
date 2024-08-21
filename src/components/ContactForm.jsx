@@ -1,9 +1,9 @@
-import React from 'react'
-import Button from "../components/Button"
-import phone from "../assets/icons/phone icon.png"
-import sms from "../assets/icons/sms.png"
-import location from "../assets/icons/location.png"
-import { useForm } from 'react-hook-form'
+import React from 'react';
+import Button from "../components/Button";
+import phone from "../assets/icons/phone icon.png";
+import sms from "../assets/icons/sms.png";
+import location from "../assets/icons/location.png";
+import { useForm } from 'react-hook-form';
 
 const ContactForm = () => {
     const {
@@ -17,6 +17,7 @@ const ContactForm = () => {
         console.log('Form Data:', { ...data, fullPhoneNumber });
         alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
     };
+
     return (
         <div className="bg-[#034D2B] w-full xl:h-[741px] flex justify-center items-center py-12 px-4">
             <div className="w-full flex flex-col xl:flex-row justify-center items-center gap-12">
@@ -112,14 +113,10 @@ const ContactForm = () => {
                                     </select>
                                     <input
                                         type="tel"
-                                        placeholder="123-456-7890"
+                                        placeholder="Enter your phone number"
                                         className={`border rounded-r-lg text-[14px] w-full p-2 font-spaceGrotesk ${errors.phone ? 'border-red-500' : ''}`}
                                         {...register('phone', {
                                             required: 'Phone number is required',
-                                            pattern: {
-                                                value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
-                                                message: 'Phone number must be in the format 123-456-7890',
-                                            },
                                         })}
                                     />
                                 </div>
@@ -148,7 +145,7 @@ const ContactForm = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ContactForm
+export default ContactForm;
