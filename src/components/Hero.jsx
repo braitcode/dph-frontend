@@ -15,7 +15,7 @@ const Hero = () => {
     <>
       <div>
         <NavBar />
-        <div className="w-full  md:flex justify-center items-center gap-12 mb-3 p-5 mt-[5rem]">
+        <div className="w-full  md:flex justify-center items-center gap-12 md:mb-[2rem] p-5 mt-[5rem]">
           {/* left div */}
           <div className="md:w-[45%] flex flex-col gap-[36px]">
             <div className="md:flex flex-col md:gap-[20px]">
@@ -30,10 +30,11 @@ const Hero = () => {
                 <Button size="medium" color="success">
                   <span className="text-[15px]">Send a message</span>
                 </Button>
-
-                <button className="bg-white text-[#028A4C] border-2 border-[#028A4C] py-2 px-4 rounded-md  font-spaceGrotesk text-[14px] font-bold">
-                  Book a consultant
-                </button>
+                <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+ <Button size="medium" color="white">
+              <span className="text-[15px]">Send a message</span>
+            </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -70,10 +71,11 @@ const Hero = () => {
             <Button size="medium" color="success">
               <span className="text-[15px]">Send a message</span>
             </Button>
-
-            <button className="bg-white text-[#028A4C] border-2 border-[#028A4C] py-2 px-4 rounded-md  font-spaceGrotesk text-[14px] font-bold">
-              Book a consultant
-            </button>
+            <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+ <Button size="medium" color="white">
+              <span className="text-[15px]">Send a message</span>
+            </Button>
+                </div>
           </div>
         </div>
 
