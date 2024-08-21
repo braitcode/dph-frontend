@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div>
         <div className="bg-black w-full xl:h-[353px] font flex p-16">
-            <div className="w-full xl:flex xl:justify-between flex flex-col gap-12">
+            <div className="w-full xl:flex xl:flex-row xl:justify-between flex flex-col gap-12">
                 <div className="w-[175px] flex flex-col gap-[23px]">
                   <img src={dphLogo} alt="" />
                   <p className='text-white text-[17px] font-spaceGrotesk font-medium'>444 St. Yellow Street California, Usa +1 556 767</p>
