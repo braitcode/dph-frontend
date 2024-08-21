@@ -4,7 +4,7 @@ import { data } from "./DB/InfoDB"
 
 const Info = () => {
   return (
-    <div className='container w-full font-spaceGrotesk'>
+    <div className=' w-full font-spaceGrotesk border border-red-500'>
         <div className="w-full h-80 bg-white m-auto pt-4 px-4 md:w-full lg:px-0 lg:flex lg:items-center lg:justify-center lg:gap-[400px]">
           <div className=" pt-4 md:w-[680px] md:m-auto md:flex md:justify-between md:items-center md:mt-10 lg:w-[1260px] lg:m-auto lg:flex lg:items-center lg:justify-between">
           <div className="font-bold text-2xl text-center md:text-start pb-2 lg:text-start">
