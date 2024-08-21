@@ -1,8 +1,17 @@
 import React from 'react'
+import Tailor from "../components/Tailor"
+import ContactForm from "../components/ContactForm"
+import SubFooter from "../components/SubFooter"
+import Footer from "../components/Footer"
 
 const Home = () => {
     return (
-        <div>Helllo world Welcome to DPH</div>
+        <>
+        <Tailor/>
+        <ContactForm/>
+        <SubFooter/>
+        <Footer/>
+        </>
     )
 }
 
