@@ -24,7 +24,7 @@ const Info = () => {
         <div className="lg:w-[1239px] lg:m-auto">
         <div className="w-full lg:flex lg:justify-between lg:items-center">
           <div className=" px-4 lg:px-0 lg:w-[554px]">
-            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">creative visionaries, innovative  and passionate entrepreneurs</h1>
+            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">Creative visionaries, innovative  and passionate entrepreneurs</h1>
             <p className='text-center lg:text-start lg:font-medium lg:text-[20px] lg:w-96'>We are a team of visionary creators, strategist, and storytellers with a deep passion for design and commitment to excellence</p>
           </div>
 
