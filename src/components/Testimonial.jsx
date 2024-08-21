@@ -1,70 +1,24 @@
 import React, { useState } from "react";
-import images from "../assets/portfolioimages/space.png";
-import starsIcon from "../assets/portfolioimages/ratings.png";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { testimonialData } from "./DB/SundayDb";
+
 
 const Testimonial = () => {
-  const newData = [
-    {
-      id: 1,
-      image: images,
-      title: "Jane Cooper",
-      location: "Abuja, Nigeria",
-      testimony:
-        "“I had an incredible experience renting from Rent Cars! The process was seamless, the car was in pristine condition, and the customer service was top-notch...”",
-      rate: starsIcon,
-    },
-    {
-      id: 2,
-      image: images,
-      title: "Leslie Alexander",
-      location: "Lagos, Nigeria",
-      testimony:
-        "“I was really impressed with the level of service I received from this car rental company. The process was smooth and easy, and the car I rented was in excellent condition...”",
-      rate: starsIcon,
-    },
-    {
-      id: 3,
-      image: images,
-      title: "Bobbie Robertson",
-      location: "Port Harcourt, Nigeria",
-      testimony:
-        "“Rent Cars truly stands out. From their convenient online booking system to their prompt pickup and drop-off service, everything was convenient and stress-free.”",
-      rate: starsIcon,
-    },
-    {
-      id: 4,
-      image: images,
-      title: "Eleanor Pena",
-      location: "Ibadan, Nigeria",
-      testimony:
-        "“Artchain NFT exceeded my expectations. The entire process, from acquiring to analyzing transactions, was seamless and secure. The platform's transparency and ease of use have made me a loyal user.Artchain NFT exceeded my expectations. The entire process, from acquiring to analyzing transactions, was seamless and secure. The platform's transparency and ease of use have made me a loyal user.”",
-      rate: starsIcon,
-    },
-    {
-      id: 5,
-      image: images,
-      title: "Michael Edwards",
-      location: "Enugu, Nigeria",
-      testimony:
-        "“WeCare truly stands out in the healthcare space. Their meticulous attention to detail and the precision of their transaction analysis have made a significant impact on our operations. Highly recommended!”",
-      rate: starsIcon,
-    },
-  ];
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeButton, setActiveButton] = useState("next"); // Set the right button as active by default
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? newData.length - 3 : prevIndex - 1
+      prevIndex === 0 ? testimonialData.length - 3 : prevIndex - 1
     );
     setActiveButton("prev");
   };
 
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === newData.length - 3 ? 0 : prevIndex + 1
+      prevIndex === testimonialData.length - 3 ? 0 : prevIndex + 1
     );
     setActiveButton("next");
   };
@@ -77,7 +31,7 @@ const Testimonial = () => {
         </h1>
         {/* testimony box */}
         <section className="container m-auto grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-9">
-          {newData.slice(currentIndex, currentIndex + 3).map((slide, index) => {
+          {testimonialData.slice(currentIndex, currentIndex + 3).map((slide, index) => {
             const isMiddleItem = index === 1;
             return (
               <div
