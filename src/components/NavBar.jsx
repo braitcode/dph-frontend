@@ -31,7 +31,7 @@ const NavBar = () => {
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               <a
                 href={link.link}
-                className="font-spaceGrotesk  text-[ #171717] text-[15px] hover:text-[#028A4C] focus:text-[#028A4C] duration-500"
+                className="font-spaceGrotesk xl:text-[18px] font-medium text-[ #171717] text-[15px] hover:text-[#028A4C] focus:text-[#028A4C] duration-500"
               >
                 {link.name}
               </a>
@@ -42,10 +42,10 @@ const NavBar = () => {
         <div class="auth-buttons flex justify-end gap-2">
             <Button size="medium" color="white" >
 
-            <span className="text-[15px] text-[#028A4C]">Login</span>
+            <span className="text-[16px] font-bold text-[#028A4C]">Login</span>
           </Button>
           <Button size="medium" color="success">
-            <span className="text-[15px]">Sign Up</span>
+            <span className="text-[16px] font-bold">Sign Up</span>
           </Button>
         </div>
         <div
