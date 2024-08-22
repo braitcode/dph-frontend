@@ -3,7 +3,7 @@ import { solution } from './DB/Solution.jsx'
 
 const Tailor = () => {
     return (
-        <div className='w-11/12 mx-auto lg:w-10/12 xl:w-3/4'>
+        <div className='container w-11/12 mx-auto lg:w-10/12 xl:w-3/4'>
             <section className='w-full p-4 pb-[5rem]'>
                 <h2 className='font-bold font-spaceGrotesk text-[30px] leading-normal text-center pt-7 md:text-[38px] lg:text-[48px]'>
                     Tailored Solution For Your Needs
