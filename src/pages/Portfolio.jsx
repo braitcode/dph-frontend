@@ -61,7 +61,7 @@ const Portfolio = () => {
                 <img
                   src={project.image}
                   alt="project-images"
-                  className="w-full h-64 lg:w-full lg:h-96 rounded-t-xl"
+                  className="w-[600px] h-64 lg:w-full lg:h-[425px] rounded-t-xl"
                 />
                 <div className="lg:px-9 xl:px-12 px-6 py-3 border border-b-4 rounded-b-lg font-spaceGrotesk">
                   <h3 className="text-xl font-bold mt-3">{project.title}</h3>
