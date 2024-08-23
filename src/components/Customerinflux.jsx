@@ -1,12 +1,26 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 
 const Customerinflux = ({ users }) => {
-    const width = (users / 300) * 100; 
-  
+  // const [flowAnimation, setFlowAnimation] = useState(0);
+
+  // useEffect(() => {
+  //   setFlowAnimation(Math.min((users / 250) * 100, 100));
+  // }, [users]);
+  const flowAnimation = Math.min((users / 250) * 100, 100);
+  const count = Math.min(users, 230);
     return (
-      <div className="h-2 bg-gray-300 rounded-full">
-        <div className={`h-2 bg-[#02864A] rounded-full transition-width duration-500`} style={{ width: `${width}%` }}></div>
+      <div
+      className={`animate-flow ${flowAnimation === 92 ? 'animate-flow-complete' : ''}`}
+      style={{ '--flow-animation': `${flowAnimation}%` }}
+    >
+           
+
+      {/* your flow animation content here */}
+      <div className="h-2 bg-gray-300 rounded-md">
+        <div className={`h-2 bg-[#02864A] rounded-md transition-width duration-500`} style={{ width: `${flowAnimation}%` }}></div>
       </div>
+    </div>
+      
     );
   };
   
