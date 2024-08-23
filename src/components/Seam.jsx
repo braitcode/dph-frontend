@@ -23,7 +23,7 @@ const Seam = () => {
                         </Button>
                     </a>
                 </div>
-                <div>
+                <div className='flex justify-center'>
                     <img src={seamimg} alt="" className='w-[85%] mt-10' />
                 </div>
             </section>
