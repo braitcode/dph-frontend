@@ -7,11 +7,14 @@ import Testimonial from "../components/Testimonial"
 import Portfolio from "../pages/Portfolio"
 import Info from "../components/Info"
 import Seam from '../components/Seam'
-
+import Hero from '../components/Hero'
+import NavBar from '../components/NavBar'
 
 const Home = () => {
     return (
         <>
+            <NavBar/>
+            <Hero/>
             <Info />
             <Tailor />
             <Seam />

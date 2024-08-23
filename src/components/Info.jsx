@@ -4,7 +4,7 @@ import { data } from "./DB/InfoDB"
 
 const Info = () => {
   return (
-    <div className=' w-full font-spaceGrotesk border border-red-500'>
+    <div className='w-full font-spaceGrotesk'>
         <div className="w-full h-80 bg-white m-auto pt-4 px-4 md:w-full lg:px-0 lg:flex lg:items-center lg:justify-center lg:gap-[400px]">
           <div className=" pt-4 md:w-[680px] md:m-auto md:flex md:justify-between md:items-center md:mt-10 lg:w-[1260px] lg:m-auto lg:flex lg:items-center lg:justify-between">
           <div className="font-bold text-2xl text-center md:text-start pb-2 lg:text-start">
@@ -24,7 +24,7 @@ const Info = () => {
         <div className="lg:w-[1239px] lg:m-auto">
         <div className="w-full lg:flex lg:justify-between lg:items-center">
           <div className=" px-4 lg:px-0 lg:w-[554px]">
-            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">creative visionaries, innovative  and passionate entrepreneurs</h1>
+            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">Creative visionaries, innovative  and passionate entrepreneurs</h1>
             <p className='text-center lg:text-start lg:font-medium lg:text-[20px] lg:w-96'>We are a team of visionary creators, strategist, and storytellers with a deep passion for design and commitment to excellence</p>
           </div>
 
