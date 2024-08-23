@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import { data } from "./DB/InfoDB"
+import arrowRight from "../assets/icons/Line arrow-right.png"
 
 const Info = () => {
   return (
@@ -12,25 +13,29 @@ const Info = () => {
             </div>
             <div className="text-center md:text-start lg:text-start lg:w-[515px]">
                 <p className="pb-4 text-[#323F49] md:w-[320px] lg:w-[500px] lg:text-xl lg:font-semibold ">We are your partners in crafting digital brilliance. Our expertise spans UI/UX , mobile and website, web development, brand guidelines and product design.</p>
-                <Button color='darkGreen'>
-                  Get in Touch
+                <Button color="success" size="medium">
+                 <div className=" flex items-center gap-2">
+                  <span className="text-[15px]">Get in Touch Now</span>
+                <img src={arrowRight} alt="" />
+                 </div>
                 </Button>
             </div>
           </div>
         </div>
 
-       <div className="w-full bg-[#034D2B] text-white m-auto lg:h-[884px]">
+       <div className="w-full bg-[#034D2B] text-white m-auto">
         <h1 className="text-center font-semibold text-3xl py-6 lg:font-bold lg:text-[55px] lg:mb-14 lg:pt-10">Why Choose Us ?</h1>
         <div className="lg:w-[1239px] lg:m-auto">
         <div className="w-full lg:flex lg:justify-between lg:items-center">
-          <div className=" px-4 lg:px-0 lg:w-[554px]">
-            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">Creative visionaries, innovative  and passionate entrepreneurs</h1>
+          <div className="px-4 lg:px-0 lg:w-[554px]">
+            <h1 className="text-center font-medium text-2xl pb-2 lg:font-semibold lg:text-5xl lg:text-start lg:mb-4">Creative Visionaries, Innovative  and Passionate Entrepreneurs</h1>
             <p className='text-center lg:text-start lg:font-medium lg:text-[20px] lg:w-96'>We are a team of visionary creators, strategist, and storytellers with a deep passion for design and commitment to excellence</p>
           </div>
 
-          <section className='pt-8 grid grid-cols-1 gap-8 py-6 md:grid-cols-2 lg:w-[690px] lg:grid-cols-2 lg:gap-10'>
-            {data.map((item, index) => (
-              <div key={index} className='bg-white h-64 w-9/12 border m-auto rounded-2xl lg:w-[320px] lg:h-[300px'>
+          <section className='pt-8 py-6 w-full'>
+           <div className="grid gap-9 grid-cols-1 border m-auto border-pink-600 md:w-[700px] md:grid-cols-2 lg:w-[690px] lg:grid-cols-2 lg:gap-10">
+           { data.map((item, index) => (
+              <div key={index} className='bg-white border-pink-600 w-9/12 border m-auto rounded-2xl md:w-full lg:w-[320px]'>
               <div className=" h-60 w-4/5 m-auto mt-2 lg:flex lg:flex-col lg:gap-6">
               <div className="bg-black mt-6 w-[54px] h-[54px] rounded-md lg:mt-2">
                    <div className='h-[50px] w-[50px] flex items-center justify-center'>
@@ -45,6 +50,7 @@ const Info = () => {
             </div>      
               ))
             }
+           </div>
           </section>
           </div>
         </div>
