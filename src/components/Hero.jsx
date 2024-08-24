@@ -31,11 +31,11 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <div >
+      <div  >
         {/* <NavBar /> */}
-        <div className="w-full lg:flex justify-between items-center gap-12 md:mb-[2rem]  mt-[5rem] max-w-7xl m-auto font-spaceGrotesk   ">
+        <div className=" lg:flex justify-between items-center gap-12 md:mb-[2rem]  mt-[5rem] max-w-[1260px] w-11/12 mx-auto lg:w-10/12 xl:w-3/4  m-auto font-spaceGrotesk ">
           {/* left div */}
-          <div className="lg:w-[45%] flex flex-col gap-[2.25rem] w-full ">
+          <div className="lg:w-[45%] flex flex-col gap-[2.25rem] ">
             <div className="lg:flex flex-col lg:gap-[20px] lg:mt-[8.8rem] mt-[2rem] ">
               <h1 className="lg:text-[55px] text-[30px] md:text-[40px] font-bold lg:leading-[3.2rem] leading-[2rem] md:leading-[3rem] ">
                 Elevate Your Brand With Stunning Mobile And Website Designs
@@ -114,7 +114,7 @@ const Hero = () => {
         </div>
 
         <div className=" bg-black">
-          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[1.1rem]    max-w-7xl m-auto  ">
+          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[1.1rem]    max-w-[1260px] w-11/12 mx-auto lg:w-10/12 xl:w-3/4 m-auto px-5 lg:px-0  ">
             <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Web Development</span>{" "}
             <img src={dot} alt="" className="w-[5px]" />

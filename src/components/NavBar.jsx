@@ -14,8 +14,8 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className=" bg-white top-0 w-full fixed border-b z-[1]">
-        <div className="max-w-7xl m-auto flex justify-between items-center md:p-5   ">
+      <nav className=" bg-white top-0 w-full fixed border-b z-[1] ">
+        <div className="max-w-[1260px] w-11/12  lg:w-10/12 xl:w-3/4  m-auto h-[80px] md:h-[106px]   flex justify-between items-center  ">
           <div className="logo p-5 md:p-0">
             <a href="/">
               {" "}
