@@ -33,7 +33,7 @@ const Hero = () => {
     <>
       <div >
         {/* <NavBar /> */}
-        <div className="w-full lg:flex justify-between items-center gap-12 md:mb-[2rem]  mt-[5rem] max-w-7xl m-auto font-spaceGrotesk  lg:px[4rem]  ">
+        <div className="w-full lg:flex justify-between items-center gap-12 md:mb-[2rem]  mt-[5rem] max-w-7xl m-auto font-spaceGrotesk   ">
           {/* left div */}
           <div className="lg:w-[45%] flex flex-col gap-[2.25rem] w-full ">
             <div className="lg:flex flex-col lg:gap-[20px] lg:mt-[8.8rem] mt-[2rem] ">
@@ -114,7 +114,7 @@ const Hero = () => {
         </div>
 
         <div className=" bg-black">
-          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[1.1rem]  lg:px-[4.8rem]    max-w-7xl m-auto  ">
+          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[1.1rem]    max-w-7xl m-auto  ">
             <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Web Development</span>{" "}
             <img src={dot} alt="" className="w-[5px]" />

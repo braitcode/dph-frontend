@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <>
       <nav className=" bg-white top-0 w-full fixed border-b z-[1]">
-        <div className="max-w-7xl m-auto flex justify-between items-center md:p-5   lg:px-[4.8rem]">
+        <div className="max-w-7xl m-auto flex justify-between items-center md:p-5   ">
           <div className="logo p-5 md:p-0">
             <a href="/">
               {" "}
