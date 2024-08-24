@@ -1,7 +1,7 @@
-import img1 from '../../assets/icons/convert.png';
-import img2 from '../../assets/icons/products.png';
-import img3 from '../../assets/icons/chrome.png'
-import img4 from '../../assets/icons/map.png';
+import img1 from '../../assets/icons/convert.svg';
+import img2 from '../../assets/icons/layer.svg';
+import img3 from '../../assets/icons/chrome.svg'
+import img4 from '../../assets/icons/map.svg';
 
 const solution = [
     {
