@@ -37,7 +37,9 @@ const Testimonial = () => {
 
   return (
     <>
-      <main className="px-4 sm:px-2 lg:px-8 bg-[#F2F2F2] py-7">
+      <main className="max-w-7xl m-auto bg-[#F2F2F2] py-7">
+        <section className=" lg:px-[20px] md:px-[19px] px-[11px] ">
+
         <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk">
           Testimonials
         </h1>
@@ -79,7 +81,7 @@ const Testimonial = () => {
           })}
         </section>
         {/* Slide button section */}
-        <div className="flex gap-5 justify-center my-5 pt-5">
+        <div className="flex gap-5 justify-center my-5 py-5">
           <button
             onClick={handlePrevClick}
             className={`border p-2 rounded-lg ${
@@ -97,6 +99,7 @@ const Testimonial = () => {
             <SlArrowRight />
           </button>
         </div>
+        </section>
       </main>
     </>
   );
