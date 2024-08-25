@@ -13,8 +13,8 @@ import NavBar from '../components/NavBar'
 const Home = () => {
     return (
         <>
-            <NavBar/>
-            <Hero/>
+            <NavBar />
+            <Hero />
             <Info />
             <Tailor />
             <Seam />
