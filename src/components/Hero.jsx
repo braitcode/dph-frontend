@@ -11,6 +11,7 @@ import dot from "../assets/icons/dot.svg";
 import drive from "../assets/icons/drive.svg";
 import elevate from '../assets/icons/elevate.svg'
 import arrowRight from "../assets/icons/Line arrow-right.png"
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
   const [count, setCount] = useState(1);
@@ -35,8 +36,8 @@ const Hero = () => {
         {/* <NavBar /> */}
         <div className="w-full lg:flex justify-between items-center gap-12 md:mb-[2rem] mt-[5rem] max-w-7xl m-auto font-spaceGrotesk px-[0.8rem]">
           {/* left div */}
-          <div className="lg:w-[45%] flex flex-col gap-[2.25rem] ">
-            <div className="lg:flex flex-col lg:gap-[20px] lg:mt-[8.8rem] mt-[2rem] ">
+          <div className="lg:w-[45%] flex flex-col gap-[2.25rem] w-full ">
+            <div className="lg:flex flex-col lg:gap-[20px] mt-[2rem] ">
               <h1 className="lg:text-[55px] text-[30px] md:text-[40px] font-bold lg:leading-[3.2rem] leading-[2rem] md:leading-[3rem] ">
                 Elevate Your Brand With Stunning Mobile And Website Designs
               </h1>
@@ -48,7 +49,7 @@ const Hero = () => {
                 <Button size="medium" color="success">
                   <div className="flex gap-2">
 
-                    <span className="text-[15px]">Get Started</span> <img src={arrowRight} alt="" />
+                    <span className="text-[15px]">Get Started</span><FaArrowRightLong className='mt-1' />
                   </div>
                 </Button>
                 <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
@@ -60,7 +61,7 @@ const Hero = () => {
             </div>
           </div>
           {/* right div */}
-          <div className="lg:w-[45%] mt-[2.1rem] lg:mt-[4.1rem] w-full  ">
+          <div className="lg:w-[45%] mt-[2.1rem] lg:mt-[3.1rem] lg:mb-[1.5rem] w-full  ">
             <div className="flex justify-between  gap-3 py-3">
               <div className="relative h-auto">
                 <img src={laptop} alt="" className="w-[350px] lg:w-[450px] " />
@@ -98,11 +99,10 @@ const Hero = () => {
             Driven by a passion for innovative designs, we craft mobile and
             web designs that captivate and resonate with users.
           </p>
-          <div className="flex  lg:hidden  gap-3 m-3 justify-center">
+          <div className="flex  lg:hidden gap-3 m-3 justify-center">
             <Button size="medium" color="success">
               <div className="flex gap-2">
-
-                <span className="md:text-[15px] text-[10px]">Get Started</span> <img src={arrowRight} alt="" />
+                <span className="md:text-[15px] text-[10px]">Get Started</span><FaArrowRightLong className='mt-1' />
               </div>
             </Button>
             <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
