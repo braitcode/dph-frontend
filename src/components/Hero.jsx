@@ -32,7 +32,7 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <div >
+      <div  >
         {/* <NavBar /> */}
         <div className="w-full lg:flex justify-between items-center gap-12 md:mb-[2rem] mt-[5rem] max-w-7xl m-auto font-spaceGrotesk px-[0.8rem]">
           {/* left div */}
@@ -66,7 +66,7 @@ const Hero = () => {
               <div className="relative h-auto">
                 <img src={laptop} alt="" className="w-[350px] lg:w-[450px] " />
                 <div className="absolute xl:mt-[3.1rem] top-[-15px] md:top-[-2rem] left-12  md:left-[160px] lg:left-[120px] lg:top-[-4rem]">
-                  {/* <img src={elevateimg} alt="" className="w-[90px] lg:w-[90%]" /> */}
+             
                   <div className="relative ">
                     <button className="btn bg-[#028A4C] w-[70px]  h-[70px]   md:w-[90px]  md:h-[90px] lg:w-[100px]  lg:h-[100px]  rounded-full ">
                       <img src={elevate} alt="" className="absolute  top-[1.4rem] left-[1.3rem]  md:top-[1.3rem] md:left-[1.5rem]  lg:top-[1.3rem] lg:left-[1.3rem] w-[30px] lg:w-[60%] md:w-[50%] animate-pulse  " />
@@ -114,7 +114,7 @@ const Hero = () => {
         </div>
 
         <div className=" bg-black">
-          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[0.8rem] max-w-7xl m-auto  ">
+          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px] px-[0.8rem] max-w-7xl m-auto  ">
             <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Web Development</span>{" "}
             <img src={dot} alt="" className="w-[5px]" />
