@@ -36,7 +36,7 @@ const Testimonial = () => {
             return (
               <div
                 key={slide.id}
-                className={`p-3 border border-2 rounded-lg font-spaceGrotesk transition-transform duration-500 mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${
+                className={`p-3 border-2 rounded-lg font-spaceGrotesk transition-transform duration-500 mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${
                   isMiddleItem
                     ? "lg:scale-[115%] md:scale-[110%] text-white bg-[#028A4C]"
                     : "border-[#B3B3B3] text-[#4B4B4B]"
