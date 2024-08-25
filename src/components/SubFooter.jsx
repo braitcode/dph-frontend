@@ -5,7 +5,7 @@ import arrowRight from "../assets/icons/Line arrow-right.png"
 const SubFooter = () => {
   return (
     <div>
-        <div className="bg-white w-full h-[500px] flex justify-center items-center">
+        <div className="container bg-white max-w-7xl m-auto w-full h-[500px] flex justify-center items-center">
               <div className="flex flex-col items-center gap-[32px]">
                   <div className="">
                       <h1 className='xl:text-[85px] text-[30px] font-bold font-spaceGrotesk'>Let's Create Together</h1>
