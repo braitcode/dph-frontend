@@ -7,6 +7,9 @@ import linkedin from "../assets/icons/linkedin.png"
 import facebook from "../assets/icons/facebook.png"
 import arrowRightUp from "../assets/icons/arrowRightUp.png"
 import email from "../assets/icons/sms outline.png"
+import phone from "../assets/icons/phone icon.png";
+import sms from "../assets/icons/sms.png";
+import location from "../assets/icons/location.png";
 
 const Footer = () => {
   return (
@@ -23,6 +26,22 @@ const Footer = () => {
           <p className='text-white text-[17px] font-spaceGrotesk font-medium'>
             444 St. Yellow Street California, USA +1 556 767
           </p>
+          <div className="xl:hidden flex flex-col gap-4">
+          <p className='text-white text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
+                            <img src={phone} alt="" />
+                            +234 998 890 4847
+                        </p>
+
+                        <p className='text-white text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
+                            <img src={sms} alt="" />
+                            Dph@gmail.com
+                        </p>
+
+                        <p className='text-white text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
+                            <img src={location} alt="" />
+                            1, Dph cresent, Lagos, Nigeria
+                        </p>
+          </div>
         </div>
 
         <div className="flex flex-col items-center md:items-start gap-[20px]">
