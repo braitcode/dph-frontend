@@ -13,7 +13,7 @@ import location from "../assets/icons/location.png";
 
 const Footer = () => {
   return (
-    <div className="bg-black  w-full md:p-16">
+    <div className="bg-black py-4 w-full md:p-16">
       <div className="container lg:w-11/12 w-full m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
         <div className="xl:w-[250px] flex flex-col items-center md:items-start gap-[23px]">
           <div className="">
@@ -23,9 +23,6 @@ const Footer = () => {
             </div>
             <p className='text-white font-spaceGrotesk text-[12px]'>Digital Presence Hub</p>
           </div>
-          {/* <p className='text-white text-[17px] font-spaceGrotesk font-medium'>
-          1, Dph cresent, Lagos, Nigeria
-          </p> */}
 
           <div className=" flex flex-col gap-4">
             <p className='text-white text-[18px] w- font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
@@ -74,7 +71,6 @@ const Footer = () => {
           <div className=''>
             <input type="email" placeholder='Enter your email' className='border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full w-[80%]' />
           </div>
-          {/* <p className="border border-white w-full"></p> */}
           <div className="flex justify-evenly">
             <img src={twitter} alt="" />
             <img src={youtube} alt="" />
