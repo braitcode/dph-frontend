@@ -4,7 +4,7 @@ import line from '../assets/icons/line.svg'
 
 const Tailor = () => {
     return (
-        <div className='max-w-7xl w-11/12 mx-auto lg:w-10/12 xl:w-3/4 font-spaceGrotesk'>
+        <div className='container w-11/12 mx-auto lg:w-10/12 xl:w-3/4 font-spaceGrotesk'>
             <style>
                 {`
                 .group:hover img.svg-white {
@@ -29,7 +29,7 @@ const Tailor = () => {
                             const { id, title, image, description } = sol;
                             return (
                                 <div key={id}
-                                    className='bg-[#EFEFEF] pt-7 pb-7 pl-4 pr-3 rounded shadow-[0_1px_0_0] shadow-[#000000] lg:w-full lg:pl-6 group ml-[-0.5rem] hover:bg-[#028A4C]'>
+                                    className='container w-11/12 mx-auto bg-[#EFEFEF] pt-7 pb-7 pl-4 pr-3 rounded shadow-[0_1px_0_0] shadow-[#000000] lg:pl-6 group hover:bg-[#028A4C]'>
                                     <img
                                         src={image}
                                         alt=""
@@ -40,9 +40,9 @@ const Tailor = () => {
                                     </h2>
                                     <p
                                         className='text-[10px] font-medium group-hover:text-white md:text-[12px] lg:text-[16px]'>
-                                        {description}
+                                        {description} <br />
                                         <a
-                                            href="#" className='ml-1 text-[10px] text-[#028A4C] group-hover:text-white md:text-[12px] lg:text-[16px]'>
+                                            href="#" className='ml-1 text-[10px] text-[#028A4C] group-hover:text-white md:text-[12px] lg:text-[16px] find-out-more'>
                                             <img className='svg-white inline-block pt-2' src={line} alt="line" />Find Out More
                                         </a>
                                     </p>
