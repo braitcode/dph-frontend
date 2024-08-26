@@ -20,8 +20,8 @@ const ContactForm = () => {
 
     return (
         <div className="bg-[#034D2B] w-full  xl:h-[741px] flex justify-center items-center py-12 px-4">
-            <div className="w-full max-w-7xl m-auto flex flex-col xl:flex-row justify-center items-center gap-12">
-                <div className="xl:w-[45%] flex flex-col gap-[36px] xl:p-4">
+            <div className="container lg:w-11/12 w-full m-auto flex flex-col xl:flex-row justify-center items-center gap-12">
+                <div className="xl:w-[50%] flex flex-col gap-[36px] xl:p-4">
                     <div className="flex flex-col gap-[20px] text-center xl:text-left">
                         <h1 className='text-white xl:text-[45px] text-[24px] font-bold w-[80%] mx-auto xl:mx-0 font-spaceGrotesk'>
                             Book A Complimentary Consultation
@@ -49,7 +49,7 @@ const ContactForm = () => {
                     </div>
                 </div>
 
-                <div className="bg-white xl:w-[45%] w-full h-auto rounded-xl p-6">
+                <div className="bg-white xl:w-[50%] w-full h-auto rounded-xl p-6">
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
                         <div className="flex flex-col sm:flex-row justify-between gap-4">
                             <div className="w-full sm:w-[48%] flex flex-col gap-2">
