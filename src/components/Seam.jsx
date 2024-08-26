@@ -5,10 +5,10 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Seam = () => {
     return (
-        <div className='w-full font-spaceGrotesk bg-[#F6FFFB]'>
-            <section className='max-w-7xl m-auto'>
+        <div className='font-spaceGrotesk bg-[#F6FFFB]'>
+            <section className='container w-11/12 mx-auto'>
                 <div className='mt-10 pt-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-10 pb-12 pl-3 md:pl-1'>
-                    <div className='md:mt-10 lg:mt-[10rem] md:ml-[1.2rem]'>
+                    <div className='md:mt-10 lg:mt-[10rem]'>
                         <h3 className=' font-semibold text-[24px] lg:text-[48px] lg:leading-[3.2rem]'>
                             Seamless integration of aesthetics and functionality is our hallmark
                         </h3>
@@ -25,7 +25,7 @@ const Seam = () => {
                         </a>
                     </div>
                     <div className='flex justify-center'>
-                        <img src={seamimg} alt="" className=' mt-10 w-[90%] md:w-[95%]' />
+                        <img src={seamimg} alt="" className=' mt-10 w-[100%] md:w-[95%]' />
                     </div>
                 </div>
             </section>
