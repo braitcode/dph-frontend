@@ -16,8 +16,8 @@ const Customerinflux = ({ users }) => {
            
 
       {/* your flow animation content here */}
-      <div className="h-2 bg-gray-300 rounded-md">
-        <div className={`h-2 bg-[#02864A] rounded-md transition-width duration-500`} style={{ width: `${flowAnimation}%` }}></div>
+      <div className="h-1 md:h-2 bg-gray-300 rounded-sm mb-3 md:mb-0">
+        <div className={`h-1  md:h-2 bg-[#02864A] rounded-sm transition-width duration-500`} style={{ width: `${flowAnimation}%` }}></div>
       </div>
     </div>
       
