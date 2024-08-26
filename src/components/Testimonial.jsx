@@ -37,14 +37,14 @@ const Testimonial = () => {
 
   return (
     <>
-      <main className="max-w-7xl m-auto bg-[#F2F2F2] py-7">
-        <section className=" lg:px-[20px] md:px-[19px] px-[11px] ">
+      <main className=" bg-[#F2F2F2] py-7">
+        <section className="w-11/12 mx-auto container">
 
         <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk">
           Testimonials
         </h1>
         {/* Testimony box */}
-        <section className="container m-auto grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-9">
+        <section className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-9">
           {testimonialData.slice(currentIndex, currentIndex + itemsPerSlide).map((slide, index) => {
             const isMiddleItem = index === 1 && itemsPerSlide > 1;
             return (
