@@ -114,7 +114,7 @@ const Hero = () => {
         </div>
 
         <div className=" bg-black">
-          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px] text-[10px] md:text-[19px] px-[0.8rem] max-w-7xl m-auto  ">
+          <div className="flex justify-between text-white w-full  py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px] px-[0.8rem] max-w-7xl m-auto  ">
             <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Web Development</span>{" "}
             <img src={dot} alt="" className="w-[5px]" />
