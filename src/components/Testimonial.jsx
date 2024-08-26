@@ -1,38 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { testimonialData } from "./DB/SundayDb";
 
-
 const Testimonial = () => {
-  
-
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [activeButton, setActiveButton] = useState("next"); // Set the right button as active by default
+  const [itemsPerSlide, setItemsPerSlide] = useState(3);
+  const [activeButton, setActiveButton] = useState("next");
+
+  // Adjust the number of items per slide based on screen width
+  useEffect(() => {
+    const updateItemsPerSlide = () => {
+      setItemsPerSlide(window.innerWidth < 768 ? 1 : 3);
+    };
+
+    updateItemsPerSlide(); // Call on component mount
+    window.addEventListener("resize", updateItemsPerSlide); // Adjust on window resize
+
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
+  }, []);
 
   const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonialData.length - 3 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex - itemsPerSlide;
+      return newIndex < 0 ? testimonialData.length - itemsPerSlide : newIndex;
+    });
     setActiveButton("prev");
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonialData.length - 3 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + itemsPerSlide;
+      return newIndex >= testimonialData.length ? 0 : newIndex;
+    });
     setActiveButton("next");
   };
 
   return (
     <>
-      <main className="px-4 sm:px-2 lg:px-8 bg-[#F2F2F2] py-7">
-        <h1 className="text-3xl text-center font-semibold font-spaceGrotesk">
-          Testimonial
+      <main className="max-w-7xl m-auto bg-[#F2F2F2] py-7">
+        <section className=" lg:px-[20px] md:px-[19px] px-[11px] ">
+
+        <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk">
+          Testimonials
         </h1>
-        {/* testimony box */}
+        {/* Testimony box */}
         <section className="container m-auto grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-9">
-          {testimonialData.slice(currentIndex, currentIndex + 3).map((slide, index) => {
-            const isMiddleItem = index === 1;
+          {testimonialData.slice(currentIndex, currentIndex + itemsPerSlide).map((slide, index) => {
+            const isMiddleItem = index === 1 && itemsPerSlide > 1;
             return (
               <div
                 key={slide.id}
@@ -66,8 +80,8 @@ const Testimonial = () => {
             );
           })}
         </section>
-        {/* slide button section */}
-        <div className="flex gap-5 justify-center my-5 pt-5">
+        {/* Slide button section */}
+        <div className="flex gap-5 justify-center my-5 py-5">
           <button
             onClick={handlePrevClick}
             className={`border p-2 rounded-lg ${
@@ -85,6 +99,7 @@ const Testimonial = () => {
             <SlArrowRight />
           </button>
         </div>
+        </section>
       </main>
     </>
   );

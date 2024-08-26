@@ -13,7 +13,7 @@ const Info = () => {
             </div>
             <div className="text-center md:text-start xl:text-start xl:w-[515px]">
                 <p className="pb-4 text-[#323F49] md:w-[500px] md:text-center xl:text-start xl:w-[500px] xl:text-xl xl:font-semibold">We are your partners in crafting digital brilliance. Our expertise spans UI/UX , mobile and website, web development, brand guidelines and product design.</p>
-                <div className="flex justify-center md:w-full">
+                <div className="flex justify-center xl:justify-start md:w-full md:justify-center">
           <Button color="success" size="medium" className="md:mx-auto">
              <div className="flex items-center gap-2">
             <span className="text-[15px]">Get in Touch Now</span>

@@ -23,7 +23,7 @@ const Portfolio = () => {
           .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
-    <main className="container m-auto px-4 sm:px-2 lg:px-8">
+    <main className="max-w-7xl m-auto lg:px-[20px] md:px-[19px] px-[11px] ">
       <section className="flex flex-col items-center gap-3 py-5">
         <h2 className="lg:text-2xl xl:text-[28px] md:text-xl text-[#02864A] font-spaceGrotesk font-semibold">
           Our Projects
