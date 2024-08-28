@@ -24,13 +24,13 @@ const Footer = () => {
             <p className='text-white font-spaceGrotesk text-[12px]'>Digital Presence Hub</p>
           </div>
 
-          <div className=" flex flex-col gap-4">
-            <p className='text-white text-[18px] w- font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
+          <div className="flex flex-col gap-4">
+            <p className='text-white text-[18px] font-bold flex justify-center md:justify-normal xl:justify-start gap-4 font-spaceGrotesk'>
               <img src={phone} alt="" className='' />
               +234 998 890 4847
             </p>
 
-            <p className='text-white xl:hidden text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
+            <p className='text-white xl:hidden text-[18px] font-bold flex justify-center md:justify-normal xl:justify-start gap-4 font-spaceGrotesk'>
               <img src={sms} alt="" />
               Dph@gmail.com
             </p>
@@ -68,10 +68,10 @@ const Footer = () => {
 
         <div className="flex flex-col gap-[20px]">
           <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
-          <div className=''>
-            <input type="email" placeholder='Enter your email' className='border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full w-[80%]' />
+          <div className='md:w-full'>
+            <input type="email" placeholder='Enter your email' className='border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full md:w-full w-[80%]' />
           </div>
-          <div className="flex justify-evenly">
+          <div className="flex xl:justify-between justify-evenly md:justify-between">
             <img src={twitter} alt="" />
             <img src={youtube} alt="" />
             <img src={instagram} alt="" />
