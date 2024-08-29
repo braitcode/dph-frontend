@@ -1,94 +1,62 @@
-## Project Description 
+# Documentation
 
-Digital Presence Hub is a leading digital presence platform for multi-location brands which provides the following services to small scale businesses in enhancing their online presence and client base; website development, domain hosting, creation and management instagram accounts.
+# Folder Structure
 
-## Folder Structure
+- **`/src`:** This directory holds all the source code.
 
-The folder structure of the project is as follows:
+  - **`/components`:** 
+    - **`/contexts`:**
+    - **`/layout`:** 
+  - **`/pages`:** 
+    - **`/home`:**
+    - **`/about`:**
+    - **`/services`:**
+    - **`/contact`:**
+    - **`/signup`:**
+    - **`/login`:**
 
-```
-AUGUST2024/
-│
-├── node_module/            
-├── public/            
-├── src/            
-│   ├── assets/        
-│   └── components/            
-│   └── pages/           
-│   └──            
-│   └──            
-│
-└── .eslintrc.cjs
-└── .gitignore
-└── index.html
-└── package-lock.json
-└── package.json
-└── README.md
-└── vite.config.js
-```
+# Dependencies
 
-## Getting Started
+1. **React Icons**: React Icons is a library that provides a comprehensive set of icons for use in React applications. It integrates various popular icon libraries and makes it easy to use them in your React components. This library allows developers to easily include icons from libraries like Font Awesome, Material Design, Feather, and many others.
 
-Follow these steps to get the project up and running on your local machine.
+    - **Installation**:
+      React Icons was installed using npm:
+      ```bash
+      npm install react-icons
+      ```
+2. **Axios**: Axios is a popular JavaScript library used to make HTTP requests from both the browser and Node.js environments. It simplifies the process of making asynchronous requests to retrieve or send data to web servers, providing a clean and powerful API.
 
-### Clone the Repository
+    - **Installation**:
+      Axios was installed using npm:
+      ```bash
+      npm install axios
+      ```
+3. **React Router Dom**: React Router DOM is a library used for routing in React applications, enabling developers to create single-page applications (SPAs) with navigation and dynamic content rendering. It provides a way to manage and respond to URL changes, allowing for the creation of a seamless and interactive user experience.
 
-```bash
-git clone https://github.com/braitcode/dph-frontend.git
-```
+    - **Installation**:
+      React Router Dom was installed using npm:
+      ```bash
+      npm install react-router-dom
+      ```
+4. **Tailwindcss**: Tailwind CSS is a utility-first CSS framework that provides a set of predefined classes to help you rapidly build custom user interfaces without writing custom CSS.
+    - **Installation**:
+      Tailwindcss was installed using npm:
+      ```bash
+      npm install -D tailwindcss postcss autoprefixer
+      npx tailwindcss init -p
+      ```
+5. **React Bootstrap**: React Bootstrap is a popular front-end framework that combines the power of React with Bootstrap, allowing developers to build responsive, mobile-first web applications with ease. It provides a set of React components that encapsulate Bootstrap's styles and behaviors, making it easy to integrate Bootstrap's design system into React projects.
 
-### Install Dependencies
+    - **Installation**:
+      React Bootstrap was installed using npm:
+      ```bash
+      npm install react-bootstrap
+      ```
 
-```bash
-# Install frontend dependencies
-cd dph-frontend
-npm install
+5. **React Hook Form**: React Hook Form is a library for handling form validation and state management in React applications. It simplifies the process of managing form inputs, validations, and submissions while providing a clean and efficient API.
 
-
-### Run the Development Servers
-
-```bash
-# Start the frontend development server
-npm run dev
-
-```
-
-Now you can access the application at `http://localhost:5173`.
-
-## Contributing
-
-Follow these guidelines to contribute to the project:
-
-1. Fork the repository.
-2. Clone your forked repository to your local machine.
-3. Create a new branch for your feature or bug fix.
-4. Make your changes and commit them with descriptive commit messages.
-5. Push your changes to your branch on your forked repository.
-6. Submit a pull request to the main repository.
-
-### Branch Naming Convention
-
-When naming your branch, follow this convention:
-
-- `feature/<feature-name>` for new features e.g brait/navbar
-- `bugfix/<bug-description>` for bug fixes e.g peace/navbaroverflow
-
-### Avoiding Conflicts
-
-To avoid conflicts when pushing changes to your branch, make sure to pull any changes from the development repository's `development` branch into your local branch before pushing:
-
-```bash
-git pull origin development
-```
-
-Resolve any conflicts locally and then push your changes.
-
-## Code Style
-
-Follow the existing code style and conventions in the project. Use meaningful variable and function names, and ensure your code is properly formatted.
-
-## Issues and Feedback
-
-If you encounter any issues or have feedback, please [open an issue](<issue-tracker-url>) on the GitHub repository, or reach out to the Team Lead, Bright.
-
----
+    - **Installation**:
+      React Hook Form was installed using npm:
+      ```bash
+      npm install react-hook-form
+      ```
