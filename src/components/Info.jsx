@@ -7,7 +7,7 @@ const Info = () => {
   return (
     <div className='w-full font-spaceGrotesk'>
         <div className="w-full bg-white m-auto pt-4 px-4 md:w-full lg:px-0 lg:flex lg:items-center lg:justify-center lg:gap-[400px]">
-          <div className="py-8 md:w-[680px] md:m-auto md:flex md:flex-col md:justify-between md:items-center md:mt-10 xl:w-[1260px] xl:flex-row xl:m-auto xl:flex xl:items-center xl:justify-between">
+          <div className="container py-8 md:w-[680px] md:m-auto md:flex md:flex-col md:justify-between md:items-center md:mt-10 xl:w-11/12 xl:flex-row xl:m-auto xl:flex xl:items-center xl:justify-between">
           <div className="font-bold text-2xl text-center pb-2 md:text-start xl:text-start">
                 <h1 className='md:w-[700px] md:text-3xl md:font-medium xl:w-[420px] xl:font-bold xl:text-5xl'>DPH Surpassed and Exceeded Our Expectations</h1>
             </div>
@@ -26,11 +26,11 @@ const Info = () => {
         </div>
 
        <div className="w-full bg-[#034D2B] text-white m-auto">
-        <h1 className="text-center font-semibold text-3xl py-1 md:text-5xl md:py-8 xl:font-bold xl:text-[55px] xl:py-6">Why Choose Us ?</h1>
-        <div className="md:w-[700px] md:m-auto xl:w-[1239px] xl:m-auto">
-        <div className="w-full md:flex-col md:justify-center xl:flex lg:items-center xl:flex-row">
-          <div className="px-4 xl:w-[554px]">
-            <h1 className="text-center font-medium text-2xl md:font-semibold md:text-3xl md:pb-2 xl:text-start xl:font-bold xl:text-[45px] xl:pb-6 xl:leading-10">Creative Visionaries, Innovative  and Passionate Entrepreneurs</h1>
+        <h1 className="pt-10 pb-5 text-center font-semibold text-3xl pt[71px] md:text-5xl md:pt-[71px] md:pb-8 xl:font-bold xl:text-[55px] xl:pt-[71px]">Why Choose Us ?</h1>
+        <div className="pb-4 md:pb-[71px] md:w-[700px] md:m-auto xl:w-11/12 xl:m-auto ">
+        <div className="w-full md:flex-col md:justify-between xl:flex lg:items-center xl:flex-row">
+          <div className="px-4 xl:w-[554px] xl:px-0">
+            <h1 className="text-center font-medium text-2xl md:font-semibold md:text-3xl md:pb-2 xl:text-start xl:font-bold xl:text-[45px] xl:pb-6 xl:leading-10">Creative Visionaries, Innovative  And Passionate Entrepreneurs</h1>
             <p className='text-center xl:text-start xl:font-medium xl:text-[20px] xl:w-96'>We are a team of visionary creators, strategist, and storytellers with a deep passion for design and commitment to excellence</p>
           </div>
 
