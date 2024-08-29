@@ -27,7 +27,7 @@ const Info = () => {
 
        <div className="w-full bg-[#034D2B] text-white m-auto">
         <h1 className="pt-10 pb-5 text-center font-semibold text-3xl pt[71px] md:text-5xl md:pt-[71px] md:pb-8 xl:font-bold xl:text-[55px] xl:pt-[71px]">Why Choose Us ?</h1>
-        <div className="pb-4 md:pb-[71px] md:w-[700px] md:m-auto xl:w-11/12 xl:m-auto ">
+        <div className="container pb-4 md:pb-[71px] md:w-[700px] md:m-auto xl:w-11/12 xl:m-auto ">
         <div className="w-full md:flex-col md:justify-between xl:flex lg:items-center xl:flex-row">
           <div className="px-4 xl:w-[554px] xl:px-0">
             <h1 className="text-center font-medium text-2xl md:font-semibold md:text-3xl md:pb-2 xl:text-start xl:font-bold xl:text-[45px] xl:pb-6 xl:leading-10">Creative Visionaries, Innovative  And Passionate Entrepreneurs</h1>
