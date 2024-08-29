@@ -23,13 +23,13 @@ const Tailor = () => {
                     Our team of experts crafts intuitive digital experience, from mobile interfaces to <br /> user-friendly websites, delivering functional solutions that impress.
                 </h5>
                 <div
-                    className='grid grid-cols-1 sm:grid-cols-2 mt-[20px] gap-[60px]'>
+                    className='grid grid-cols-1 sm:grid-cols-2 gap-[40px]'>
                     {
                         solution.map((sol) => {
                             const { id, title, image, description } = sol;
                             return (
                                 <div key={id}
-                                    className='container w-11/12 mx-auto bg-[#EFEFEF] pt-7 pb-7 pl-4 pr-3 rounded shadow-[0_1px_0_0] shadow-[#000000] lg:pl-6 group hover:bg-[#028A4C]'>
+                                    className='bg-[#EFEFEF] px-3 py-4 rounded shadow-[0_1px_0_0] shadow-[#000000] lg:px-4 group hover:bg-[#028A4C]'>
                                     <img
                                         src={image}
                                         alt=""
