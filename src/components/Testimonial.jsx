@@ -44,7 +44,7 @@ const Testimonial = () => {
           Testimonials
         </h1>
         {/* Testimony box */}
-        <section className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-9">
+        <section className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 xl:gap-12 lg:gap-10 md:gap-5 lg:py-7 py-3 xl:p-">
           {testimonialData.slice(currentIndex, currentIndex + itemsPerSlide).map((slide, index) => {
             const isMiddleItem = index === 1 && itemsPerSlide > 1;
             return (
