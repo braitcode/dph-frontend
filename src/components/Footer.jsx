@@ -14,7 +14,7 @@ import location from "../assets/icons/location.png";
 const Footer = () => {
   return (
     <div className="bg-black py-4 w-full md:p-16">
-      <div className="container lg:w-11/12 w-full m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
+      <div className="container lg:w-11/12 w-full m-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
         <div className="xl:w-[250px] flex flex-col items-center md:items-start gap-[23px]">
           <div className="">
             <div className="flex items-center justify-center md:justify-start text-[32.14px] gap-2">
@@ -26,7 +26,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-4">
             <p className='text-white text-[18px] font-bold flex justify-center md:justify-normal xl:justify-start gap-4 font-spaceGrotesk'>
-              <img src={phone} alt="" className='' />
+              <img src={phone} alt="" className='w-[24px] h-[24px]' />
               +234 998 890 4847
             </p>
 
