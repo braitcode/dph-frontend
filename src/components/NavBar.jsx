@@ -52,10 +52,10 @@ const NavBar = () => {
         <div className="auth-buttons justify-end gap-2 hidden lg:block">
           
           <Button size="medium" color="success">
-          <Link  to="/SignUp" className="text-[16px]  text-white ">Sign Up</Link >
+          <Link  to="/signup" className="text-[16px]  text-white ">Sign Up</Link >
           </Button>
           <Button size="medium" color="white">
-            <Link  to="/LogIn" className="text-[16px]  text-[#171717] ">Login</Link >
+            <Link  to="/login" className="text-[16px]  text-[#171717] ">Login</Link >
           </Button>
         </div>
         <div
