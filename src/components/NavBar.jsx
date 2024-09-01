@@ -7,7 +7,7 @@ import Button from "./Button";
 const NavBar = () => {
   const NavLinks = [
     { name: "About", link: "/" },
-    { name: "Our Services", link: "/" },
+    { name: "Our Services", link: "/services" },
     { name: "Portfolio", link: "/" },
     { name: "Contact Us", link: "/" },
   ];
