@@ -1,20 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import SignUp from './pages/Signup'
-import LogIn from './pages/Login'
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      {/* <Home /> */}
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/LogIn" element={<LogIn />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
-      </BrowserRouter>
-     
+      </Router>
     </>
   );
 }
