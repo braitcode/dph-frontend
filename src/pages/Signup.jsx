@@ -5,6 +5,8 @@ import google from '../assets/google.svg'
 import signuplog from "../assets/signuplogo.svg";
 import orline from '../assets/orline.svg'
 import { Link } from "react-router-dom";
+
+
 const SignUp = () => {
 
   useEffect(() => {
@@ -44,6 +46,8 @@ const SignUp = () => {
     };
 
     return (
+        <>
+        
         <div className="w-full font-spaceGrotesk lg:flex gap-3">
           
           <div className='lg:w-[50%] px-[30px] pt-[30px] pb-[30px] lg:pb-3 lg:pt-[32px]  w-full flex flex-col  lg:pl-[100px] lg:pr-[32px] container m-auto '>
@@ -148,6 +152,7 @@ const SignUp = () => {
             <img src={signuplog} alt="" className='absolute top-[35px] right-[30px]' />
           </div>
         </div>
+        </>
     );
 };
 

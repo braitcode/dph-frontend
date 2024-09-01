@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { portfolioData } from "./DB/SundayDb"; // Adjust the path as needed
+import { Link } from "react-router-dom";
 
 const SubPortfolio= () => {
   const [activeCategory, setActiveCategory] = useState("All Works");
@@ -83,10 +84,13 @@ const SubPortfolio= () => {
         </section>
       )}
 
+      <Link to="/portfolio">
+      
       <div className="flex items-center gap-3 justify-center mb-9 font-spaceGrotesk">
         <p className="text-[#02864A] font-semibold cursor-pointer">View all</p>
         <FaArrowRightLong className="text-sm text-[#02864A] mt-[2px] cursor-pointer" />
       </div>
+      </Link>
     </main>
   );
 };

@@ -37,6 +37,9 @@ const Login = () => {
     };
 
     return (
+        <>
+        
+        
         <div className="w-full font-spaceGrotesk lg:flex gap-3">
           
           <div className='lg:w-[50%] px-[30px] pt-[30px] pb-[30px] lg:pb-3 lg:pt-[74px]  w-full flex flex-col  lg:pl-[100px] lg:pr-[32px] container m-auto '>
@@ -127,6 +130,7 @@ const Login = () => {
             <img src={signuplog} alt="" className='absolute top-[40px] right-[40px]' />
           </div>
         </div>
+        </>
     );
 };
 
