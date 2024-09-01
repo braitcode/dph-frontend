@@ -13,8 +13,10 @@ import location from "../assets/icons/location.png";
 
 const Footer = () => {
   return (
-    <div className="bg-black py-4 w-full md:p-16">
-      <div className="container lg:w-11/12 w-full m-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
+    <div className="bg-black w-full xl:h-[353px] xl:pt-[3rem]">
+
+    <div className="container lg:w-11/12 m-auto py-4 xl:p-0 md:p-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
         <div className="xl:w-[250px] flex flex-col items-center md:items-start gap-[23px]">
           <div className="">
             <div className="flex items-center justify-center md:justify-start text-[32.14px] gap-2">
@@ -80,6 +82,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
