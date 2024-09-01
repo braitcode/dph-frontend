@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { SlMenu } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
 import logo from "../assets/icons/logo.svg";
@@ -37,23 +38,24 @@ const NavBar = () => {
             </li>
           ))}
           <div className="flex gap-2 lg:hidden">
+     
+            <Button size="medium" color="success">
+            <Link  to="/SignUp" className="text-[16px]  text-white ">Sign Up</Link >
+            </Button>
             <div className="border-2 lg:border-none rounded-md border-[#028A4C]">
               <Button size="medium" color="primary">
-                <span className="text-[16px] font-bold text-[#028A4C]">Login</span>
+              <Link  to="/LogIn" className="text-[16px]  text-[#171717] ">Login</Link >
               </Button>
             </div>
-
-            <Button size="medium" color="success">
-              <span className="text-[16px] font-bold">Sign Up</span>
-            </Button>
           </div>
         </ul>
         <div className="auth-buttons justify-end gap-2 hidden lg:block">
-          <Button size="medium" color="white">
-            <span className="text-[16px] font-bold text-[#028A4C]">Login</span>
-          </Button>
+          
           <Button size="medium" color="success">
-            <span className="text-[16px] font-bold">Sign Up</span>
+          <Link  to="/signup" className="text-[16px]  text-white ">Sign Up</Link >
+          </Button>
+          <Button size="medium" color="white">
+            <Link  to="/login" className="text-[16px]  text-[#171717] ">Login</Link >
           </Button>
         </div>
         <div
