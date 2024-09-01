@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from 'react';
-import signupimg from '../assets/sigupimg.svg'
+import signupimg from '../assets/signup.png'
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
 import signuplog from "../assets/signuplogo.svg";
@@ -48,22 +48,21 @@ const SignUp = () => {
     return (
         <>
         
-        <div className="w-full font-spaceGrotesk lg:flex gap-3">
-          
+        <div className=" w-full font-spaceGrotesk lg:flex gap-3">
           <div className='lg:w-[50%] px-[30px] pt-[30px] pb-[30px] lg:pb-3 lg:pt-[32px]  w-full flex flex-col  lg:pl-[100px] lg:pr-[32px] container m-auto '>
           <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] pb-[8px] ">Get Started</h2>
             <p className='lg:text-[18px]  pb-[32px] text-center lg:text-start text-[16px] '>
               Join us now by filling your details below
             </p>
             <form onSubmit={handleSubmit}>
-            <label className="block font-[500px] text-[18px] lg:text-[23px] pb-[17px]">
+            <label className="block font-[500px] text-[18px] lg:text-[23px] ">
                    Full Name
                     <input
                         type="text"
                         value={fullname}
                         placeholder='John Doe'
                         onChange={(event) => setFullName(event.target.value)}
-                        className="w-full p-3 text-sm lg:text-[18px] text-gray-700 border-[1.5px] border-gray-500 rounded focus:border-[#02864A]"
+                        className="w-full p-2 text-sm lg:text-[18px] text-gray-700 border-[1.5px] border-gray-500 rounded focus:border-[#02864A]"
                         style={{
                             outline: 'none',
                             boxShadow: 'none',
@@ -72,14 +71,14 @@ const SignUp = () => {
                     {fullNameError && <p className="text-red-500 xl:text-[14px] text-[12px]">{fullNameError}</p>}
                 </label>
                 <br />
-                <label className="block font-[500px] text-[18px] lg:text-[23px] pb-[17px]">
+                <label className="block font-[500px] text-[18px] lg:text-[23px] ">
                     Email
                     <input
                         type="email"
                         value={email}
                         placeholder='johndoe@gmail.com'
                         onChange={(event) => setEmail(event.target.value)}
-                        className="w-full p-3 text-sm lg:text-[18px] text-gray-700 border-[1.5px] border-gray-500 rounded focus:border-[#02864A]"
+                        className="w-full p-2 text-sm lg:text-[18px] text-gray-700 border-[1.5px] border-gray-500 rounded focus:border-[#02864A]"
                         style={{
                             outline: 'none',
                             boxShadow: 'none',
@@ -88,14 +87,14 @@ const SignUp = () => {
                     {emailError && <p className="text-red-500 xl:text-[14px] text-[12px]">{emailError}</p>}
                 </label>
                 <br />
-                <label className="block relative  font-[500px] text-[18px] lg:text-[23px] lg:pb-[24px] ">
+                <label className="block relative  font-[500px] text-[18px] lg:text-[23px] lg:pb-[20px] ">
                     Password
                     <input
                         type={showPassword ? 'text' : 'password'} 
                         value={password}
                         placeholder='Password'
                         onChange={(event) => setPassword(event.target.value)}
-                        className="w-full p-3 border-[1.5px] border-gray-500 text-sm lg:text-[18px] text-gray-700 rounded focus:border-[#02864A]"
+                        className="w-full p-2 border-[1.5px] border-gray-500 text-sm lg:text-[18px] text-gray-700 rounded focus:border-[#02864A]"
                         style={{
                             outline: 'none',
                             boxShadow: 'none',
@@ -125,16 +124,16 @@ const SignUp = () => {
                     </div>
                 <button
                     type="submit"
-                    className="bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded lg:text-[18px] text-[14px]"
+                    className="bg-[#02864A] w-full text-white font-bold py-2 px-2 rounded lg:text-[18px] text-[14px]"
                 >
                     Login
                 </button>
                 <br />
                 
-                <img src={orline} alt="" className='my-5  xl:[w-full] w-[100%] lg:px-[43px] px-[20px]' />
+                <img src={orline} alt="" className='my-4  xl:[w-full] w-[100%] ' />
                 <a href="https://www.google.com">
                     <button
-                        className="w-full font-bold py-3 px-4 rounded-lg border border-gray-300 lg:text-[20px] text-[16px] text-[#212429]"
+                        className="w-full font-bold py-2 px-2 rounded-lg border border-gray-300 lg:text-[18px] text-[16px] text-[#212429]"
                     >
                         <img className='inline w-6 h-6 mr-2 ' src={google} alt="" />
                         Continue With Google
@@ -142,16 +141,17 @@ const SignUp = () => {
                 </a>
             </form>
             <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5">
-              Already a user? <span className='text-[#02864A]'>    <Link  to='/LogIn' >Log In</Link></span>
+              Already a user? <span className='text-[#02864A]'>    <Link  to='/login' >Log In</Link></span>
            
             </h3>
           </div>
         
           <div  className='lg:w-[50%] h-full hidden lg:block' >
-            <img src={signupimg} alt="" className=' h-full object-contain w-full relative'/>
-            <img src={signuplog} alt="" className='absolute top-[35px] right-[30px]' />
+            <img src={signupimg} alt="" className=' h-full  w-full relative'/>
+            <img src={signuplog} alt="" className='absolute top-[20px] right-[30px] w-[10%]' />
           </div>
         </div>
+        
         </>
     );
 };

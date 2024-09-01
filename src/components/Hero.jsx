@@ -41,7 +41,7 @@ const Hero = () => {
               <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold xl:leading-[3.2rem]     lg:leading-[2.5rem] leading-[2rem] md:leading-[3rem] lg:text-start  text-center ">
                 Elevate Your Brand With Stunning Mobile And Website Designs
               </h1>
-              <p className="xl:text-[24px] text-[12px] md:text-[18px] font-medium leading-[2rem] hidden lg:block ">
+              <p className="xl:text-[24px]  lg:text-[18px] font-medium leading-[2rem] hidden lg:block ">
                 Driven by a passion for innovative designs, we craft mobile and
                 web designs that captivate and resonate with users.
               </p>
@@ -95,7 +95,7 @@ const Hero = () => {
             <img src={drive} alt="" className="w-full" />
           </div>
 
-          <p className=" text-[12px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 lg:hidden block text-center">
+          <p className=" text-[16px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 lg:hidden block text-center">
             Driven by a passion for innovative designs, we craft mobile and
             web designs that captivate and resonate with users.
           </p>

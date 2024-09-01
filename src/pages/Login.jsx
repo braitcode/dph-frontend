@@ -1,9 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
-import signupimg from '../assets/sigupimg.svg'
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
-import signinimg from '../assets/signinimg.svg'
+import signinimg from '../assets/login.png'
 import signuplog from "../assets/signuplogo.svg";
 import orline from '../assets/orline.svg'
 const Login = () => {
@@ -121,7 +120,7 @@ const Login = () => {
                 </a>
             </form>
             <h3 className="font-normal text-center text-gray-500 mt-5">
-                New User? <span className='text-[#02864A]'>    <Link  to='/SignUp' >Sign Up</Link></span>
+                New User? <span className='text-[#02864A]'>    <Link  to='/signup' >Sign Up</Link></span>
             </h3>
           </div>
         
