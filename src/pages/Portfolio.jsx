@@ -50,6 +50,7 @@ const Portfolio = () => {
     <>
       <NavBar/>
       <main className="w-11/12 mx-auto container font-spaceGrotesk">
+
         <section className="lg:flex justify-between items-center my-[45px] py-[42px]">
           <div className="lg:w-[582px]">
             <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold leading-tight lg:text-start text-center">Explore Our Impressive Portfolio </h1>

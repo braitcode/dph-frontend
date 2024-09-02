@@ -48,6 +48,7 @@ const Contact = () => {
             </div>
             {/* list */}
             <div className="m-auto w-9/12  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+
               <div className="one pb-3 flex gap-4 items-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                 <img src={PhoneIcon} alt="" />
                 <p>+91 98765 43210</p>
@@ -68,6 +69,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="w-8/12 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 xl:pt-6 lg:justify-start justify-center ">
+
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
               <img src={InstaIcon} alt="" />
@@ -126,6 +128,7 @@ const Contact = () => {
                       {errors.lastName.message}
                     </span>
                   )}
+
                 </div>
               </div>
 
@@ -201,6 +204,7 @@ const Contact = () => {
                       {errors.phone.message}
                     </span>
                   )}
+
                 </div>
               </div>
 
