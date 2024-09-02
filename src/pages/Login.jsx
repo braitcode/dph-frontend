@@ -39,7 +39,7 @@ const Login = () => {
         <>
 
 
-            <div className="w-full font-spaceGrotesk lg:flex gap-3">
+            <div className="w-full h-[100vh] font-spaceGrotesk lg:flex gap-3">
 
                 <div className='lg:w-[50%] px-[30px] pt-[30px] pb-[30px] lg:pb-3 lg:pt-[74px]  w-full flex flex-col  lg:pl-[100px] lg:pr-[32px] container m-auto '>
                     <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] ">Welcome back to Dph!</h2>
