@@ -1,6 +1,5 @@
 import React from 'react'
 import { solution } from './DB/Solution.jsx'
-import line from '../assets/icons/line.svg'
 
 const Tailor = () => {
     return (
@@ -41,10 +40,6 @@ const Tailor = () => {
                                     <p
                                         className='text-[10px] font-medium group-hover:text-white md:text-[12px] lg:text-[16px]'>
                                         {description} <br />
-                                        <a
-                                            href="#" className='ml-1 text-[10px] text-[#028A4C] group-hover:text-white md:text-[12px] lg:text-[16px] find-out-more'>
-                                            <img className='svg-white inline-block pt-2' src={line} alt="line" />Find Out More
-                                        </a>
                                     </p>
                                 </div>
                             )
