@@ -32,10 +32,10 @@ const Contact = () => {
         <h1 className="font-bold text-[55px]">Contact Us</h1>
         <p className="font-medium text-[24px]">Get in touch with us</p>
       </div>
-      <div className="container m-auto xl:w-11/12 h-[757px] xl:border-2 xl:rounded-3xl mb-[71px]">
-        <div className="flex flex-col xl:flex-row xl:w-11/12 xl:h-[660px] lg:gap-[62px] m-auto lg:mt-10">
+      <div className="container m-auto xl:w-11/12 xl:border-2 xl:rounded-3xl mb-[71px]">
+        <div className="flex flex-col xl:flex-row  xl:w-11/12 xl:h-[660px] lg:gap-[62px] m-auto lg:mt-10">
           <div className="relative overflow-hidden green mb-10 m-auto w-11/12 text-white rounded-3xl bg-[#034D2B] xl:mb-0 xl:w-2/5 xl:h-[660px]">
-            <div className="">
+            <div className="relative z-10">
 
             <div className="xl:w-[344px] xl:pt-[44px] xl:m-auto ">
               <h1 className="text-center pt-4 font-bold text-[28px] xl:text-start xl:pt-0">
@@ -47,7 +47,7 @@ const Contact = () => {
               </p>
             </div>
             {/* list */}
-            <div className=" m-auto w-9/12 xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+            <div className="m-auto w-9/12  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
               <div className="one pb-3 flex gap-4 items-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                 <img src={PhoneIcon} alt="" />
                 <p>+91 98765 43210</p>
@@ -67,7 +67,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="w-8/12 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 xl:pt-6">
+            <div className="w-8/12 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 xl:pt-6 lg:justify-start justify-center ">
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
               <img src={InstaIcon} alt="" />
@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
             </div>
               {/* circle pattern */}
-        <div className="absolute z-0 top-[27rem] left-[12rem] ">
+        <div className="absolute z-0 lg:top-[27rem] top-[10rem] lg:left-[12rem] left-[10rem] md:left-[29rem] ">
           <div className="p-10 rounded-full h-[452px] w-[452px] border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
         </div>
           </div>
