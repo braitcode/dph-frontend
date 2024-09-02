@@ -6,6 +6,10 @@ import Portfolio from "./pages/Portfolio";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
+import PageNotfound from "./pages/PageNotFound";
+import About from "./pages/About";
+
+
 function App() {
   return (
     <>
@@ -18,6 +22,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<PageNotfound />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </>
