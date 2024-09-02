@@ -48,10 +48,10 @@ const SignUp = () => {
     return (
         <>
         
-        <div className=" w-full font-spaceGrotesk lg:flex gap-3">
-          <div className='lg:w-[50%] px-[30px] pt-[30px] pb-[30px] lg:pb-3 lg:pt-[32px]  w-full flex flex-col  lg:pl-[100px] lg:pr-[32px] container m-auto '>
-          <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] pb-[8px] ">Get Started</h2>
-            <p className='lg:text-[18px]  pb-[32px] text-center lg:text-start text-[16px] '>
+        <div className="overflow-hidden w-full font-spaceGrotesk lg:flex gap-3">
+          <div className='lg:w-[45%]  w-full flex flex-col items-center mt-[50px]'>
+          <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] mb-[8px] ">Get Started</h2>
+            <p className='lg:text-[18px]  text-center lg:text-start text-[16px] '>
               Join us now by filling your details below
             </p>
             <form onSubmit={handleSubmit}>
@@ -87,7 +87,7 @@ const SignUp = () => {
                     {emailError && <p className="text-red-500 xl:text-[14px] text-[12px]">{emailError}</p>}
                 </label>
                 <br />
-                <label className="block relative  font-[500px] text-[18px] lg:text-[23px] lg:pb-[20px] ">
+                <label className="block relative  font-[500px] text-[18px] lg:text-[23px] lg:mb-[20px] mb-2">
                     Password
                     <input
                         type={showPassword ? 'text' : 'password'} 
@@ -113,7 +113,7 @@ const SignUp = () => {
                     {passwordError && <p className="text-red-500 xl:text-[14px] text-[12px]">{passwordError}</p>}
                 </label>
                
-                <div className="flex items-center lg:pb-[24px] xl:text-[16px]">
+                <div className="flex items-center mb-2 lg:pb-[24px] xl:text-[16px]">
                         <input
                             type="checkbox"
                             checked={Agree}
@@ -140,13 +140,13 @@ const SignUp = () => {
                     </button>
                 </a>
             </form>
-            <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5">
+            <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5 mb-2">
               Already a user? <span className='text-[#02864A]'>    <Link  to='/login' >Log In</Link></span>
            
             </h3>
           </div>
         
-          <div  className='lg:w-[50%] h-full hidden lg:block' >
+          <div  className='lg:w-[55%] h-full hidden lg:block' >
             <img src={signupimg} alt="" className=' h-full  w-full relative'/>
             <img src={signuplog} alt="" className='absolute top-[20px] right-[30px] w-[10%]' />
           </div>
