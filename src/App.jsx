@@ -5,6 +5,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Contact from "./pages/Contact";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </>

@@ -21,7 +21,7 @@ const ContactForm = () => {
     return (
         <div className="bg-[#034D2B]">
             <div className="container lg:w-11/12 m-auto w-full xl:h-[741px] flex justify-center items-center py-12 xl:px-0 px-4">
-                <div className=" w-full  flex flex-col xl:flex-row justify-center items-center gap-12">
+                <div className=" w-full flex flex-col xl:flex-row justify-center items-center gap-12">
                     <div className="xl:w-[50%] flex flex-col gap-[36px] ">
                         <div className="flex flex-col gap-[20px] text-center xl:text-left">
                             <h1 className='text-white xl:text-[45px] text-[24px] font-bold w-[80%] mx-auto xl:mx-0 font-spaceGrotesk'>
