@@ -33,15 +33,15 @@ const Hero = () => {
   return (
     <>
       <div  >
-        {/* <NavBar /> */}
+        
         <div className=" lg:flex justify-between items-center gap-12 md:mb-[2rem] mt-[5rem] container w-11/12 m-auto font-spaceGrotesk ">
           {/* left div */}
           <div className="lg:w-[45%] flex flex-col gap-[2.25rem] w-full ">
             <div className="lg:flex flex-col lg:gap-[20px] lg:mt-[2rem] mt-[2rem]  ">
-              <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold xl:leading-[3.2rem]     lg:leading-[2.5rem] leading-[2rem] md:leading-[3rem] lg:text-start  text-center ">
+              <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold xl:leading-[4.4rem] lg:leading-[3.4rem] leading-[2rem] md:leading-[3rem] lg:text-start  text-center ">
                 Elevate Your Brand With Stunning Mobile And Website Designs
               </h1>
-              <p className="xl:text-[24px]  lg:text-[18px] font-medium leading-[2rem] hidden lg:block ">
+              <p className="xl:text-[24px]  lg:text-[18px] font-medium leading-[1.91rem] hidden lg:block ">
                 Driven by a passion for innovative designs, we craft mobile and
                 web designs that captivate and resonate with users.
               </p>
