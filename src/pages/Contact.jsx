@@ -180,7 +180,6 @@ const Contact = () => {
                       <option value="+235">+235</option>
                       <option value="+241">+241</option>
                       <option value="+244">+244</option>
-                      <option value="+1">+1</option>
                       {/* Add more country codes as needed */}
                     </select>
                     <input
