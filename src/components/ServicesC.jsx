@@ -30,18 +30,17 @@ const ServicesC = () => {
                 </div>
             </div>
             <main>
-
                 {/* first container */}
                 <section className='bg-[#F6FFFB]'>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
                 xl:gap-[5rem]'>
-                        <div className='md:order-2 mb-2'>
+                        <div className='md:order-2 mb-2 md:mt-3'>
                             <img
                                 src={img1}
                                 alt="Branding Service"
-                                className="rounded-lg w-[100%]" />
+                                className="rounded-lg mb-2 w-[100%]" />
                         </div>
-                        <div className='py-[2rem] md:py-[5rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">Branding</h3>
                             <p className="text-gray-600 mb-4 text-[14px] lg:text-[20px]">
                                 Our branding service crafts distinctive logos,
@@ -56,7 +55,6 @@ const ServicesC = () => {
                         </div>
                     </div>
                 </section>
-
                 {/* second container */}
                 <section>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
@@ -68,7 +66,7 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[5rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Web Development
                             </h3>
@@ -86,7 +84,6 @@ const ServicesC = () => {
                         </div>
                     </div>
                 </section>
-
                 {/* third container */}
                 <section className='bg-[#F6FFFB]'>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px] 
@@ -98,7 +95,7 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[5rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Mobile Design
                             </h3>
@@ -116,11 +113,10 @@ const ServicesC = () => {
                         </div>
                     </div>
                 </section>
-
                 {/* fourth container */}
                 <section >
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem] py-5'>
+                xl:gap-[5rem] py-3'>
                         <div>
                             <img
                                 src={img4}
@@ -128,7 +124,7 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[5rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Consultation
                             </h3>
