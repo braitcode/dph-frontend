@@ -68,11 +68,21 @@ const Footer = () => {
           <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Privacy</p>
         </div>
 
-        <div className="flex flex-col gap-[20px]">
+        <div className="flex flex-col md:col-span-2 gap-[20px]">
           <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
-          <div className='md:w-full'>
-            <input type="email" placeholder='Enter your email' className='border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full md:w-full w-[80%]' />
-          </div>
+            <div className='md:w-full w-[90%] relative'>
+              <input
+                type="email"
+                placeholder="Email"
+                class="border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full md:w-full w-[80%] pr-16"
+              />
+              <button
+                type="submit"
+                class="absolute right-0 top-0 h-full px-4  bg-white rounded-r-lg"
+              >
+                Submit
+              </button>
+            </div>
           <div className="flex xl:justify-between justify-evenly md:justify-between">
             <img src={twitter} alt="" />
             <img src={youtube} alt="" />

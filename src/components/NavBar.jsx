@@ -7,7 +7,7 @@ import Button from "./Button";
 
 const NavBar = () => {
   const NavLinks = [
-    { name: "About", link: "/" },
+    { name: "About", link: "/about" },
     { name: "Our Services", link: "/services" },
     { name: "Portfolio", link: "/portfolio" },
     { name: "Contact Us", link: "/contact" },
@@ -16,7 +16,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white top-0 w-full fixed border-b z-[1]">
+    <div className="bg-white top-0 w-full fixed border-b z-[20]">
       <nav className="container lg:w-11/12 m-auto flex justify-between py-5">
         <div className="logo px-5 md:px-[2rem]  lg:px-0">
           <a href="/">
