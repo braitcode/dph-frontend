@@ -214,7 +214,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   placeholder="Type your message"
-                  className={`text-[14px] border-2 rounded-lg p-8 font-spaceGrotesk ${
+                  className={`text-[14px] border-2 rounded-lg p-4 font-spaceGrotesk ${
                     errors.message ? "border-red-500" : ""
                   }`}
                   rows="5"
