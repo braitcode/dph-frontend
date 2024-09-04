@@ -17,6 +17,7 @@ const Button = ({ type, size, color, onClick, disabled, children }) => {
     darkGreen: 'bg-[#034D2B] text-white hover:bg-green-900',
     dark: 'bg-[#292D32] text-white hover:bg-black',
     success: 'bg-[#02864A] text-white hover:bg-green-800',
+    danger: 'bg-[#D12D2D] text-white hover:bg-red-800'
   };
 
   return (

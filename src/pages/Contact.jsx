@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PhoneIcon from "../assets/icons/phone icon.png";
 import Sms from "../assets/icons/sms outline.png";
 import MiniLoc from "../assets/icons/small loc.png";
@@ -11,19 +11,56 @@ import Button from "../components/Button";
 import { useForm } from "react-hook-form";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import MessageModal from "../components/MessageModal";
 
 const Contact = () => {
+   // State for modal visibility and type
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [modalType, setModalType] = useState('success');
+   const [modalMessage, setModalMessage] = useState('');
+ 
+  // Function to handle success scenario
+const handleSuccess = () => {
+  setModalType('success'); // Set the correct modal type
+  setModalMessage('Kindly check your email for confirmation!');
+  setIsModalOpen(true);
+  reset(); // Clear the form fields
+};
+
+// Function to handle error scenario
+const handleError = () => {
+  setModalType('fail'); // Set the correct modal type
+  setModalMessage('Something went wrong. Please try again.');
+  setIsModalOpen(true);
+};
+
+ 
+   // Function to close the modal
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+     
+   };
+
+   
+  //  validation
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // reset function to clear the form
   } = useForm();
 
   const onSubmit = (data) => {
     const fullPhoneNumber = `${data.countryCode}${data.phone}`;
     console.log("Form Data:", { ...data, fullPhoneNumber });
-    alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
-    reset();
+    try {
+       // If the submission is successful
+    handleSuccess(); // Show success modal
+    } catch (error) {
+      // If there's an error during submission
+    handleError(); // Show error modal
+    }
+
   };
   return (
     <div>
@@ -32,7 +69,7 @@ const Contact = () => {
         <h1 className="font-bold text-[55px]">Contact Us</h1>
         <p className="font-medium text-[24px]">Get in touch with us</p>
       </div>
-      <div className="container m-auto xl:w-11/12 xl:border-2 xl:rounded-3xl mb-[71px]">
+      <div className="container m-auto xl:w-11/12 xl:border-2 xl:rounded-3xl mb-[71px] xl:pb-[3rem]">
         <div className="flex flex-col xl:flex-row  xl:w-11/12 xl:h-[660px] lg:gap-[62px] m-auto lg:mt-10">
           <div className="relative overflow-hidden green mb-10 m-auto w-11/12 text-white rounded-3xl bg-[#034D2B] xl:mb-0 xl:w-2/5 xl:h-[660px]">
             <div className="relative z-10">
@@ -75,7 +112,7 @@ const Contact = () => {
             </div>
             </div>
               {/* circle pattern */}
-        <div className="absolute z-0 lg:top-[27rem] top-[10rem] lg:left-[12rem] left-[10rem] md:left-[29rem] ">
+        <div className="absolute z-0 lg:top-[27rem] lg:left-[12rem] xl:top-[28rem] xl:left-[20rem]  top-[10rem] left-[10rem] md:left-[29rem] ">
           <div className="p-10 rounded-full h-[452px] w-[452px] border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
         </div>
           </div>
@@ -233,6 +270,14 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
+      {/* Message Modal */}
+      {isModalOpen && (
+        <MessageModal
+          type={modalType}
+          message={modalMessage}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };

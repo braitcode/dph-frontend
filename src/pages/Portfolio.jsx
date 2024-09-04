@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,} from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { portfolioPageData } from "../components/DB/SundayDb";
 import Button from "../components/Button";
@@ -8,6 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import Footer from "../components/Footer";
 import Testimonial from "../components/Testimonial";
+import { Link } from "react-router-dom";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -55,15 +56,20 @@ const Portfolio = () => {
             <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold leading-tight lg:text-start text-center">Explore Our Impressive Portfolio </h1>
             <p className="text-lg lg:mr-[96px] xl:text-[24px] text-[12px] md:text-[18px] font-medium text-pretty my-3 text-[#575253] lg:text-start text-center">In the past, we have worked on dozens of developments and cutting-edge Web & Digital projects</p>
             <div className="flex gap-3 my-5 lg:justify-start justify-center">
+            <Link to="/signup">
+            
               <Button size="small" color="success">
                 <div className="flex gap-2">
                   <span className="md:text-[15px] text-[12px]">Get Started</span><FaArrowRightLong className='mt-1' />
                 </div>
               </Button>
+            </Link>
               <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+                <Link to='/contact'>
                 <Button size="small" color="white">
                   <span className="md:text-[15px] text-[12px] font-spaceGrotesk">Book a consultant</span>
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
