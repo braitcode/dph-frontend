@@ -111,7 +111,7 @@ const ServicesC = () => {
                             </p>
                             <Button size="medium" color="success">
                                 <div className="flex gap-2 px-1  xl:px-5">
-                                    <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                    <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.06rem]' />
                                 </div>
                             </Button>
                         </div>
