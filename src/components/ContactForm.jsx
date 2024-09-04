@@ -69,7 +69,7 @@ const handleError = () => {
                             </p>
                         </div>
 
-                        <div className="hidden xl:flex flex flex-col gap-[23px] text-center xl:text-left">
+                        <div className=" xl:flex flex flex-col gap-[23px] text-center xl:text-left">
                             <p className='text-white text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
                                 <img src={phone} alt="" />
                                 +234 998 890 4847
