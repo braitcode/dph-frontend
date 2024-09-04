@@ -16,7 +16,6 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  
   return (
     <div className="bg-white top-0 w-full fixed border-b z-[20]">
       <nav className="container lg:w-11/12 m-auto flex justify-between py-5">
@@ -26,23 +25,29 @@ const NavBar = () => {
           </Link>
         </div>
         <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "top-[90%] opacity-0"
-            } lg:opacity-100`}
-            style={{
-              transition: "all 0.5s ease-in-out"
-            }}
+          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${
+            open ? "top-full opacity-100" : "top-[90%] opacity-0"
+          } lg:opacity-100`}
+          style={{
+            transition: "all 0.5s ease-in-out",
+          }}
         >
           {NavLinks.map((link) => (
             <li key={link.name} className="lg:ml-8 text-xl lg:my-0 my-7">
-            <Link
+              <Link
                 to={link.link}
-                 onClick={() => setOpen(false)}
-                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${location.pathname === link.link ? "text-[#028A4C]" : "text-[#171717]"} hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
+                onClick={() => setOpen(false)}
+                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${
+                  location.pathname === link.link
+                    ? "text-[#028A4C]"
+                    : "text-[#171717]"
+                } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
               >
                 {link.name}
               </Link>
             </li>
           ))}
+          {/* auth for small screens */}
           <div className="flex gap-2 lg:hidden">
             <Link to="/SignUp" className="text-[16px]  text-white ">
               <div className="">
@@ -50,31 +55,34 @@ const NavBar = () => {
                   Sign Up
                 </Button>
               </div>
-            </Link >
-            <div className="border-2 lg:border-none rounded-md border-[#028A4C]">
-              <Button size="medium" color="primary">
-                <Link to="/LogIn" className="text-[16px]  text-[#171717] ">Login</Link >
-              </Button>
-            </div>
+            </Link>
+
+            <Link to="/login" className="text-[16px]  text-[#171717] ">
+              <div className="border-2 lg:border-none rounded-md border-[#028A4C]">
+                <Button size="medium" color="primary">
+                  Log In
+                </Button>
+              </div>
+            </Link>
           </div>
         </ul>
-        <div className="xl:flex lg:flex auth-buttons justify-end gap-2 hidden lg:block">
+        {/* large screens */}
+        <div className="xl:flex auth-buttons justify-end gap-2 hidden lg:block">
           <Link to="/signup" className="text-[16px]  text-white ">
             <div className="">
               <Button size="medium" color="success">
                 Sign Up
               </Button>
             </div>
-          </Link >
+          </Link>
 
           <Link to="/login" className="text-[16px]  text-[#171717] ">
             <div className="">
-
               <Button size="medium" color="white">
                 Login
               </Button>
             </div>
-          </Link >
+          </Link>
         </div>
         <div
           onClick={() => setOpen(!open)}
