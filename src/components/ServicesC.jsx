@@ -6,7 +6,9 @@ import img2 from '../assets/web.png'
 import img3 from '../assets/mobiled.png'
 import img4 from '../assets/consult.png'
 import { Link } from 'react-router-dom';
+
 const ServicesC = () => {
+
     return (
         <div className='font-spaceGrotesk'>
             <div className=' py-10 lg:px-[10rem] xl:px-[20rem] mt-20'>
@@ -35,8 +37,8 @@ const ServicesC = () => {
                 {/* first container */}
                 <section className='bg-[#F6FFFB]'>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem]'>
-                        <div className='md:order-2 mb-2 md:mt-3'>
+                xl:gap-[5rem] xl:pt-[54.5px]'>
+                        <div className='md:order-2 mb-2'>
                             <img
                                 src={img1}
                                 alt="Branding Service"
@@ -60,7 +62,7 @@ const ServicesC = () => {
                 {/* second container */}
                 <section>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem] py-5'>
+                xl:gap-[5rem] py-5 xl:pt-[54.5px] '>
                         <div className="mb-2">
                             <img
                                 src={img2}
@@ -89,7 +91,7 @@ const ServicesC = () => {
                 {/* third container */}
                 <section className='bg-[#F6FFFB]'>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px] 
-                xl:gap-[5rem] py-5'>
+                xl:gap-[5rem] py-5 xl:pt-[54.5px]'>
                         <div className='md:order-2 '>
                             <img
                                 src={img3}
@@ -118,7 +120,7 @@ const ServicesC = () => {
                 {/* fourth container */}
                 <section >
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem] py-3'>
+                xl:gap-[5rem] py-3 xl:pt-[54.5px]'>
                         <div>
                             <img
                                 src={img4}
