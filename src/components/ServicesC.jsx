@@ -21,22 +21,24 @@ const ServicesC = () => {
                 <div className="flex gap-5 justify-center mt-[2rem] mb-[2rem]">
                     <Link to='/signup'>
                         <Button size="medium" color="success" className=''>
-                            <div className="flex gap-2 p-1">
+                            <div className="flex gap-2 p-[0.1rem]">
                                 <span className="md:text-[15px] text-[10px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
                             </div>
                         </Button>
                     </Link>
-                    <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
-                        <Button size="medium">
-                            <span className="md:text-[15px] text-[10px]">Book a consultant</span>
-                        </Button>
-                    </div>
+                    <Link to='/contact'>
+                        <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+                            <Button size="medium">
+                                <span className="md:text-[15px] text-[10px]">Book a consultant</span>
+                            </Button>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <main>
                 {/* first container */}
                 <section className='bg-[#F6FFFB]'>
-                    <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
+                    <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px] md:pt-5
                 xl:gap-[5rem] xl:pt-[54.5px]'>
                         <div className='md:order-2 mb-2'>
                             <img
