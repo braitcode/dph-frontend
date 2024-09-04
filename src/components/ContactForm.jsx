@@ -10,11 +10,13 @@ const ContactForm = () => {
        // State for modal visibility and type
    const [isModalOpen, setIsModalOpen] = useState(false);
    const [modalType, setModalType] = useState('success');
+   const [modalTitle, setModalTitle] = useState('');  
    const [modalMessage, setModalMessage] = useState('');
  
   // Function to handle success scenario
 const handleSuccess = () => {
   setModalType('success'); // Set the correct modal type
+  setModalTitle('Consultation booked');
   setModalMessage('Kindly check your email for confirmation!');
   setIsModalOpen(true);
   reset(); // Clear the form fields
@@ -23,6 +25,7 @@ const handleSuccess = () => {
 // Function to handle error scenario
 const handleError = () => {
   setModalType('fail'); // Set the correct modal type
+  setModalTitle('Booking failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
 };
@@ -186,6 +189,7 @@ const handleError = () => {
             {isModalOpen && (
         <MessageModal
           type={modalType}
+          title={modalTitle}
           message={modalMessage}
           onClose={handleCloseModal}
         />

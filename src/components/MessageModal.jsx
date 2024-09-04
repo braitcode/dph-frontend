@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import Button from "../components/Button";
 
-const MessageModal = ({ type, message, onClose }) => {
+const MessageModal = ({ type, title, message, onClose }) => {
   const isSuccess = type === 'success';
 
   return (
@@ -17,7 +17,7 @@ const MessageModal = ({ type, message, onClose }) => {
         {/* Message */}
         <div className="text-center space-y-1">
           <h1 className="text-lg font-bold">
-            {isSuccess ? 'Consultation booked' : 'Booking failed'}
+            {title || (isSuccess ? 'Success' : 'Failed')}
           </h1>
           <p className="text-sm text-[#1A1A1A]">
             {/* Display the dynamic message */}
