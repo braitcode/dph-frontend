@@ -198,7 +198,6 @@ const Contact = () => {
                       <option value="+235">+235</option>
                       <option value="+241">+241</option>
                       <option value="+244">+244</option>
-                      <option value="+1">+1</option>
                       {/* Add more country codes as needed */}
                     </select>
                     <input
@@ -232,7 +231,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   placeholder="Type your message"
-                  className={`text-[14px] border-2 rounded-lg p-8 font-spaceGrotesk ${
+                  className={`text-[14px] border-2 rounded-lg p-4 font-spaceGrotesk ${
                     errors.message ? "border-red-500" : ""
                   }`}
                   rows="5"
