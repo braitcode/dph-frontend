@@ -1,21 +1,58 @@
-import React from 'react';
+import React, {useState} from "react";
 import Button from "../components/Button";
 import phone from "../assets/icons/phone icon.png";
 import sms from "../assets/icons/sms.png";
 import location from "../assets/icons/location.png";
+import MessageModal from './MessageModal';
 import { useForm } from 'react-hook-form';
 
 const ContactForm = () => {
+       // State for modal visibility and type
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [modalType, setModalType] = useState('success');
+   const [modalMessage, setModalMessage] = useState('');
+ 
+  // Function to handle success scenario
+const handleSuccess = () => {
+  setModalType('success'); // Set the correct modal type
+  setModalMessage('Kindly check your email for confirmation!');
+  setIsModalOpen(true);
+  reset(); // Clear the form fields
+};
+
+// Function to handle error scenario
+const handleError = () => {
+  setModalType('fail'); // Set the correct modal type
+  setModalMessage('Something went wrong. Please try again.');
+  setIsModalOpen(true);
+};
+
+ 
+   // Function to close the modal
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+     
+   };
+
+
+ 
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset, // reset function to clear the form
     } = useForm();
 
     const onSubmit = (data) => {
         const fullPhoneNumber = `${data.countryCode}${data.phone}`;
         console.log('Form Data:', { ...data, fullPhoneNumber });
-        alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
+        try {
+            // If the submission is successful
+         handleSuccess(); // Show success modal
+         } catch (error) {
+           // If there's an error during submission
+         handleError(); // Show error modal
+         }
     };
 
     return (
@@ -146,6 +183,13 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
+            {isModalOpen && (
+        <MessageModal
+          type={modalType}
+          message={modalMessage}
+          onClose={handleCloseModal}
+        />
+      )}
         </div>
     );
 }
