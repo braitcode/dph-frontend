@@ -28,9 +28,7 @@ const NavBar = () => {
           className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${
             open ? "top-full opacity-100" : "top-[90%] opacity-0"
           } lg:opacity-100`}
-          style={{
-            transition: "all 0.5s ease-in-out",
-          }}
+        
         >
           {NavLinks.map((link) => (
             <li key={link.name} className="lg:ml-8 text-xl lg:my-0 my-7">
@@ -67,7 +65,7 @@ const NavBar = () => {
           </div>
         </ul>
         {/* large screens */}
-        <div className="xl:flex auth-buttons justify-end gap-2 hidden lg:block">
+        <div className="lg:flex justify-end gap-2 hidden ">
           <Link to="/signup" className="text-[16px]  text-white ">
             <div className="">
               <Button size="medium" color="success">
