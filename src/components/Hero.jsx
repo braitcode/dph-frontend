@@ -12,6 +12,7 @@ import drive from "../assets/icons/drive.svg";
 import elevate from '../assets/icons/elevate.svg'
 import arrowRight from "../assets/icons/Line arrow-right.png"
 import { FaArrowRightLong } from "react-icons/fa6";
+import LazyLoad from 'react-lazyload';
 
 const Hero = () => {
   const [count, setCount] = useState(1);
@@ -64,12 +65,18 @@ const Hero = () => {
           <div className="lg:w-[45%] mt-[2.1rem] lg:mt-[3.1rem] lg:mb-[1.5rem] w-full hidden lg:block ">
             <div className="flex justify-between  gap-3 py-3">
               <div className="relative h-auto ">
+                <LazyLoad>
+
                 <img src={laptop} alt="" className="w-[350px] lg:w-[450px] " />
+                </LazyLoad>
                 <div className="absolute xl:mt-[3.1rem] top-[-19px] md:top-[-1rem] left-[4rem]  md:left-[160px] lg:left-[100px] xl:left-[120px] lg:top-[-2rem] xl:top-[-4rem]">
              
                   <div className="relative">
                     <button className="btn bg-[#028A4C] w-[50px]  h-[50px] md:w-[70px]  md:h-[70px]   xl:w-[100px]  xl:h-[100px]  rounded-full ">
+                      <LazyLoad>
+
                       <img src={elevate} alt="" className="absolute  top-[0.6rem] left-[0.7rem]  md:top-[1.2rem] md:left-[1.1rem]  xl:top-[1.3rem] xl:left-[1.3rem] w-[30px] xl:w-[60%] md:w-[50%] animate-pulse  " />
+                      </LazyLoad>
                     </button>
                   </div>
                 </div>
@@ -91,8 +98,10 @@ const Hero = () => {
                 </div>
               </div>
             </div>
+              <LazyLoad>
 
             <img src={drive} alt="" className="w-full" />
+              </LazyLoad>
           </div>
 
           <p className=" text-[16px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 lg:hidden block text-center">
@@ -117,7 +126,10 @@ const Hero = () => {
           <div className="flex justify-between text-white   py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px]  container w-11/12 m-auto  ">
             <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Web Development</span>{" "}
+            <LazyLoad>
+
             <img src={dot} alt="" className="w-[5px]" />
+            </LazyLoad>
             <span>Consultation</span> <img src={dot} alt="" className="w-[5px]" />
             <span>Mobile Development</span>
           </div>
