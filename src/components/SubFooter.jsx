@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import arrowRight from "../assets/icons/Line arrow-right.png"
+import { Link } from 'react-router-dom'
 
 const SubFooter = () => {
   return (
@@ -14,11 +15,14 @@ const SubFooter = () => {
                       <p className='xl:text-[22px] text-[16px] text-center font-medium font-spaceGrotesk'>Ready to elevate your digital presence? Contact us to discuss how DPH can turn your ideas into visually captivating realities that drive results</p>
                   </div>
                   <div className="flex">
+                    <Link to="/contact">
+                    
                       <Button color="success">
                         <div className="flex gap-2">
-                          <p className='font-spaceGrotesk'>Get in Touch Now</p> <img src={arrowRight} alt="" />
+                          <p className='font-spaceGrotesk'>Get in Touch Now!</p> <img src={arrowRight} alt="" />
                         </div>
                       </Button>
+                    </Link>
                   </div>
               </div>
         </div>

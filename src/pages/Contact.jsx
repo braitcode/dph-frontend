@@ -85,6 +85,7 @@ const handleError = () => {
             </div>
             {/* list */}
             <div className="m-auto w-9/12  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+
               <div className="one pb-3 flex gap-4 items-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                 <img src={PhoneIcon} alt="" />
                 <p>+91 98765 43210</p>
@@ -105,6 +106,7 @@ const handleError = () => {
               </div>
             </div>
             <div className="w-8/12 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 xl:pt-6 lg:justify-start justify-center ">
+
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
               <img src={InstaIcon} alt="" />
@@ -163,6 +165,7 @@ const handleError = () => {
                       {errors.lastName.message}
                     </span>
                   )}
+
                 </div>
               </div>
 
@@ -214,7 +217,6 @@ const handleError = () => {
                       <option value="+235">+235</option>
                       <option value="+241">+241</option>
                       <option value="+244">+244</option>
-                      <option value="+1">+1</option>
                       {/* Add more country codes as needed */}
                     </select>
                     <input
@@ -238,6 +240,7 @@ const handleError = () => {
                       {errors.phone.message}
                     </span>
                   )}
+
                 </div>
               </div>
 
@@ -247,7 +250,7 @@ const handleError = () => {
                 </label>
                 <textarea
                   placeholder="Type your message"
-                  className={`text-[14px] border-2 rounded-lg p-8 font-spaceGrotesk ${
+                  className={`text-[14px] border-2 rounded-lg p-4 font-spaceGrotesk ${
                     errors.message ? "border-red-500" : ""
                   }`}
                   rows="5"

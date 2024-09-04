@@ -8,7 +8,7 @@ const Button = ({ type, size, color, onClick, disabled, children }) => {
   // Size variations
   const sizeStyles = {
     small: 'text-sm py-1 px-2 font-spaceGrotesk',
-    medium: 'text-base py-2 px-4 ',
+    medium: 'text-base py-2 px-4 font-spaceGrotesk',
     large: 'text-lg py-3 px-5 w-full rounded-lg font-spaceGrotesk',
   };
 
