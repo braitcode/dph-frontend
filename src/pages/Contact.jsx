@@ -19,12 +19,28 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const fullPhoneNumber = `${data.countryCode}${data.phone}`;
-    console.log("Form Data:", { ...data, fullPhoneNumber });
-    alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
-    reset();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...data, fullPhoneNumber }),
+      });
+  
+      if (response.ok) {
+        alert('Form submitted successfully');
+      } else {
+        alert('Error submitting form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting form');
+    }
   };
+  
   return (
     <div>
       <NavBar />
@@ -84,22 +100,24 @@ const Contact = () => {
           {/*FORM */}
           <div className="bg-white xl:w-[700px] xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl ">
             <form
+            action=""
+            method="POST"
               onSubmit={handleSubmit(onSubmit)}
               className="w-10/12 m-auto flex flex-col gap-6 xl:w-full xl:m-0"
             >
               <div className="flex flex-col sm:flex-row justify-between gap-4">
                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                   <label className="text-[18px] font-bold font-spaceGrotesk">
-                    First Name
+                    FirstName
                   </label>
                   <input
                     type="text"
-                    placeholder="First name"
+                    placeholder="FirstName"
                     className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
                       errors.firstName ? "border-red-500" : ""
                     }`}
                     {...register("firstName", {
-                      required: "First name is required",
+                      required: "FirstName is required",
                     })}
                   />
                   {errors.firstName && (
@@ -111,11 +129,11 @@ const Contact = () => {
 
                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                   <label className="text-[18px] font-bold font-spaceGrotesk">
-                    Last Name
+                    LastName
                   </label>
                   <input
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="LastName"
                     className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
                       errors.lastName ? "border-red-500" : ""
                     }`}
