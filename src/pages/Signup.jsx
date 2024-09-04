@@ -3,17 +3,14 @@ import signupimg from '../assets/signup.png'
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
 import signuplog from "../assets/signuplogo.svg";
-import Button from "../components/Button";
-import orline from '../assets/orline.svg'
+// import Button from "../components/Button";
+// import orline from '../assets/orline.svg'
 import { Link } from "react-router-dom";
+import { useAuth } from '../components/contexts/Auth';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
-
-    useEffect(() => {
-        document.title = " DPH || Sign Up ";
-    });
-
     const [fullname, setFullName] = useState('');
     const [fullNameError, setFullNameError] = useState(null);
     const [email, setEmail] = useState('');
@@ -23,9 +20,17 @@ const SignUp = () => {
     const [Agree, setAgree] = useState('');
     const [AgreeError, setAgreeError] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Validate input fields
+    const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState({});
+
+    useEffect(() => {
+        document.title = " DPH || Sign Up ";
+    });
+
+    const { signup } = useAuth();
+    const navigate = useNavigate();
+
+    const validateForm = () => {
         let isValid = true;
         if (fullname.trim() === '') {
             setFullNameError('Please enter your Full name');
@@ -51,6 +56,31 @@ const SignUp = () => {
         } else {
             setAgreeError(null);
         }
+        return isValid;
+
+    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if(!validateForm()) return;
+
+        try {
+            setLoading(true);
+            const data = await signup(fullname, email, password);
+
+            if(!data?.error){
+                setLoading(false);
+                navigate("/");
+            }else{
+                setErrors({ form: "Registration failed"});
+                setLoading(false);
+            }
+        } catch (err) {
+            console.log(err);
+            setErrors({ form: err.message});
+            setLoading(false);
+            
+        }
+        
     };
 
     return (
@@ -69,7 +99,7 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 value={fullname}
-                                placeholder='John Doe'U
+                                placeholder='John Doe'
                                 onChange={(event) => setFullName(event.target.value)}
                                 className="w-full p-3 h-[55px] text-sm text-[14px] lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
                                 style={{
@@ -144,9 +174,11 @@ const SignUp = () => {
                         <button
                             type="submit"
                             className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
+                            disabled={loading}
                         >
-                            Sign Up
+                            {loading ? 'Signing up...' : 'Sign Up'}
                         </button>
+
                         <br />
                         <div className="flex items-center my-5 px-[2rem]">
                     <hr className="w-full border-[2px] border-[#A4ADB6]" />
