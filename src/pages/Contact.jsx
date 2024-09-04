@@ -1,3 +1,4 @@
+
 import React from "react";
 import PhoneIcon from "../assets/icons/phone icon.png";
 import Sms from "../assets/icons/sms outline.png";
@@ -19,27 +20,13 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     const fullPhoneNumber = `${data.countryCode}${data.phone}`;
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...data, fullPhoneNumber }),
-      });
-  
-      if (response.ok) {
-        alert('Form submitted successfully');
-      } else {
-        alert('Error submitting form');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Error submitting form');
-    }
+    console.log("Form Data:", { ...data, fullPhoneNumber });
+    alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
+    reset();
   };
+    
   
   return (
     <div>
@@ -49,42 +36,42 @@ const Contact = () => {
         <p className="font-medium text-[24px]">Get in touch with us</p>
       </div>
       <div className="container m-auto xl:w-11/12 xl:border-2 xl:rounded-3xl mb-[71px]">
-        <div className="flex flex-col xl:flex-row  xl:w-11/12 xl:h-[660px] lg:gap-[62px] m-auto lg:mt-10">
-          <div className="relative overflow-hidden green mb-10 m-auto w-11/12 text-white rounded-3xl bg-[#034D2B] xl:mb-0 xl:w-2/5 xl:h-[660px]">
-            <div className="relative z-10">
+        <div className="flex flex-col xl:flex-row  xl:w-11/12 xl:h-[660px] lg:gap-[62px] xl:items-center m-auto">
+          <div className="relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-4/6 lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
+            <div className="relative z-10 ">
 
             <div className="xl:w-[344px] xl:pt-[44px] xl:m-auto ">
               <h1 className="text-center pt-4 font-bold text-[28px] xl:text-start xl:pt-0">
                 Contact Information
               </h1>
-              <p className="text-center px-4 pb-6 font-medium text-[16px] text-[#FFFFFF99] xl:text-start xl:px-0 xl:pb-0">
+              <p className="text-center px-6 pb-6 font-medium text-[16px] text-[#FFFFFF99] xl:text-start xl:px-0 xl:pb-0">
                 Fill up the form and our team will get back to you within 24
                 hours.
               </p>
             </div>
             {/* list */}
-            <div className="m-auto w-9/12  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+            <div className="m-auto w-4/6 md:w-[500px]  lg:w-[500px]  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
 
-              <div className="one pb-3 flex gap-4 items-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
+              <div className="one pb-3 flex gap-4 items-center md:justify-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                 <img src={PhoneIcon} alt="" />
                 <p>+91 98765 43210</p>
               </div>
-              <div className="one pb-3 flex items-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
                 <img src={Sms} alt="" />
                 <p>domain@paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
                 <img src={WebImg} alt="" />
                 <p>https://paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px">
                 <img src={MiniLoc} alt="" />
                 <p className="xl:w-[211px]">
                   444 St. Yellow Street California, Usa
                 </p>
               </div>
             </div>
-            <div className="w-8/12 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 xl:pt-6 lg:justify-start justify-center ">
+            <div className="w-3/5 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 lg:w-[300px] xl:pt-6 lg:justify-center justify-center ">
 
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
@@ -100,24 +87,22 @@ const Contact = () => {
           {/*FORM */}
           <div className="bg-white xl:w-[700px] xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl ">
             <form
-            action=""
-            method="POST"
               onSubmit={handleSubmit(onSubmit)}
               className="w-10/12 m-auto flex flex-col gap-6 xl:w-full xl:m-0"
             >
               <div className="flex flex-col sm:flex-row justify-between gap-4">
                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                   <label className="text-[18px] font-bold font-spaceGrotesk">
-                    FirstName
+                    First Name
                   </label>
                   <input
                     type="text"
-                    placeholder="FirstName"
+                    placeholder="First name"
                     className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
                       errors.firstName ? "border-red-500" : ""
                     }`}
                     {...register("firstName", {
-                      required: "FirstName is required",
+                      required: "First name is required",
                     })}
                   />
                   {errors.firstName && (
@@ -129,11 +114,11 @@ const Contact = () => {
 
                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                   <label className="text-[18px] font-bold font-spaceGrotesk">
-                    LastName
+                    Last Name
                   </label>
                   <input
                     type="text"
-                    placeholder="LastName"
+                    placeholder="Last Name"
                     className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
                       errors.lastName ? "border-red-500" : ""
                     }`}
