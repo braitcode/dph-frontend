@@ -5,7 +5,7 @@ import img1 from '../assets/brand.png'
 import img2 from '../assets/web.png'
 import img3 from '../assets/mobiled.png'
 import img4 from '../assets/consult.png'
-
+import { Link } from 'react-router-dom';
 const ServicesC = () => {
     return (
         <div className='font-spaceGrotesk'>
@@ -17,11 +17,13 @@ const ServicesC = () => {
                     We provide innovative solutions that streamline operations, enhance productivity, and drive growth
                 </p>
                 <div className="flex gap-5 justify-center mt-[2rem] mb-[2rem] ">
-                    <Button size="medium" color="success">
-                        <div className="flex gap-2 p-1">
-                            <span className="md:text-[15px] text-[10px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
-                        </div>
-                    </Button>
+                    <Link to='/signup'>
+                        <Button size="medium" color="success">
+                            <div className="flex gap-2 p-1">
+                                <span className="md:text-[15px] text-[10px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
+                            </div>
+                        </Button>
+                    </Link>
                     <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C] p-1">
                         <Button size="medium">
                             <span className="md:text-[15px] text-[10px]">Book a consultant</span>
