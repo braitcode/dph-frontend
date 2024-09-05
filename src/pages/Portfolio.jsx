@@ -61,7 +61,7 @@ const Portfolio = () => {
             
               <Button size="small" color="success">
                 <div className="flex gap-2">
-                  <span className="md:text-[15px] text-[12px]">Get Started</span><FaArrowRightLong className='mt-1' />
+                  <span className="md:text-[15px] text-[12px] p-[0.1rem]">Get Started</span><FaArrowRightLong className='mt-1' />
                 </div>
               </Button>
             </Link>
