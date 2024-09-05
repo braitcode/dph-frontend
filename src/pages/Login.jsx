@@ -51,7 +51,7 @@ const Login = () => {
 
             if (!data?.error) {
                 setLoading(false);
-                navigate("/"); // Redirect to home or desired page
+                navigate("/contact"); // Redirect to home or desired page
             } else {
                 setErrors({ form: "Login failed" });
                 setLoading(false);
@@ -139,6 +139,7 @@ const Login = () => {
                         className="bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px]"
                         disabled={loading}
                     >
+                        
                         {loading ? 'Logging in...' : 'Login'}
                     </button>
 

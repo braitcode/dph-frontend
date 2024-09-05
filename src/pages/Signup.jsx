@@ -4,25 +4,24 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
 import signuplog from "../assets/signuplogo.svg";
 // import Button from "../components/Button";
-// import orline from '../assets/orline.svg'
+// import orline from '../assets/orline.svg';
 import { Link } from "react-router-dom";
 import { useAuth } from '../components/contexts/Auth';
 import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
-    const [fullname, setFullName] = useState('');
+    const [fullname, setFullName] = useState('Peace B');
     const [fullNameError, setFullNameError] = useState(null);
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('peace@email.com');
     const [emailError, setEmailError] = useState(null);
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState('password');
     const [passwordError, setPasswordError] = useState(null);
     const [Agree, setAgree] = useState('');
     const [AgreeError, setAgreeError] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
-
     useEffect(() => {
         document.title = " DPH || Sign Up ";
     });
@@ -82,6 +81,8 @@ const SignUp = () => {
         }
         
     };
+console.log(fullname);
+
 
     return (
         <>
@@ -171,6 +172,7 @@ const SignUp = () => {
                                 
                           
                         </div>
+                        {errors.form && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.form}</p>}
                         <button
                             type="submit"
                             className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
