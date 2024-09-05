@@ -67,6 +67,21 @@ const Login = () => {
       }, 2000); 
   };
 
+
+            if (!data?.error) {
+                setLoading(false);
+                navigate("/contact"); // Redirect to home or desired page
+            } else {
+                setErrors({ form: "Login failed" });
+                setLoading(false);
+            }
+        } catch (err) {
+            console.log(err);
+            setErrors({ form: err.message });
+            setLoading(false);
+        }
+    };
+
   const handleError = (message) => {
     setModalType('fail');
     setModalTitle('Login Failed');
@@ -74,14 +89,31 @@ const Login = () => {
     setIsModalOpen(true);
   };
 
+
   // Function to close the modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
+
+                        <a href="#" className="text-sm text-red-500 font-semibold hover:text-red-700">
+                            Forgot password?
+                        </a>
+                    </div>
+                    {errors.form && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.form}</p>}
+                    <button
+                        type="submit"
+                        className="bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px]"
+                        disabled={loading}
+                    >
+                        
+                        {loading ? 'Logging in...' : 'Login'}
+                    </button>
+
   useEffect(() => {
     document.title = "DPH || Log In";
   }, []);
+
 
   return (
     <>
