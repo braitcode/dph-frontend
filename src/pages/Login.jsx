@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
+import image from '../assets/signup.png'
 import logo from "../assets/signuplogo.svg";
 import { useAuth } from "../components/contexts/Auth"; // Import the context hook correctly
 
@@ -133,7 +134,7 @@ const Login = () => {
               </label>
               <br />
               <div className="flex justify-between mb-4 ">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <input
                     type="checkbox"
                     checked={rememberMe}
@@ -146,7 +147,7 @@ const Login = () => {
                     }}
                   />
                   <label>Remember me</label>
-                </div>
+                </div> */}
                 <a
                   href="#"
                   className="text-sm text-red-500 font-semibold hover:text-red-700"
