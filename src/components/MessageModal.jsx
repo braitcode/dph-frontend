@@ -8,7 +8,7 @@ const MessageModal = ({ type, title, message, onClose }) => {
 
   return (
     <main className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 font-spaceGrotesk z-20">
-      <section className="flex flex-col justify-center items-center bg-white py-12 rounded-lg shadow-lg max-w-md w-full space-y-5">
+      <section className="flex flex-col justify-center items-center bg-white m-4 p-5 rounded-lg shadow-lg max-w-md w-full space-y-5">
         {/* Icon */}
         <div className={`border-[1rem] ${isSuccess ? 'border-[#EAFFF6] bg-[#028A4C]' : 'border-[#FFEFEF] bg-[#D12D2D]'} p-3 rounded-full text-white`}>
           {isSuccess ? <FaCheck /> : <RxCross2 />}
