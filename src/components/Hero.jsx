@@ -22,7 +22,7 @@ const Hero = () => {
         }
         return prevCount + 1;
       });
-    }, 2); 
+    }, 2);
     return () => {
       clearInterval(timer);
     };
@@ -44,18 +44,18 @@ const Hero = () => {
               <div className="lg:flex lg:gap-3 hidden">
                 <Link to='/signup'> <Button size="medium" color="success">
                   <div className="flex gap-2">
-                    <span className="text-[15px]">Get Started</span>
-                    <FaArrowRightLong className="mt-1" />
+                    <span className="text-[15px] p-[0.1rem]">Get Started</span>
+                    <FaArrowRightLong className="mt-[0.4rem]" />
                   </div>
                 </Button></Link>
-                
+
                 <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
                   <Link to='/contact'>
-                  <Button size="medium" color="white">
-                    <span className="text-[15px]">Book a consultant</span>
-                  </Button>
+                    <Button size="medium" color="white">
+                      <span className="text-[15px]">Book a consultant</span>
+                    </Button>
                   </Link>
-                
+
                 </div>
               </div>
             </div>
@@ -65,13 +65,13 @@ const Hero = () => {
             <div className="flex justify-between  gap-3 py-3">
               <div className="relative h-auto ">
                 <LazyLoad>
-                <img src={laptop} alt="" className="w-[350px] lg:w-[450px] " />
+                  <img src={laptop} alt="" className="w-[350px] lg:w-[450px] " />
                 </LazyLoad>
                 <div className="absolute xl:mt-[3.1rem] top-[-19px] md:top-[-1rem] left-[4rem]  md:left-[160px] lg:left-[100px] xl:left-[120px] lg:top-[-2rem] xl:top-[-4rem]">
                   <div className="relative">
                     <button className="btn bg-[#028A4C] w-[50px]  h-[50px] md:w-[70px]  md:h-[70px]   xl:w-[100px]  xl:h-[100px]  rounded-full ">
                       <LazyLoad>
-                      <img src={elevate} alt="" className="absolute  top-[0.6rem] left-[0.7rem]  md:top-[1.2rem] md:left-[1.1rem]  xl:top-[1.3rem] xl:left-[1.3rem] w-[30px] xl:w-[60%] md:w-[50%] animate-pulse  " />
+                        <img src={elevate} alt="" className="absolute  top-[0.6rem] left-[0.7rem]  md:top-[1.2rem] md:left-[1.1rem]  xl:top-[1.3rem] xl:left-[1.3rem] w-[30px] xl:w-[60%] md:w-[50%] animate-pulse  " />
                       </LazyLoad>
                     </button>
                   </div>
@@ -94,10 +94,10 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-              <LazyLoad>
+            <LazyLoad>
 
-            <img src={drive} alt="" className="w-full" />
-              </LazyLoad>
+              <img src={drive} alt="" className="w-full" />
+            </LazyLoad>
           </div>
 
           <p className=" text-[16px] md:text-[18px] font-medium font-spaceGrotesk lh-normal p-2 lg:hidden block text-center">
@@ -105,23 +105,23 @@ const Hero = () => {
             designs that captivate and resonate with users.
           </p>
           <div className="flex  lg:hidden gap-3  justify-center mb-[2rem] ">
-          <Link to='/signup'>
-          <Button size="small" color="success">
-              <div className="flex gap-2">
-                <span className="md:text-[15px] text-[10px]">Get Started</span>
-                <FaArrowRightLong className="mt-1" />
-              </div>
-            </Button></Link>
-            
+            <Link to='/signup'>
+              <Button size="small" color="success">
+                <div className="flex gap-2">
+                  <span className="md:text-[15px] text-[10px] p-[0.2rem]">Get Started</span>
+                  <FaArrowRightLong className="mt-[0.4rem]" />
+                </div>
+              </Button></Link>
+
             <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
               <Link to='/contact'>
-              <Button size="small" color="white">
-                <span className="md:text-[15px] text-[10px]">
-                  Book a consultant
-                </span>
-              </Button>
+                <Button size="small" color="white">
+                  <span className="md:text-[15px] text-[10px]">
+                    Book a consultant
+                  </span>
+                </Button>
               </Link>
-             
+
             </div>
           </div>
         </div>
@@ -132,9 +132,9 @@ const Hero = () => {
             <span>Web Development</span>{" "}
             <LazyLoad>
 
-            <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" />
+              <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" />
             </LazyLoad>
-            <span>Consultation</span><LazyLoad> <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" /></LazyLoad> 
+            <span>Consultation</span><LazyLoad> <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" /></LazyLoad>
             <span>Mobile Development</span>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Login = () => {
   // State for modal visibility and type
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('success');
-  const [modalTitle, setModalTitle] = useState(''); 
+  const [modalTitle, setModalTitle] = useState('');
   const [modalMessage, setModalMessage] = useState('');
 
   const handleLogin = async (event) => {
@@ -62,9 +62,9 @@ const Login = () => {
     setIsModalOpen(true);
     // Automatically close the modal and navigate after a delay
     setTimeout(() => {
-        setIsModalOpen(false);
-        navigate('/contact'); 
-      }, 2000); 
+      setIsModalOpen(false);
+      navigate('/contact');
+    }, 2000);
   };
 
   const handleError = (message) => {
@@ -166,9 +166,11 @@ const Login = () => {
           </h3>
         </div>
 
-        <div className='h-full hidden lg:block'>
-          <img src={signinimg} alt="" className='h-full w-full relative' />
-          <img src={signuplog} alt="" className='absolute top-[40px] right-[40px]' />
+        <div className='h-[100vh] hidden lg:block'>
+          <img src={signinimg} alt="" className='h-[100vh] w-full relative' />
+          <Link to='/'>
+            <img src={signuplog} alt="" className='absolute top-[40px] right-[40px]' />
+          </Link>
         </div>
 
         {/* Modal */}
