@@ -72,7 +72,7 @@ const SignUp = () => {
             }else{
                 setErrors({ form: "Registration failed"});
                 setLoading(false);
-            }
+            };
         } catch (err) {
             console.log(err);
             setErrors({ form: err.message});

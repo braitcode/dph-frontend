@@ -55,7 +55,7 @@ const Login = () => {
             } else {
                 setErrors({ form: "Login failed" });
                 setLoading(false);
-            }
+            };
         } catch (err) {
             console.log(err);
             setErrors({ form: err.message });
