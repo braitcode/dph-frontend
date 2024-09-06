@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import PhoneIcon from "../assets/icons/phone icon.png";
 import Sms from "../assets/icons/sms outline.png";
 import MiniLoc from "../assets/icons/small loc.png";
@@ -16,15 +16,26 @@ import Footer from "../components/Footer";
 const Contact = () => {
   const {
     register,
-    handleSubmit,
+    handleSubmit: handleFormSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    const fullPhoneNumber = `${data.countryCode}${data.phone}`;
-    console.log("Form Data:", { ...data, fullPhoneNumber });
-    alert(`Form Submitted Successfully with phone number: ${fullPhoneNumber}`);
-    reset();
+  const onSubmit = async (data) => {
+    console.log("Form submitted with data: ", data);
+    try {
+      const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([[data.firstName, data.lastName, data.email, data.phone, data.message, new Date().toLocaleString()]]),
+      });
+      await response.json();
+      reset();
+    } catch (err) {
+      console.log(err);
+    }
   };
     
   
@@ -85,157 +96,156 @@ const Contact = () => {
         </div>
           </div>
           {/*FORM */}
-          <div className="bg-white xl:w-[700px] xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl ">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="w-10/12 m-auto flex flex-col gap-6 xl:w-full xl:m-0"
-            >
-              <div className="flex flex-col sm:flex-row justify-between gap-4">
-                <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                  <label className="text-[18px] font-bold font-spaceGrotesk">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="First name"
-                    className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
-                      errors.firstName ? "border-red-500" : ""
-                    }`}
-                    {...register("firstName", {
-                      required: "First name is required",
-                    })}
-                  />
-                  {errors.firstName && (
-                    <span className="text-red-500 text-sm">
-                      {errors.firstName.message}
-                    </span>
-                  )}
-                </div>
+          <div>
+      {/* Your form UI */}
+      <div className="bg-white xl:w-[700px] xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl">
+        <form
+          onSubmit={handleFormSubmit(onSubmit)}
+          className="w-10/12 m-auto flex flex-col gap-6 xl:w-full xl:m-0"
+        >
+          <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <div className="w-full sm:w-[48%] flex flex-col gap-2">
+              <label className="text-[18px] font-bold font-spaceGrotesk">
+                First Name
+              </label>
+              <input
+                type="text"
+                placeholder="First Name"
+                {...register("firstName", {
+                  required: "First name is required",
+                })}
+                className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
+                  errors.firstName ? "border-red-500" : ""
+                }`}
+              />
+              {errors.firstName && (
+                <span className="text-red-500 text-sm">
+                  {errors.firstName.message}
+                </span>
+              )}
+            </div>
 
-                <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                  <label className="text-[18px] font-bold font-spaceGrotesk">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
-                      errors.lastName ? "border-red-500" : ""
-                    }`}
-                    {...register("lastName", {
-                      required: "Last name is required",
-                    })}
-                  />
-                  {errors.lastName && (
-                    <span className="text-red-500 text-sm">
-                      {errors.lastName.message}
-                    </span>
-                  )}
-
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row justify-between gap-4">
-                <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                  <label className="text-[18px] font-bold font-spaceGrotesk">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="johndoe@gmail.com"
-                    className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
-                      errors.email ? "border-red-500" : ""
-                    }`}
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value:
-                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                        message: "Invalid email address",
-                      },
-                    })}
-                  />
-                  {errors.email && (
-                    <span className="text-red-500 text-sm">
-                      {errors.email.message}
-                    </span>
-                  )}
-                </div>
-
-                <div className="w-full sm:w-[48%] flex flex-col gap-2">
-                  <label className="text-[18px] font-bold font-spaceGrotesk">
-                    Phone
-                  </label>
-                  <div className="flex">
-                    <select
-                      className={`border-2 border-t border-b rounded-l-md bg-gray-50 text-[14px] p-3 font-spaceGrotesk ${
-                        errors.countryCode ? "border-red-500" : ""
-                      }`}
-                      {...register("countryCode", {
-                        required: "Country code is required",
-                      })}
-                    >
-                      <option value="+234">+234</option>
-                      {/* <option value="">Code</option> */}
-                      <option value="+1">+1</option>
-                      <option value="+44">+44</option>
-                      <option value="+91">+91</option>
-                      <option value="+235">+235</option>
-                      <option value="+241">+241</option>
-                      <option value="+244">+244</option>
-                      {/* Add more country codes as needed */}
-                    </select>
-                    <input
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      className={`border rounded-r-lg text-[14px] w-full p-2 font-spaceGrotesk ${
-                        errors.phone ? "border-red-500" : ""
-                      }`}
-                      {...register("phone", {
-                        required: "Phone number is required",
-                      })}
-                    />
-                  </div>
-                  {errors.countryCode && (
-                    <span className="text-red-500 text-sm">
-                      {errors.countryCode.message}
-                    </span>
-                  )}
-                  {errors.phone && (
-                    <span className="text-red-500 text-sm">
-                      {errors.phone.message}
-                    </span>
-                  )}
-
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-[18px] font-bold font-spaceGrotesk">
-                  Message
-                </label>
-                <textarea
-                  placeholder="Type your message"
-                  className={`text-[14px] border-2 rounded-lg p-4 font-spaceGrotesk ${
-                    errors.message ? "border-red-500" : ""
-                  }`}
-                  rows="5"
-                  {...register("message", { required: "Message is required" })}
-                />
-                {errors.message && (
-                  <span className="text-red-500 text-sm">
-                    {errors.message.message}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex pt-3 justify-center xl:justify-start xl:pt-[73px]">
-                <Button size="large" color="success" type="submit">
-                  Send a message
-                </Button>
-              </div>
-            </form>
+            <div className="w-full sm:w-[48%] flex flex-col gap-2">
+              <label className="text-[18px] font-bold font-spaceGrotesk">
+                Last Name
+              </label>
+              <input
+                type="text"
+                placeholder="Last Name"
+                {...register("lastName", {
+                  required: "Last name is required",
+                })}
+                className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
+                  errors.lastName ? "border-red-500" : ""
+                }`}
+              />
+              {errors.lastName && (
+                <span className="text-red-500 text-sm">
+                  {errors.lastName.message}
+                </span>
+              )}
+            </div>
           </div>
+
+          <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <div className="w-full sm:w-[48%] flex flex-col gap-2">
+              <label className="text-[18px] font-bold font-spaceGrotesk">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="johndoe@gmail.com"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    message: "Invalid email address",
+                  },
+                })}
+                className={`border-2 text-[14px] p-3 rounded-md font-spaceGrotesk ${
+                  errors.email ? "border-red-500" : ""
+                }`}
+              />
+              {errors.email && (
+                <span className="text-red-500 text-sm">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+
+            <div className="w-full sm:w-[48%] flex flex-col gap-2">
+              <label className="text-[18px] font-bold font-spaceGrotesk">
+                Phone
+              </label>
+              <div className="flex">
+                <select
+                  {...register("countryCode", {
+                    required: "Country code is required",
+                  })}
+                  className={`border-2 border-t border-b rounded-l-md bg-gray-50 text-[14px] p-3 font-spaceGrotesk ${
+                    errors.countryCode ? "border-red-500" : ""
+                  }`}
+                >
+                  <option value="+234">+234</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                  <option value="+91">+91</option>
+                  <option value="+235">+235</option>
+                  <option value="+241">+241</option>
+                  <option value="+244">+244</option>
+                </select>
+                <input
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  {...register("phone", {
+                    required: "Phone number is required",
+                  })}
+                  className={`border rounded-r-lg text-[14px] w-full p-2 font-spaceGrotesk ${
+                    errors.phone ? "border-red-500" : ""
+                  }`}
+                />
+              </div>
+              {errors.countryCode && (
+                <span className="text-red-500 text-sm">
+                  {errors.countryCode.message}
+                </span>
+              )}
+              {errors.phone && (
+                <span className="text-red-500 text-sm">
+                  {errors.phone.message}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-[18px] font-bold font-spaceGrotesk">
+              Message
+            </label>
+            <textarea
+              placeholder="Type your message"
+              {...register("message", { required: "Message is required" })}
+              className={`text-[14px] border-2 rounded-lg p-4 font-spaceGrotesk ${
+                errors.message ? "border-red-500" : ""
+              }`}
+              rows="5"
+            />
+            {errors.message && (
+              <span className="text-red-500 text-sm">
+                {errors.message.message}
+              </span>
+            )}
+          </div>
+
+          <div className="flex pt-3 justify-center xl:justify-start xl:pt-[73px]">
+            <Button size="large" color="success" type="submit">
+              Send a message
+            </Button>
+          </div>
+        </form>
+      </div>
+    </div>
         </div>
       </div>
       <Footer />
