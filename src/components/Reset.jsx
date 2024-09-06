@@ -42,12 +42,12 @@ const Reset = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (newPassword.length < 8) {
-            handleError('Password must be at least 8 characters long');
+            handleError('Password must be at least 8 characters');
             return;
         }
 
         if (confirmPassword.length < 8) {
-            handleError('Confirm password must be at least 8 characters long');
+            handleError('Confirm password must be at least 8 characters');
             return;
         }
 
