@@ -42,6 +42,7 @@ const Login = () => {
 
     if (!isValid) return;
 
+    
     try {
       // Attempt login
       const response = await login(username, password);
@@ -55,6 +56,7 @@ const Login = () => {
     }
   };
 
+  
   const handleSuccess = () => {
     setModalType('success');
     setModalTitle('');

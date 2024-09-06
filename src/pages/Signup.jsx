@@ -178,7 +178,7 @@ console.log(fullname);
                             className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
                             disabled={loading}
                         >
-                            {loading ? 'Signing up...' : 'Sign Up'}
+                            {loading ? 'Please wait...' : 'Sign Up'}
                         </button>
 
                         <br />
