@@ -118,7 +118,7 @@ const Reset = () => {
                             </span>
                             {confirmPassword && confirmPassword.length < 8 && (
                                 <p className="text-red-500 text-[12px] lg:text-[14px]">
-                                    Password must be at least 8 characters long
+                                    Password must be at least 8 characters
                                 </p>
                             )}
                             {confirmPassword && newPassword !== confirmPassword && (
