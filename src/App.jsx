@@ -9,9 +9,13 @@ import Contact from "./pages/Contact";
 import PageNotfound from "./pages/PageNotFound";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
+import { useAuth } from './components/contexts/Auth';
+
 
 
 function App() {
+  const { PrivateRoutes, AdminRoutes} = useAuth();
+
   return (
     <>
       <Router>

@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, {useState} from "react";
 import PhoneIcon from "../assets/icons/phone icon.png";
 import Sms from "../assets/icons/sms outline.png";
 import MiniLoc from "../assets/icons/small loc.png";
@@ -12,8 +11,41 @@ import Button from "../components/Button";
 import { useForm } from "react-hook-form";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import MessageModal from "../components/MessageModal";
 
 const Contact = () => {
+   // State for modal visibility and type
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [modalType, setModalType] = useState('success');
+   const [modalTitle, setModalTitle] = useState(''); 
+   const [modalMessage, setModalMessage] = useState('');
+ 
+  // Function to handle success scenario
+const handleSuccess = () => {
+  setModalType('success'); 
+  setModalTitle('Message sent');
+  setModalMessage('Kindly check your email for confirmation!');
+  setIsModalOpen(true);
+  reset(); // Clear the form fields
+};
+
+// Function to handle error scenario
+const handleError = () => {
+  setModalType('fail'); // Set the correct modal type
+  setModalTitle('Message failed');
+  setModalMessage('Something went wrong. Please try again.');
+  setIsModalOpen(true);
+};
+
+ 
+   // Function to close the modal
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+     
+   };
+
+   
+  //  validation
   const {
     register,
     handleSubmit: handleFormSubmit,
@@ -63,26 +95,26 @@ const Contact = () => {
             {/* list */}
             <div className="m-auto w-4/6 md:w-[500px]  lg:w-[500px]  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
 
-              <div className="one pb-3 flex gap-4 items-center md:justify-center xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
+              <div className="one pb-3 flex gap-4 items-center md:justify-center xl:justify-start xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                 <img src={PhoneIcon} alt="" />
                 <p>+91 98765 43210</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
                 <img src={Sms} alt="" />
                 <p>domain@paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
                 <img src={WebImg} alt="" />
                 <p>https://paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:pb-0 xl:gap-[25px">
+              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px">
                 <img src={MiniLoc} alt="" />
                 <p className="xl:w-[211px]">
                   444 St. Yellow Street California, Usa
                 </p>
               </div>
             </div>
-            <div className="w-3/5 pt-3 pb-6 xl:w-[344px] m-auto flex gap-8 lg:w-[300px] xl:pt-6 lg:justify-center justify-center ">
+            <div className="w-2/3 justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[300px] xl:pt-6 lg:justify-center xl:justify-start xl:w-[344px] ">
 
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
@@ -91,7 +123,7 @@ const Contact = () => {
             </div>
             </div>
               {/* circle pattern */}
-        <div className="absolute z-0 lg:top-[27rem] top-[10rem] lg:left-[12rem] left-[10rem] md:left-[29rem] ">
+        <div className="absolute z-0 lg:top-[27rem] lg:left-[12rem] xl:top-[28rem] xl:left-[20rem]  top-[10rem] left-[10rem] md:left-[29rem] ">
           <div className="p-10 rounded-full h-[452px] w-[452px] border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
         </div>
           </div>
@@ -249,6 +281,15 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
+      {/* Message Modal */}
+      {isModalOpen && (
+        <MessageModal
+          type={modalType}
+          title={modalTitle}
+          message={modalMessage}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };

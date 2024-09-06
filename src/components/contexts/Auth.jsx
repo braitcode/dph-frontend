@@ -56,9 +56,14 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = async (formData) => {
+  
+  const signup = async (fullname, email, password) => {
     try {
-      const { data } = await axios.post("/auth/signup", formData, {
+      const { data } = await axios.post("/auth/signup", {
+        fullname,
+        email,
+        password
+      }, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

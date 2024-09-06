@@ -6,37 +6,41 @@ import img2 from '../assets/web.png'
 import img3 from '../assets/mobiled.png'
 import img4 from '../assets/consult.png'
 import { Link } from 'react-router-dom';
+
 const ServicesC = () => {
+
     return (
         <div className='font-spaceGrotesk'>
             <div className=' py-10 lg:px-[10rem] xl:px-[20rem] mt-20'>
-                <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] sm:w-11/12 text-center leading-[1.8rem] py-2 '>
+                <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[55px] xl:leading-[70px] sm:w-11/12 text-center leading-[1.8rem] py-2 '>
                     Optimized  services to elevate your business
                 </h1>
-                <p className='mx-auto sm:w-11/12 text-center leading-[1.2rem]'>
+                <p className='mx-auto sm:w-11/12 text-center leading-[1.2rem] text-[#575253] font-light xl:text-[24px] xl:leading-[30.62px]'>
                     We provide innovative solutions that streamline operations, enhance productivity, and drive growth
                 </p>
-                <div className="flex gap-5 justify-center mt-[2rem] mb-[2rem] ">
+                <div className="flex gap-5 justify-center mt-[2rem] mb-[2rem]">
                     <Link to='/signup'>
-                        <Button size="medium" color="success">
-                            <div className="flex gap-2 p-1">
+                        <Button size="medium" color="success" className=''>
+                            <div className="flex gap-2 p-[0.1rem]">
                                 <span className="md:text-[15px] text-[10px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
                             </div>
                         </Button>
                     </Link>
-                    <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C] p-1">
-                        <Button size="medium">
-                            <span className="md:text-[15px] text-[10px]">Book a consultant</span>
-                        </Button>
-                    </div>
+                    <Link to='/contact'>
+                        <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+                            <Button size="medium">
+                                <span className="md:text-[15px] text-[10px]">Book a consultant</span>
+                            </Button>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <main>
                 {/* first container */}
                 <section className='bg-[#F6FFFB]'>
-                    <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem]'>
-                        <div className='md:order-2 mb-2 md:mt-3'>
+                    <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px] md:pt-5
+                xl:gap-[5rem] xl:pt-[54.5px]'>
+                        <div className='md:order-2 mb-2'>
                             <img
                                 src={img1}
                                 alt="Branding Service"
@@ -49,18 +53,20 @@ const ServicesC = () => {
                                 visual identities, and taglines that capture your
                                 brand's essence and resonate with your audience.
                             </p>
-                            <Button size="medium" color="success">
-                                <div className="flex gap-2 px-1 xl:px-5">
-                                    <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                </div>
-                            </Button>
+                            <Link to='/signup'>
+                                <Button size="medium" color="success">
+                                    <div className="flex gap-2 px-1 xl:px-5">
+                                        <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </section>
                 {/* second container */}
                 <section>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem] py-5'>
+                xl:gap-[5rem] py-5 xl:pt-[54.5px] '>
                         <div className="mb-2">
                             <img
                                 src={img2}
@@ -78,18 +84,20 @@ const ServicesC = () => {
                                 design services are focused on creating visually
                                 user-friendly, and fully responsive websites
                             </p>
-                            <Button size="medium" color="success">
-                                <div className="flex gap-2 px-1 xl:px-5">
-                                    <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                </div>
-                            </Button>
+                            <Link to='/signup'>
+                                <Button size="medium" color="success">
+                                    <div className="flex gap-2 px-1 xl:px-5">
+                                        <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </section>
                 {/* third container */}
                 <section className='bg-[#F6FFFB]'>
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px] 
-                xl:gap-[5rem] py-5'>
+                xl:gap-[5rem] py-5 xl:pt-[54.5px]'>
                         <div className='md:order-2 '>
                             <img
                                 src={img3}
@@ -107,18 +115,20 @@ const ServicesC = () => {
                                 comprehensive, covering everything from initial
                                 concept development to final design.
                             </p>
-                            <Button size="medium" color="success">
-                                <div className="flex gap-2 px-1  xl:px-5">
-                                    <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                </div>
-                            </Button>
+                            <Link to='/signup'>
+                                <Button size="medium" color="success">
+                                    <div className="flex gap-2 px-1  xl:px-5">
+                                        <span className="text-[12px] md:text-[15px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.06rem]' />
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </section>
                 {/* fourth container */}
                 <section >
                     <div className='container w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-[30px]
-                xl:gap-[5rem] py-3'>
+                xl:gap-[5rem] py-3 xl:pt-[54.5px]'>
                         <div>
                             <img
                                 src={img4}
@@ -138,11 +148,13 @@ const ServicesC = () => {
                                 and let's explore how we can elevate your brand
                                 to new heights.
                             </p>
-                            <Button size="medium" color="success">
-                                <div className="flex gap-2 px-1 xl:px-5">
-                                    <span className="text-[12px] md:text-[15px]">Book Now</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                </div>
-                            </Button>
+                            <Link to='#'>
+                                <Button size="medium" color="success">
+                                    <div className="flex gap-2 px-1 xl:px-5">
+                                        <span className="text-[12px] md:text-[15px]">Book Now</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </section>
