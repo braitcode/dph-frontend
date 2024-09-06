@@ -3,19 +3,16 @@ import signupimg from '../assets/signup.png'
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
 import signuplog from "../assets/signuplogo.svg";
-// import Button from "../components/Button";
-// import orline from '../assets/orline.svg';
-import { Link } from "react-router-dom";
 import { useAuth } from '../components/contexts/Auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 
 
 const SignUp = () => {
-    const [fullname, setFullName] = useState('Peace B');
+    const [fullname, setFullName] = useState('');
     const [fullNameError, setFullNameError] = useState(null);
-    const [email, setEmail] = useState('peace@email.com');
+    const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(null);
-    const [password, setPassword] = useState('password');
+    const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState(null);
     const [Agree, setAgree] = useState('');
     const [AgreeError, setAgreeError] = useState(null);
@@ -68,7 +65,7 @@ const SignUp = () => {
 
             if(!data?.error){
                 setLoading(false);
-                navigate("/");
+                navigate("/login");
             }else{
                 setErrors({ form: "Registration failed"});
                 setLoading(false);
@@ -178,7 +175,7 @@ console.log(fullname);
                             className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
                             disabled={loading}
                         >
-                            {loading ? 'Signing up...' : 'Sign Up'}
+                            {loading ? 'Please wait...' : 'Sign Up'}
                         </button>
 
                         <br />
@@ -208,7 +205,10 @@ console.log(fullname);
 
                 <div className='h-full hidden lg:block rounded-tl-lg relative' >
                     <img src={signupimg} alt="" className='w-full h-full rounded-tl-[12px] rounded-bl-[12px]' />
+                    <Link to='/'>
                     <img src={signuplog} alt="" className='absolute top-[20px] right-[30px]' />
+                    </Link>
+                   
                 </div>
                
             </div>
