@@ -14,12 +14,12 @@ import { useAuth } from './components/contexts/Auth';
 
 
 function App() {
-  const { PrivateRoutes, AdminRoutes} = useAuth();
+  const { PrivateRoutes, AdminRoutes } = useAuth();
 
   return (
     <>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
