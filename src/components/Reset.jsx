@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import signinimg from '../assets/login.png';
-import signuplog from "../assets/signuplogo.svg";
+import signuplogo from "../assets/signuplogo.svg";
 import MessageModal from '../components/MessageModal';
 import { GoArrowLeft } from "react-icons/go";
 
@@ -150,7 +150,7 @@ const Reset = () => {
                     }}
                 >
                     <Link to='/'>
-                        <img src={signuplog} alt="Signup Logo" className='absolute top-[40px] right-[40px]' />
+                        <img src={signuplogo} alt="Signup Logo" className='absolute top-[40px] right-[40px]' />
                     </Link>
                 </div>
                 {isModalOpen && (
