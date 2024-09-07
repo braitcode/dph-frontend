@@ -61,7 +61,7 @@ const Reset = () => {
 
         try {
             const response = await axios.put(`/auth/reset-password/${token}`, {
-              newPassword,
+              password,
             });
             toast.success(response.data.message);
             setTimeout(() => {
