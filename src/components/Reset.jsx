@@ -11,49 +11,77 @@ import toast from 'react-hot-toast';
 const Reset = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalType, setModalType] = useState('success');
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalMessage, setModalMessage] = useState('');
+
     const { token } = useParams();
     const navigate = useNavigate();
-  
+
+    // const handleSuccess = () => {
+    //     setModalType('success');
+    //     setModalTitle('Success');
+    //     setModalMessage('Password Reset Successful!');
+    //     setIsModalOpen(true);
+    //     setTimeout(() => {
+    //         setIsModalOpen(false);
+    //         navigate('/login');
+    //     }, 700);
+    // };
+
     const handleError = (message) => {
-      toast.error(message);
+        setModalType('fail');
+        setModalTitle('Reset Password Failed');
+        setModalMessage(message);
+        setIsModalOpen(true);
     };
-  
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
+
     const handleSubmit = async (event) => {
-      event.preventDefault();
-  
-      if (newPassword.length < 8) {
-        handleError('Password must be at least 8 characters');
-        return;
-      }
-  
-      if (confirmPassword.length < 8) {
-        handleError('Confirm password must be at least 8 characters');
-        return;
-      }
-  
-      if (newPassword !== confirmPassword) {
-        handleError('Passwords do not match');
-        return;
-      }
-  
-      try {
-        const response = await axios.post(`/auth/reset-password/${token}`, {
-          newPassword
-        }, {
-          headers: {
-            Authorization: `Bearer ${token}`, // Ensure Bearer token is passed
-          }
-        });
-  
-        toast.success(response.data.message);
-        setTimeout(() => {
-          navigate("/login");
-        }, 2000);
-      } catch (error) {
-        console.error("Error resetting password:", error);
-        toast.error(`Failed to reset password: ${error?.response?.data?.message || error.message}`);
-      }
-    };
+        event.preventDefault();
+    
+        if (newPassword.length < 8) {
+          handleError('Password must be at least 8 characters');
+          return;
+        }
+    
+        if (confirmPassword.length < 8) {
+          handleError('Confirm password must be at least 8 characters');
+          return;
+        }
+    
+        if (newPassword !== confirmPassword) {
+          handleError('Passwords do not match');
+          return;
+        }
+    
+        try {
+          const response = await axios.put(`/auth/reset-password/${token}`, {
+            newPassword
+          }, {
+            headers: {
+              Authorization: `Bearer ${token}`, // Ensure Bearer token is passed
+            }
+          });
+    
+          toast.success(response.data.message);
+          setTimeout(() => {
+            navigate("/login");
+          }, 2000);
+        } catch (error) {
+          console.error("Error resetting password:", error);
+          toast.error(`Failed to reset password: ${error?.response?.data?.message || error.message}`);
+        }
+      };
+
+    useEffect(() => {
+        document.title = "DPH || Reset Password";
+    }, []);
 
     return (
         <>
