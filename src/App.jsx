@@ -12,6 +12,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useAuth } from './components/contexts/Auth';
 import ForgotPassword from "./components/ForgotPassword";
 import CheckEmail from "./components/CheckEmail";
+import toast, { Toaster } from 'react-hot-toast';
+import Reset from "./components/Reset";
+
 
 
 
@@ -21,6 +24,8 @@ function App() {
 
   return (
     <>
+    <Toaster position="top-center" reverseOrder={false} />
+
       <Router>
         <ScrollToTop />
         <Routes>
@@ -32,6 +37,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotfound />} />
           <Route path="/about" element={<About />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/check" element={<CheckEmail />} />
+          <Route path="/reset-password" element={<Reset />} />
         </Routes>
       </Router>
     </>
