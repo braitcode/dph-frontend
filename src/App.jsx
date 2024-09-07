@@ -39,7 +39,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/check" element={<CheckEmail />} />
-          <Route path="/reset-password:token" element={<Reset />} />
+          <Route path="/reset-password/:token" element={<Reset />} />
         </Routes>
       </Router>
     </>
