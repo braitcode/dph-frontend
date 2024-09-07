@@ -9,6 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Footer from "../components/Footer";
 import Testimonial from "../components/Testimonial";
 import { Link } from "react-router-dom";
+import SubFooter from "../components/SubFooter";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -169,6 +170,7 @@ const Portfolio = () => {
         </div>
       </main>
       <Testimonial/>
+      <SubFooter/>
       <Footer/>
     </>
   );

@@ -21,7 +21,7 @@ const SubFooter = () => {
                     
                       <Button color="success">
                         <div className="flex gap-2">
-                          <p className='font-spaceGrotesk'>Get in Touch Now!</p> <img src={arrowRight} alt="" />
+                          <p className='font-spaceGrotesk'>Get Started</p> <img src={arrowRight} alt="" />
                         </div>
                       </Button>
                     </Link>

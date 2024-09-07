@@ -10,16 +10,24 @@ import PageNotfound from "./pages/PageNotFound";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 import { useAuth } from './components/contexts/Auth';
+import ForgotPassword from "./components/ForgotPassword";
+import CheckEmail from "./components/CheckEmail";
+import toast, { Toaster } from 'react-hot-toast';
+import Reset from "./components/Reset";
+
+
 
 
 
 function App() {
-  const { PrivateRoutes, AdminRoutes} = useAuth();
+  const { PrivateRoutes, AdminRoutes } = useAuth();
 
   return (
     <>
+    <Toaster position="top-center" reverseOrder={false} />
+
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -29,6 +37,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotfound />} />
           <Route path="/about" element={<About />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/check" element={<CheckEmail />} />
+          <Route path="/reset-password" element={<Reset />} />
         </Routes>
       </Router>
     </>

@@ -26,7 +26,7 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
- 
+
   const validateForm = () => {
     const newErrors = {};
     if (!email) {
@@ -148,12 +148,15 @@ const Login = () => {
                   />
                   <label>Remember me</label>
                 </div> */}
+                <Link to='/forgot'>
+
                 <a
                   href="#"
                   className="text-sm text-red-500 font-semibold hover:text-red-700"
                 >
                   Forgot password?
                 </a>
+                </Link>
               </div>
               <button
                 type="submit"
