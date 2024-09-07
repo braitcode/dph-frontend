@@ -148,7 +148,7 @@ const Login = () => {
                   />
                   <label>Remember me</label>
                 </div> */}
-                <Link to='/forgot'>
+                <Link to='/forgot-password'>
 
                 <a
                   href="#"
