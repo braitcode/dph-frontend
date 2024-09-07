@@ -15,13 +15,14 @@ import CheckEmail from "./components/CheckEmail";
 
 
 
+
 function App() {
-  const { PrivateRoutes, AdminRoutes} = useAuth();
+  const { PrivateRoutes, AdminRoutes } = useAuth();
 
   return (
     <>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

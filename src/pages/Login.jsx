@@ -26,7 +26,7 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
- 
+
   const validateForm = () => {
     const newErrors = {};
     if (!email) {

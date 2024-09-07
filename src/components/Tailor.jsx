@@ -18,11 +18,11 @@ const Tailor = () => {
                     Tailored Solution For Your Needs
                 </h2>
                 <h5
-                    className='text-[12px] text-center mt-2 font-medium text-[#565353] md:text-[16px] lg:text-[24px] block pb-5'>
+                    className='text-[12px] text-center mt-2 font-medium text-[#565353] md:text-[16px] lg:text-[24px] block pb-5 lg:mb-[20px]'>
                     Our team of experts crafts intuitive digital experience, from mobile interfaces to <br /> user-friendly websites, delivering functional solutions that impress.
                 </h5>
                 <div
-                    className='grid grid-cols-1 sm:grid-cols-2 gap-[40px]'>
+                    className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] lg:px-[70px] xl:px-[120px]'>
                     {
                         solution.map((sol) => {
                             const { id, title, image, description } = sol;
