@@ -37,9 +37,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotfound />} />
           <Route path="/about" element={<About />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/check" element={<CheckEmail />} />
-          <Route path="/reset-password" element={<Reset />} />
+          <Route path="/reset-password:token" element={<Reset />} />
         </Routes>
       </Router>
     </>
