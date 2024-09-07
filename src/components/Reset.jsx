@@ -17,7 +17,7 @@ const Reset = () => {
     const [modalTitle, setModalTitle] = useState('');
     const [modalMessage, setModalMessage] = useState('');
 
-    const { token } = useParams
+    const { token } = useParams();
     const navigate = useNavigate();
 
     // const handleSuccess = () => {
