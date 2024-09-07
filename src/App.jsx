@@ -10,6 +10,8 @@ import PageNotfound from "./pages/PageNotFound";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 import { useAuth } from './components/contexts/Auth';
+import ForgotPassword from "./components/ForgotPassword";
+import CheckEmail from "./components/CheckEmail";
 
 
 
