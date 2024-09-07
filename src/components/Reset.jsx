@@ -44,40 +44,35 @@ const Reset = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
         if (newPassword.length < 8) {
-          handleError('Password must be at least 8 characters');
-          return;
+            handleError('Password must be at least 8 characters');
+            return;
         }
-    
+
         if (confirmPassword.length < 8) {
-          handleError('Confirm password must be at least 8 characters');
-          return;
+            handleError('Confirm password must be at least 8 characters');
+            return;
         }
-    
+
         if (newPassword !== confirmPassword) {
-          handleError('Passwords do not match');
-          return;
+            handleError('Passwords do not match');
+            return;
         }
-    
+
         try {
-          const response = await axios.put(`/auth/reset-password/${token}`, {
-            newPassword
-          }, {
-            headers: {
-              Authorization: `Bearer ${token}`, // Ensure Bearer token is passed
-            }
-          });
-    
-          toast.success(response.data.message);
-          setTimeout(() => {
-            navigate("/login");
-          }, 2000);
-        } catch (error) {
-          console.error("Error resetting password:", error);
-          toast.error(`Failed to reset password: ${error?.response?.data?.message || error.message}`);
-        }
-      };
+            const response = await axios.post(`/auth/reset-password/${token}`, {
+              newPassword
+            });
+            toast.success(response.data.message);
+            setTimeout(() => {
+              navigate("/login");
+            }, 2000);
+          } catch (error) {
+            console.error("Error resetting password:", error);
+            const errorMessage = error?.response?.data?.message || error.message || "An unknown error occurred";
+            toast.error(`Failed to reset password: ${errorMessage}`);
+          }
+    };
 
     useEffect(() => {
         document.title = "DPH || Reset Password";
