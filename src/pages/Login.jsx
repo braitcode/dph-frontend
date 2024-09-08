@@ -148,12 +148,15 @@ const Login = () => {
                   />
                   <label>Remember me</label>
                 </div> */}
-                <a
-                  href="#"
-                  className="text-sm text-red-500 font-semibold hover:text-red-700"
-                >
-                  Forgot password?
-                </a>
+                <Link to='/forgot-password'>
+
+                  <a
+                    href="#"
+                    className="text-sm text-red-500 font-semibold hover:text-red-700"
+                  >
+                    Forgot password?
+                  </a>
+                </Link>
               </div>
               <button
                 type="submit"

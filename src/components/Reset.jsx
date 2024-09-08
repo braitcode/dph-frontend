@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import signinimg from '../assets/login.png';
 import signuplogo from "../assets/signuplogo.svg";
 import MessageModal from '../components/MessageModal';
 import { GoArrowLeft } from "react-icons/go";
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Reset = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -15,18 +17,19 @@ const Reset = () => {
     const [modalTitle, setModalTitle] = useState('');
     const [modalMessage, setModalMessage] = useState('');
 
+    const { token } = useParams();
     const navigate = useNavigate();
 
-    const handleSuccess = () => {
-        setModalType('success');
-        setModalTitle('Success');
-        setModalMessage('Password Reset Successful!');
-        setIsModalOpen(true);
-        setTimeout(() => {
-            setIsModalOpen(false);
-            navigate('/login');
-        }, 700);
-    };
+    // const handleSuccess = () => {
+    //     setModalType('success');
+    //     setModalTitle('Success');
+    //     setModalMessage('Password Reset Successful!');
+    //     setIsModalOpen(true);
+    //     setTimeout(() => {
+    //         setIsModalOpen(false);
+    //         navigate('/login');
+    //     }, 700);
+    // };
 
     const handleError = (message) => {
         setModalType('fail');
@@ -57,10 +60,17 @@ const Reset = () => {
         }
 
         try {
-            // The Logic For The Reset Password
-            handleSuccess();
+            const response = await axios.post(`/auth/reset-password/${token}`, {
+                newPassword
+            });
+            toast.success(response.data.message);
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
         } catch (error) {
-            handleError(error.message);
+            console.error("Error resetting password:", error);
+            const errorMessage = error?.response?.data?.message || error.message || "An unknown error occurred";
+            toast.error(`Failed to reset password: ${errorMessage}`);
         }
     };
 
@@ -165,3 +175,4 @@ const Reset = () => {
         </>
     );
 };
+export default Reset;
