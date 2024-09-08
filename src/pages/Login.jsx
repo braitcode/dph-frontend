@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
-// import image from "../assets/signup.png";
 import logo from "../assets/signuplogo.svg";
 import { useAuth } from "../components/contexts/Auth"; // Import the context hook correctly
 
