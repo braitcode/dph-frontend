@@ -55,14 +55,14 @@ const SubPortfolio= () => {
           <div className="w-12 h-12 border-4 border-t-4 border-[#02864A] border-solid rounded-full animate-spin"></div>
         </div>
       ) : (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 xl:gap-7 my-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 xl:gap-12 my-8">
           {filteredData.length > 0 ? (
             filteredData.map((project) => (
               <div key={project.id} className="overflow-hidden">
                 <img
                   src={project.image}
                   alt="project-images"
-                  className="w-[600px] h-64 lg:w-full lg:h-[425px] rounded-t-xl"
+                  className="w-[600px] h-64 lg:w-full lg:h-[400px] rounded-t-xl"
                 />
                 <div className="lg:px-9 xl:px-12 px-6 py-3 border border-b-4 rounded-b-lg font-spaceGrotesk">
                   <h3 className="text-xl font-bold mt-3">{project.title}</h3>
