@@ -56,7 +56,7 @@ const Login = () => {
     try {
       setLoading(true);
       const data = await login(email, password);
-
+    
       if (!data?.error) {
         setLoading(false);
         navigate("/contact");

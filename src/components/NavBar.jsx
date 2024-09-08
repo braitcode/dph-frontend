@@ -22,10 +22,16 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const [dropdown, setDropDown] = useState(false);
-
+  const navigate = useNavigate();
   function handleDrop() {
     !dropdown ? setDropDown(true) : setDropDown(false);
   }
+
+  const {logout} =useAuth();
+  const handleLogOut = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <div className="bg-white top-0 w-full fixed border-b z-[20] font-spaceGrotesk">
@@ -65,9 +71,9 @@ const NavBar = () => {
           {auth?.user ? (
             <div className="text-[16px] lg:hidden">
 
-              <Link to="/">
-                <span className="text-[#FF0000]">Log Out</span>
-              </Link>
+            
+                <span className="text-[#FF0000]"  onClick={handleLogOut}>Log Out</span>
+            
             </div>
           ) : (
             <div className="flex gap-2 lg:hidden">

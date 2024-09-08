@@ -128,7 +128,7 @@ console.log(fullname);
                             {emailError && <p className="text-red-500 xl:text-[14px] text-[12px]">{emailError}</p>}
                         </label>
                         <br />
-                        <label className="block relative  font-[500px] text-[18px] lg:text-[23px] pb-[20px] ">
+                        <label className="block relative  font-[500px] text-[18px] lg:text-[23px] pb-[6px] ">
                             Password
                             <input
                                 type={showPassword ? 'text' : 'password'}
