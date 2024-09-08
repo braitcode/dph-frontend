@@ -4,6 +4,7 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
 import logo from "../assets/signuplogo.svg";
+import logo2 from "../assets/icons/logo.svg";
 import { useAuth } from "../components/contexts/Auth"; // Import the context hook correctly
 
 const Login = () => {
@@ -84,7 +85,7 @@ const Login = () => {
         <div className="bg-white w-full h-screen flex">
           <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <Link to="/" className=" lg:hidden  ">
-          <img src={logo} alt="Dph Logo"  className="w-[200px] mx-auto"/>
+          <img src={logo2} alt="Dph Logo"  className=" w-[100px] mx-auto"/>
         </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
               Welcome back to Dph!
