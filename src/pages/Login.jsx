@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
-import image from '../assets/signup.png'
+// import image from "../assets/signup.png";
 import logo from "../assets/signuplogo.svg";
 import { useAuth } from "../components/contexts/Auth"; // Import the context hook correctly
 
@@ -25,7 +25,6 @@ const Login = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
 
   const validateForm = () => {
     const newErrors = {};
@@ -73,7 +72,6 @@ const Login = () => {
     }
   };
 
-
   useEffect(() => {
     document.title = "DPH || Log In";
   }, []);
@@ -81,9 +79,14 @@ const Login = () => {
   return (
     <>
       <div className="font-spaceGrotesk py-5 lg:py-0 ">
+      
+
         {/* form */}
         <div className="bg-white w-full h-screen flex">
           <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
+          <Link to="/" className=" lg:hidden  ">
+          <img src={logo} alt="Dph Logo"  className="w-[200px] mx-auto"/>
+        </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
               Welcome back to Dph!
             </h2>
@@ -98,7 +101,6 @@ const Login = () => {
                   value={email}
                   placeholder="johndoe@gmail.com"
                   onChange={handleEmailChange}
-
                   className="w-full p-3 h-[55px] text-sm lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
                 />
@@ -116,7 +118,6 @@ const Login = () => {
                   value={password}
                   placeholder="Password"
                   onChange={handlePasswordChange}
-
                   className="w-full p-2 h-[55px] rounded-[5px] border-[1px] border-[#9A9696] text-sm lg:text-[16px] text-gray-700 focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
                 />
@@ -132,30 +133,12 @@ const Login = () => {
                   </p>
                 )}
               </label>
-              <br />
-              <div className="flex justify-between mb-4 ">
-                {/* <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={rememberMe}
-                    onChange={(event) => setRememberMe(event.target.checked)}
-                    className="mr-2"
-                    style={{
-                      accentColor: "#02864A",
-                      width: "18px",
-                      height: "18px",
-                    }}
-                  />
-                  <label>Remember me</label>
-                </div> */}
-                <Link to='/forgot-password'>
 
-                <a
-                  href="#"
-                  className="text-sm text-red-500 font-semibold hover:text-red-700"
-                >
-                  Forgot password?
-                </a>
+              <div className=" mb-4 text-end">
+                <Link to="/forgot">
+                  <span className="text-sm text-red-500 font-semibold hover:text-red-700 ">
+                    Forgot password?
+                  </span>
                 </Link>
               </div>
               <button
