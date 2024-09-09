@@ -60,8 +60,11 @@ const Reset = () => {
         }
 
         try {
-            const response = await axios.post(`/auth/reset-password/${token}`, {
-                newPassword
+            const response = await axios.post(`/auth/reset-password/${token}`,
+                { newPassword }, {
+                // headers: {
+                //   Authorization: `Bearer ${token}`,  // Send Bearer token in headers
+                // }
             });
             toast.success(response.data.message);
             setTimeout(() => {
@@ -175,4 +178,5 @@ const Reset = () => {
         </>
     );
 };
+
 export default Reset;
