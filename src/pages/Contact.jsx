@@ -80,10 +80,10 @@ const handleError = () => {
         <h1 className="font-bold text-[55px]">Contact Us</h1>
         <p className="font-medium text-[24px]">Get in touch with us</p>
       </div>
-      <div className="container m-auto xl:w-11/12 xl:border-2 xl:rounded-3xl mb-[71px]">
-        <div className="flex flex-col xl:flex-row  xl:w-11/12 xl:h-[660px] lg:gap-[62px] xl:items-center m-auto">
-          <div className="relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-4/6 lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
-            <div className="relative z-10 ">
+      <div className="container m-auto xl:w-11/12 lg:w-11/12 lg:border-2 lg:rounded-3xl xl:border-2 xl:rounded-3xl mb-[71px]">
+        <div className="flex flex-col lg:flex-row  lg:w-11/12 lg:h-[660px] lg:gap-[32px] lg:items-center xl:flex-row  xl:w-11/12 xl:h-[660px] xl:gap-[62px] xl:items-center m-auto">
+          <div className=" relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-2/5 lg:h-[550px] lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
+            <div className="relative z-10">
 
             <div className="xl:w-[344px] xl:pt-[44px] xl:m-auto ">
               <h1 className="text-center pt-4 font-bold text-[28px] xl:text-start xl:pt-0">
@@ -95,28 +95,30 @@ const handleError = () => {
               </p>
             </div>
             {/* list */}
-            <div className="m-auto w-4/6 md:w-[500px]  lg:w-[500px]  xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+            <div className="m-auto w-4/6 md:w-[500px] lg:w-[320px] xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
 
-              <div className="one pb-3 flex gap-4 items-center md:justify-center xl:justify-start xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
-                <img src={PhoneIcon} alt="" />
+              <div className="one pb-3 flex gap-4 items-center md:justify-center lg:justify-start lg:pl-10 xl:justify-start xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
+                <img src={PhoneIcon} alt=""/>
                 <p>+91 98765 43210</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center lg:justify-start lg:pl-10 gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
                 <img src={Sms} alt="" />
                 <p>domain@paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
+              <div className="one pb-3 flex items-center md:justify-center 
+              lg:justify-start lg:pl-10 gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px]">
                 <img src={WebImg} alt="" />
                 <p>https://paypal.com</p>
               </div>
-              <div className="one pb-3 flex items-center md:justify-center gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px">
+              <div className="one pb-3 flex items-center md:justify-center
+              lg:justify-start lg:pl-10  gap-4 font-medium text-[20px] xl:justify-start xl:pb-0 xl:gap-[25px">
                 <img src={MiniLoc} alt="" />
                 <p className="xl:w-[211px]">
                   444 St. Yellow Street California, Usa
                 </p>
               </div>
             </div>
-            <div className="w-2/3 justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[300px] xl:pt-6 lg:justify-center xl:justify-start xl:w-[344px] ">
+            <div className="w-2/3 justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[240px] lg:justify-start xl:pt-6 xl:m-auto xl:w-[265px] xl:justify-start">
 
               <img src={TwitIcon} alt="" />
               <img src={YoutubeIcon} alt="" />
@@ -125,17 +127,17 @@ const handleError = () => {
             </div>
             </div>
               {/* circle pattern */}
-        <div className="absolute z-0 lg:top-[27rem] lg:left-[12rem] xl:top-[28rem] xl:left-[20rem]  top-[10rem] left-[10rem] md:left-[29rem] ">
-          <div className="p-10 rounded-full h-[452px] w-[452px] border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
+        <div className="absolute z-0 lg:top-[22rem] lg:left-[10rem] xl:top-[25rem] xl:left-[18rem]  top-[16rem] left-[13rem] md:top-[12rem] md:left-[27rem] ">
+          <div className="p-10 rounded-full h-[352px] w-[352px] lg:h-[452px] lg:w-[452px] border-[4rem]  lg:border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
         </div>
           </div>
           {/*FORM */}
           <div>
       {/* Your form UI */}
-      <div className="bg-white xl:w-[700px] xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl">
+      <div className="bg-white xl:w-[700px] lg:w-full xl:mt-10 xl:h-[576px] w-full h-auto xl:rounded-xl">
         <form
           onSubmit={handleFormSubmit(onSubmit)}
-          className="w-10/12 m-auto flex flex-col gap-6 xl:w-full xl:m-0"
+          className="w-10/12 m-auto flex flex-col gap-6 xl:w-full lg:w-full xl:m-0"
         >
           <div className="flex flex-col sm:flex-row justify-between gap-4">
             <div className="w-full sm:w-[48%] flex flex-col gap-2">
@@ -231,7 +233,7 @@ const handleError = () => {
                 </select>
                 <input
                   type="tel"
-                  placeholder="Enter your phone number"
+                  placeholder="Enter your phone no"
                   {...register("phone", {
                     required: "Phone number is required",
                   })}
