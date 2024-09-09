@@ -24,7 +24,7 @@ const Contact = () => {
 const handleSuccess = () => {
   setModalType('success'); 
   setModalTitle('Message sent');
-  setModalMessage('Kindly check your email for confirmation!');
+  // setModalMessage('Kindly check your email for confirmation!');
   setIsModalOpen(true);
   reset(); // Clear the form fields
 };
@@ -64,9 +64,11 @@ const handleError = () => {
         body: JSON.stringify([[data.firstName, data.lastName, data.email, data.phone, data.message, new Date().toLocaleString()]]),
       });
       await response.json();
+      handleSuccess()
       reset();
     } catch (err) {
       console.log(err);
+      handleError()
     }
   };
     
