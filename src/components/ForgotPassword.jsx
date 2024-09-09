@@ -94,7 +94,9 @@ const ForgotPassword = () => {
                 {isSubmitting ? 'Sending...' : 'Send Reset Link'}
               </button>
             </form>
+            <Link to="/login">
             <p className='flex items-center gap-2 justify-center'><GoArrowLeft />Go Back</p>
+            </Link>
           </div>
           <div className='hidden lg:block' style={{ backgroundImage: `url('${image}')`, height: '100vh', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
             <Link to='/' className="absolute right-[5.875rem] top-[2.8rem] lg:right-[3rem] lg:top-[2.5rem] xl:right-[3rem] xl:top-[2.8rem]">
