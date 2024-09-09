@@ -9,6 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Footer from "../components/Footer";
 import Testimonial from "../components/Testimonial";
 import { Link } from "react-router-dom";
+import SubFooter from "../components/SubFooter";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -107,7 +108,7 @@ const Portfolio = () => {
             <div className="w-12 h-12 border-4 border-t-4 border-[#02864A] border-solid rounded-full animate-spin"></div>
           </div>
         ) : (
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 xl:gap-7 my-8">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 xl:gap-12 my-8">
             {currentData.length > 0 ? (
               currentData.map((project) => (
                 <div key={project.id} className="overflow-hidden">
@@ -169,6 +170,7 @@ const Portfolio = () => {
         </div>
       </main>
       <Testimonial/>
+      <SubFooter/>
       <Footer/>
     </>
   );

@@ -2,20 +2,17 @@ import React, { useState, useEffect } from 'react';
 import signupimg from '../assets/signup.png'
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import google from '../assets/google.svg'
-import signuplog from "../assets/signuplogo.svg";
-// import Button from "../components/Button";
-// import orline from '../assets/orline.svg';
-import { Link } from "react-router-dom";
+import logo from "../assets/signuplogo.svg";
 import { useAuth } from '../components/contexts/Auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 
 
 const SignUp = () => {
-    const [fullname, setFullName] = useState('Peace B');
+    const [fullname, setFullName] = useState('');
     const [fullNameError, setFullNameError] = useState(null);
-    const [email, setEmail] = useState('peace@email.com');
+    const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(null);
-    const [password, setPassword] = useState('password');
+    const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState(null);
     const [Agree, setAgree] = useState('');
     const [AgreeError, setAgreeError] = useState(null);
@@ -68,7 +65,7 @@ const SignUp = () => {
 
             if(!data?.error){
                 setLoading(false);
-                navigate("/");
+                navigate("/login");
             }else{
                 setErrors({ form: "Registration failed"});
                 setLoading(false);
@@ -87,9 +84,13 @@ console.log(fullname);
     return (
         <>
 
-            <div className=" font-spaceGrotesk lg:grid grid-cols-2">
+<div className="font-spaceGrotesk py-5 lg:py-0  max-h-fit">
                 {/* form  */}
-                <div className=' flex flex-col  w-11/12 m-auto container lg:py-[85px] lg:pl-[90px] lg:pr-[32px] py-[50px]'>
+                <div className="bg-white w-full h-full flex">
+                <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
+                <Link to="/" className=" lg:hidden  ">
+          <img src={logo} alt="Dph Logo"  className=" w-[200px] mx-auto"/>
+        </Link>
                     <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] pb-[8px] ">Get Started</h2>
                     <p className='lg:text-[18px]  lg:pb-[26px] pb-[18px] text-center lg:text-start text-[16px] '>
                         Join us now by filling your details below
@@ -178,7 +179,7 @@ console.log(fullname);
                             className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
                             disabled={loading}
                         >
-                            {loading ? 'Signing up...' : 'Sign Up'}
+                            {loading ? 'Please wait...' : 'Sign Up'}
                         </button>
 
                         <br />
@@ -204,13 +205,19 @@ console.log(fullname);
                 </div>
                  
              
-        
-
-                <div className='h-full hidden lg:block rounded-tl-lg relative' >
-                    <img src={signupimg} alt="" className='w-full h-full rounded-tl-[12px] rounded-bl-[12px]' />
-                    <img src={signuplog} alt="" className='absolute top-[20px] right-[30px]' />
-                </div>
-               
+    
+                <div
+            className="hidden lg:flex lg:w-1/2 xl:h-[100vh]  bg-cover relative"
+            style={{ backgroundImage: `url(${signupimg})` }}
+          >
+            <Link
+              to="/"
+              className="absolute right-[5.9rem] top-[2.5rem] xl:right-[3rem] xl:top-[2.8rem]"
+            >
+              <img src={logo} alt="Dph Logo" />
+            </Link>
+          </div>
+          </div>
             </div>
 
         </>

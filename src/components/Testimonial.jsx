@@ -48,7 +48,7 @@ const Testimonial = () => {
     <>
       <main className="bg-[#F2F2F2] py-7">
         <section className="w-11/12 mx-auto container">
-          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk">
+          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk mt-5">
             Testimonials
           </h1>
           {/* Testimony box */}
