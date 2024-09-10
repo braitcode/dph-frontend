@@ -95,7 +95,6 @@ const Hero = () => {
               </div>
             </div>
             <LazyLoad>
-
               <img src={drive} alt="" className="w-full" />
             </LazyLoad>
           </div>
@@ -125,19 +124,15 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        <div className=" bg-black">
-          <div className="flex justify-between text-white   py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px]  container w-11/12 m-auto  ">
-            <span>Branding</span> <LazyLoad> <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" /></LazyLoad>
-            <span>Web Development</span>{" "}
-            <LazyLoad>
-
-              <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" />
-            </LazyLoad>
-            <span>Consultation</span><LazyLoad> <img src={dot} alt="" className="w-[5px] pt-3 xl:pt-5" /></LazyLoad>
-            <span>Mobile Development</span>
+          <div className=" bg-black">
+            <div className="flex justify-between text-white   py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px]  container w-11/12 m-auto  ">
+              <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
+              <span>Web Development</span>{" "}
+              <img src={dot} alt="" className="w-[5px]" />
+              <span>Consultation</span> <img src={dot} alt="" className="w-[5px]" />
+              <span>Mobile Development</span>
+            </div>
           </div>
-        </div>
       </div>
     </>
   );
