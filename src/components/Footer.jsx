@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logodph from "../assets/icons/logodph.png"
 import twitter from "../assets/icons/twitter.png"
 import youtube from "../assets/icons/youtube.png"
@@ -10,8 +10,47 @@ import email from "../assets/icons/sms outline.png"
 import phone from "../assets/icons/phone icon.png";
 import sms from "../assets/icons/sms.png";
 import location from "../assets/icons/location.png";
+import axios from 'axios'
+
 
 const Footer = () => {
+  // State to store the email input and feedback messages
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+
+  // Handle the form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form behavior
+
+    // Reset feedback messages
+    setMessage('');
+    setError('');
+
+    // Check if the email is empty
+    if (!email) {
+      setError('Please enter a valid email');
+      return;
+    }
+
+    try {
+      // Send the email to the backend API for newsletter subscription using Axios
+      const response = await axios.post('/newsletter/subscribe', {
+        email, // Send email data
+        fullname: 'User' // Optionally, send fullname or other data
+      });
+
+      if (response.status === 200) {
+        setMessage('Subscription successful! Please check your email for confirmation.');
+        setEmail(''); // Reset email input after success
+      } else {
+        setError(response.data.message || 'Subscription failed. Please try again.');
+      }
+    } catch (err) {
+      // Handle any errors
+      setError('An error occurred. Please try again.');
+    }
+  };
   return (
     <div className="bg-black w-full xl:h-[353px] xl:pt-[3rem]">
 
@@ -68,12 +107,16 @@ const Footer = () => {
           <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Privacy</p>
         </div>
 
+        {/* Newsletter Signup */}
         <div className="flex flex-col md:col-span-2 gap-[20px]">
           <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
+          <form onSubmit={handleSubmit} className='md:w-full w-[90%] relative'>
             <div className='md:w-full w-[90%] relative'>
               <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} // Bind input to state
                 class="border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full md:w-full w-[80%] pr-16"
               />
               <button
@@ -83,6 +126,9 @@ const Footer = () => {
                 Submit
               </button>
             </div>
+            </form>
+            {message && <p style={{ color: 'green' }}>{message}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className="flex xl:justify-between justify-evenly md:justify-between">
             <img src={twitter} alt="" />
             <img src={youtube} alt="" />
