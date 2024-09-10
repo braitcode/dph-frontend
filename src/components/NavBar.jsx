@@ -7,6 +7,7 @@ import Button from "./Button";
 import { useAuth } from "../components/contexts/Auth";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import Dropdown from "./Dropdown";
+import user from '../assets/icons/user.svg'
 
 const NavBar = () => {
   const NavLinks = [
@@ -56,7 +57,7 @@ const NavBar = () => {
           {/* Logo */}
           <div className="logo  lg:px-0 flex-grow lg:flex-grow-0">
             <Link to="/">
-              <img src={logo} alt="Logo" className="h-6 md:h-8" />
+              <img src={logo} alt="Logo" className="h-6 md:h-8 lg:h-[61px]" />
             </Link>
           </div>
         </div>
@@ -121,9 +122,12 @@ const NavBar = () => {
 
         {/* Large Screens - Auth section */}
         {auth?.user ? (
-          <div className="lg:flex gap-2 lg:pt-2 xl:text-[18px] hidden">
-            <span className="">{auth.user.fullname}</span>
-            <span className="text-2xl " role="button" onClick={handleDrop}>
+          <div className="lg:flex gap-2  xl:text-[18px] hidden h-[61px] mt-2">
+             <div className=" bg-white border-2 border-[#028A4C] rounded-full  w-[50px] h-[50px] ">
+             <img src={user} alt=""  className="p-3"/>
+            </div>
+            <span className="pt-3">{auth.user.fullname}</span>
+            <span className="text-2xl  pt-3" role="button" onClick={handleDrop}>
               {dropdown ? (
                 <GoChevronUp className="text-black hidden lg:block mt-[2px]" />
               ) : (
@@ -147,7 +151,7 @@ const NavBar = () => {
         )}
 
         {/* Dropdown for large screens */}
-        <div className="absolute right-0 top-[4rem] hidden lg:block">
+        <div className="absolute right-0 top-[5rem] hidden lg:block">
           {dropdown && <Dropdown />}
         </div>
       </nav>

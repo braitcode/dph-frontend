@@ -79,7 +79,7 @@ const Login = () => {
   return (
     <>
       <div className="font-spaceGrotesk py-5 lg:py-0 ">
-      
+
 
         {/* form */}
         <div className="bg-white w-full h-screen flex">
