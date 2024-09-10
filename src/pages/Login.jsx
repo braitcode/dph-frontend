@@ -59,7 +59,7 @@ const Login = () => {
 
       if (!data?.error) {
         setLoading(false);
-        navigate("/contact");
+        navigate("/");
       } else {
         setErrors({ form: "Login failed" });
         setLoading(false);
