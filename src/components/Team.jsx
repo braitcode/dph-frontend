@@ -26,7 +26,7 @@ const Team = () => {
                                 <p className='xl:text-[20px] text-[#5A5A5A]'>
                                     {skill}
                                 </p>
-                                <div className='flex gap-[10px] mt-5 cursor-pointer'>
+                                <div className='flex gap-[10px] mt-5'>
                                     <div className='bg-gray-200 w-[42.15px] rounded-3xl p-[0.6rem]'>
                                         <RiFacebookCircleFill className='' size={24} />
                                     </div>

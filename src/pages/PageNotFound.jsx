@@ -8,15 +8,15 @@ const PageNotfound = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <div className="h-[100vh] w-full flex justify-center items-center">
+      <div className=" h-[100vh] w-full flex justify-center items-center">
 
-        <div className="flex flex-col gap-[40px]">
+        <div className="w-11/12 flex flex-col gap-[40px]">
           <img src={errorPage} alt="" />
           <div className="flex flex-col gap-[40px]">
-            <h1 className='flex justify-center font-spaceGrotesk text-[55px] font-bold'>Page Not Found</h1>
+            <h1 className='text-[30px] flex justify-center font-spaceGrotesk lg:text-[55px] font-bold'>Page Not Found</h1>
             <div className="flex justify-center">
 
-            <p className='font-spaceGrotesk text-[32px] text-center w-[698px]'>We can't find the page that you are looking for... !</p>
+            <p className='text-[18px] font-spaceGrotesk lg:text-[32px] text-center w-[698px]'>We can't find the page that you are looking for... !</p>
             </div>
             <Link to="/">
             

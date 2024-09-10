@@ -60,7 +60,7 @@ const Reset = () => {
         }
 
         try {
-            const response = await axios.post(`/auth/reset-password/${token}`, 
+            const response = await axios.post(`/auth/reset-password/${token}`,
                 { newPassword }, {
                 // headers: {
                 //   Authorization: `Bearer ${token}`,  // Send Bearer token in headers
@@ -68,13 +68,13 @@ const Reset = () => {
             });
             toast.success(response.data.message);
             setTimeout(() => {
-              navigate("/login");
+                navigate("/login");
             }, 2000);
-          } catch (error) {
+        } catch (error) {
             console.error("Error resetting password:", error);
             const errorMessage = error?.response?.data?.message || error.message || "An unknown error occurred";
             toast.error(`Failed to reset password: ${errorMessage}`);
-          }
+        }
     };
 
     useEffect(() => {
