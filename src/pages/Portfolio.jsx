@@ -53,7 +53,7 @@ const Portfolio = () => {
       <NavBar/>
       <main className="w-11/12 mx-auto container font-spaceGrotesk">
 
-        <section className="lg:flex justify-between items-center my-[45px] py-[42px]">
+        <section className="lg:flex justify-between items-center my-[45px] mt-[80px] py-[42px]">
           <div className="lg:w-[582px]">
             <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold leading-tight lg:text-start text-center">Explore Our Impressive Portfolio </h1>
             <p className="text-lg lg:mr-[96px] xl:text-[24px] text-[12px] md:text-[18px] font-medium text-pretty my-3 text-[#575253] lg:text-start text-center">In the past, we have worked on dozens of developments and cutting-edge Web & Digital projects</p>
