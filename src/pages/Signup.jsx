@@ -8,6 +8,12 @@ import { useNavigate, Link } from "react-router-dom";
 import logo2 from "../assets/icons/logo.svg";
 
 const SignUp = () => {
+
+  const customScrollbarStyle = {
+    scrollbarWidth: 'none', 
+    msOverflowStyle: 'none', 
+  };
+
   const [fullname, setFullName] = useState("");
   const [fullNameError, setFullNameError] = useState(null);
   const [email, setEmail] = useState("");
@@ -20,7 +26,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   useEffect(() => {
-    document.title = " DPH || Sign Up ";
+    document.title = " Digital Presence Hub-Sign Up ";
   });
 
   const { signup } = useAuth();
@@ -77,26 +83,31 @@ const SignUp = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://dph-backend.onrender.com/api/auth/google"; // Replace with your backend URL
+    window.location.href = "https://dph-backend.onrender.com/api/auth/google"; 
   };
   console.log(fullname);
 
   return (
     <>
-      <div className="font-spaceGrotesk py-5 lg:py-0  max-h-fit">
-        {/* form  */}
-        <div className="bg-white w-full h-full flex">
-          <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
+      <main className="bg-white h-screen w-full lg:flex font-spaceGrotesk">
+  {/* left section */}     
+     <section className="lg:w-1/2 p-4 lg:p-12 flex flex-col justify-center items-center h-full overflow-y-auto">
+     <div className="overflow-y-auto container mx-auto mt-5 lg:mt-5" style={{
+            ...customScrollbarStyle,
+            WebkitOverflowScrolling: 'touch', 
+          }}>
             <Link to="/" className=" lg:hidden  ">
-              <img src={logo2} alt="Dph Logo" className=" w-[100px] mx-auto" />
+              <img src={logo2} alt="Dph Logo" className=" w-[100px]  lg:my-[20px]  lg:hidden mx-auto" />
             </Link>
-            <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] pb-[8px] ">
+            <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] lg:pb-[0px] ">
               Get Started
             </h2>
-            <p className="lg:text-[18px]  lg:pb-[26px] pb-[18px] text-center lg:text-start text-[16px] ">
+            <p className="lg:text-[18px]  lg:pb-[20px] pb-[18px] text-center lg:text-start text-[16px] ">
               Join us now by filling your details below
             </p>
-            <form onSubmit={handleSubmit}>
+
+           {/* form starts here */}
+            <form onSubmit={handleSubmit}  className="space-y-5 mt-6  px-1">
               <label className="block font-[500px] text-[18px] lg:text-[23px] ">
                 Full Name
                 <input
@@ -137,7 +148,7 @@ const SignUp = () => {
                 )}
               </label>
               <br />
-              <label className="block relative  font-[500px] text-[18px] lg:text-[23px] pb-[20px] ">
+              <label className="block relative font-[500px] text-[18px] lg:text-[23px] pb-0">
                 Password
                 <input
                   type={showPassword ? "text" : "password"}
@@ -163,7 +174,7 @@ const SignUp = () => {
                 )}
               </label>
 
-              <div className="flex items-center pb-[24px] xl:text-[16px]">
+              <div className="flex  pb-[24px] xl:text-[16px]">
                 <input
                   type="checkbox"
                   checked={Agree}
@@ -229,21 +240,22 @@ const SignUp = () => {
             </h3>
           </div>
 
-          <div
-            className="hidden lg:flex lg:w-1/2 xl:h-[100vh]  bg-cover relative"
-            style={{ backgroundImage: `url(${signupimg})` }}
-          >
-            <Link
-              to="/"
-              className="absolute right-[5.9rem] top-[2.5rem] xl:right-[3rem] xl:top-[2.8rem]"
-            >
-              <img src={logo} alt="Dph Logo" />
-            </Link>
-          </div>
-        </div>
-      </div>
+        </section>
+{/* right section */}
+        <section className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage:` url(${signupimg})` }}>
+    <Link to='/' className="absolute right-[2rem] top-[2.5rem] ">
+       <img src={logo} alt="" />
+      </Link>
+   </section>
+      </main>
     </>
   );
 };
 
 export default SignUp;
+
+
+
+
+
+

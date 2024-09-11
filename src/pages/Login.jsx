@@ -5,13 +5,12 @@ import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
 import logo from "../assets/signuplogo.svg";
 import logo2 from "../assets/icons/logo.svg";
-import { useAuth } from "../components/contexts/Auth"; // Import the context hook correctly
+import { useAuth } from "../components/contexts/Auth"; //context hook 
 
 const Login = () => {
   const { login } = useAuth(); // Destructure the login function from context
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -57,7 +56,7 @@ const Login = () => {
     try {
       setLoading(true);
       const data = await login(email, password);
-    
+
       if (!data?.error) {
         setLoading(false);
         navigate("/");
@@ -73,20 +72,22 @@ const Login = () => {
   };
 
   useEffect(() => {
-    document.title = "DPH || Log In";
+    document.title = "Digital Presence Hub-Log In";
   }, []);
 
   return (
     <>
-      <div className="font-spaceGrotesk py-5 lg:py-0 ">
-
-
-        {/* form */}
+      <main className="font-spaceGrotesk py-5 lg:py-0 ">
         <div className="bg-white w-full h-screen flex">
-          <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-          <Link to="/" className=" lg:hidden  ">
-          <img src={logo2} alt="Dph Logo"  className=" w-[100px] mx-auto"/>
-        </Link>
+          {/* left section */}
+          <section className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
+            <Link to="/" className=" lg:hidden  ">
+              <img
+                src={logo2}
+                alt="Dph Logo"
+                className=" w-[100px] mx-auto pb-[8px]"
+              />
+            </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
               Welcome back to Dph!
             </h2>
@@ -167,11 +168,11 @@ const Login = () => {
                 <Link to="/signup">Sign Up</Link>
               </span>
             </h3>
-          </div>
-
-          <div
+          </section>
+          {/* right section */}
+          <section
             className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative"
-            style={{ backgroundImage: `url(${signinimg})` }}
+            style={{ backgroundImage: `url(${signinimg}) ` }}
           >
             <Link
               to="/"
@@ -179,9 +180,9 @@ const Login = () => {
             >
               <img src={logo} alt="Dph Logo" />
             </Link>
-          </div>
+          </section>
         </div>
-      </div>
+      </main>
     </>
   );
 };
