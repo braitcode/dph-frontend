@@ -87,7 +87,7 @@ const NavBar = () => {
         {/* Login or User Initials */}
         <div className="absolute top-4 right-4 md:right-8 lg:hidden">
           {auth?.user ? (
-            <div className="flex items-center text-[12px] md:text-[18px] bg-[#028A4C] text-white p-2 rounded-full">
+            <div className="flex items-center text-[14px] md:text-[18px] bg-[#028A4C] text-white p-[6px] md:p-2 rounded-full h-[30px] w-[30px] md:h-[40px] md:w-[40px]">
               {getUserInitials(auth.user.fullname)}
             </div>
           ) : (
