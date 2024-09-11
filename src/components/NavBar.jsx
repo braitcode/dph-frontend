@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SlMenu } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
@@ -18,9 +18,9 @@ const NavBar = () => {
   ];
 
   const { auth, logout } = useAuth();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // Hamburger menu state
+  const [dropdown, setDropDown] = useState(false); // Dropdown state
   const location = useLocation();
-  const [dropdown, setDropDown] = useState(false);
   const navigate = useNavigate();
 
   function handleDrop() {
@@ -32,11 +32,30 @@ const NavBar = () => {
     navigate("/");
   };
 
-  // Helper to get user's initials
+  //  get user's initials
   const getUserInitials = (fullname) => {
     const names = fullname.split(" ");
     return names.map((name) => name[0]).join("");
   };
+
+  // Close the dropdown and hamburger when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Close dropdown and hamburger if they're open
+      if (open || dropdown) {
+        setDropDown(false);
+        setOpen(false);
+      }
+    };
+
+    // Add click event listener
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      // Cleanup event listener
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [open, dropdown]);
 
   return (
     <div className="bg-white top-0 w-full fixed border-b z-[20] font-spaceGrotesk">
@@ -44,8 +63,11 @@ const NavBar = () => {
         <div className="flex mx-4 lg:mx-0 md:mx-8 gap-2">
           {/* Mobile Hamburger Menu */}
           <div
-            onClick={() => setOpen(!open)}
-            className="md:text-4xl text-2xl cursor-pointer lg:hidden  z-10"
+            onClick={(e) => {
+              e.stopPropagation(); 
+              setOpen(!open);
+            }}
+            className="md:text-4xl text-2xl cursor-pointer lg:hidden z-10"
           >
             {open ? (
               <IoClose className="text-[#028A4C]" />
@@ -55,7 +77,7 @@ const NavBar = () => {
           </div>
 
           {/* Logo */}
-          <div className="logo  lg:px-0 flex-grow lg:flex-grow-0">
+          <div className="logo lg:px-0 flex-grow lg:flex-grow-0">
             <Link to="/">
               <img src={logo} alt="Logo" className="h-6 md:h-8 lg:h-[61px]" />
             </Link>
@@ -63,13 +85,13 @@ const NavBar = () => {
         </div>
 
         {/* Login or User Initials */}
-        <div className="absolute top-4 right-4 md:right-8 lg:hidden ">
+        <div className="absolute top-4 right-4 md:right-8 lg:hidden">
           {auth?.user ? (
-            <div className="flex items-center text-[12px] md:text-[18px]  bg-[#028A4C] text-white p-2 rounded-full ">
+            <div className="flex items-center text-[12px] md:text-[18px] bg-[#028A4C] text-white p-2 rounded-full">
               {getUserInitials(auth.user.fullname)}
             </div>
           ) : (
-            <div className="flex gap-2 border-[#028A4C] md:border-2  border p-1 md:p-2  rounded-md">
+            <div className="flex gap-2 border-[#028A4C] md:border-2 border p-1 md:p-2 rounded-md">
               <Link to="/login">
                 <button className="text-[16px] w-[70px] font-semibold">
                   Log In
@@ -103,9 +125,9 @@ const NavBar = () => {
 
           {/* Logout on small screens */}
           {auth?.user ? (
-            <div className="text-[16px] lg:hidden flex flex-col  ">
+            <div className="text-[16px] lg:hidden flex flex-col">
               <span className="mb-4 font-[600px]"> Dashboard</span>
-              <span className="text-[#FF0000] " onClick={handleLogOut}>
+              <span className="text-[#FF0000]" onClick={handleLogOut}>
                 Log Out
               </span>
             </div>
@@ -122,12 +144,22 @@ const NavBar = () => {
 
         {/* Large Screens - Auth section */}
         {auth?.user ? (
-          <div className="lg:flex gap-2  xl:text-[18px] hidden h-[61px] mt-2">
-             <div className=" bg-white border-2 border-[#028A4C] rounded-full  w-[50px] h-[50px] ">
-             <img src={user} alt=""  className="p-3"/>
+          <div className="lg:flex gap-2 xl:text-[18px] hidden h-[61px] mt-2">
+            <div
+              className="bg-white border-2 border-[#028A4C] rounded-full w-[50px] h-[50px]"
+              onClick={(e) => e.stopPropagation()} 
+            >
+              <img src={user} alt="User Icon" className="p-3" />
             </div>
             <span className="pt-3">{auth.user.fullname}</span>
-            <span className="text-2xl  pt-3" role="button" onClick={handleDrop}>
+            <span
+              className="text-2xl pt-3"
+              role="button"
+              onClick={(e) => {
+                e.stopPropagation(); 
+                handleDrop();
+              }}
+            >
               {dropdown ? (
                 <GoChevronUp className="text-black hidden lg:block mt-[2px]" />
               ) : (
@@ -151,9 +183,11 @@ const NavBar = () => {
         )}
 
         {/* Dropdown for large screens */}
-        <div className="absolute right-0 top-[5rem] hidden lg:block">
-          {dropdown && <Dropdown />}
-        </div>
+        {dropdown && (
+          <div className="absolute right-0 top-[5rem] hidden lg:block">
+            <Dropdown />
+          </div>
+        )}
       </nav>
     </div>
   );
