@@ -143,7 +143,7 @@ const Footer = () => {
           <div className="flex flex-col md:col-span-2 gap-[20px]">
             <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
             <form onSubmit={handleSubmit} className='md:w-full w-[90%] relative'>
-              <div className='md:w-full w-[90%] relative'>
+              <div className='md:w-full w-[100%] relative'>
                 <input
                   type="email"
                   placeholder="Email"
