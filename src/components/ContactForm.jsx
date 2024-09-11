@@ -39,24 +39,32 @@ const handleError = () => {
 
 
  
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset, // reset function to clear the form
-    } = useForm();
+    //  validation
+  const {
+    register,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-    const onSubmit = (data) => {
-        const fullPhoneNumber = `${data.countryCode}${data.phone}`;
-        console.log('Form Data:', { ...data, fullPhoneNumber });
-        try {
-            // If the submission is successful
-         handleSuccess(); // Show success modal
-         } catch (error) {
-           // If there's an error during submission
-         handleError(); // Show error modal
-         }
-    };
+  const onSubmit = async (data) => {
+    console.log("Form submitted with data: ", data);
+    try {
+      const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([[data.firstName, data.lastName, data.email, data.phone, data.message, new Date().toLocaleString()]]),
+      });
+      await response.json();
+      handleSuccess()
+      reset();
+    } catch (err) {
+      console.log(err);
+      handleError()
+    }
+  };
 
     return (
         <div className="bg-[#034D2B]">
@@ -91,7 +99,7 @@ const handleError = () => {
                     </div>
 
                     <div className="bg-white xl:w-[50%] w-full h-auto rounded-xl p-6">
-                        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+                        <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col gap-6">
                             <div className="flex flex-col sm:flex-row justify-between gap-4">
                                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                                     <label className="text-[18px] font-bold font-spaceGrotesk">First Name</label>
