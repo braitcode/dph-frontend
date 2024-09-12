@@ -2,6 +2,7 @@ import React from 'react'
 import image from '../assets/login.png'
 import logo from '../assets/signuplogo.svg'
 import { Link } from 'react-router-dom';
+import logo2 from "../assets/icons/logo.svg";
 
 
 
@@ -16,7 +17,10 @@ const CheckEmail = () => {
     <main className='w-full max-h-fit font-spaceGrotesk '>
         <section className='grid lg:grid-cols-2 py-[50px] lg:py-0'>
             <div className='flex flex-col justify-center p-10 space-y-7'>
-                <div className='text-center lg:text-start space-y-3 lg:w-[70%]'>
+                <Link to="/" className=" lg:hidden">
+                    <img src={logo2} alt="Dph Logo" className=" w-[100px] mx-auto" />
+                </Link>
+                <div className='text-center lg:text-start lg:space-y-3 lg:w-[70%]'>
                     <h1 className='text-2xl font-bold'>Check your Email</h1>
                     <p>We have sent a password recovery instructions to your email.</p>
                 </div>
