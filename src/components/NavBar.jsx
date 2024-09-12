@@ -64,7 +64,7 @@ const NavBar = () => {
           {/* Mobile Hamburger Menu */}
           <div
             onClick={(e) => {
-              e.stopPropagation(); 
+              e.stopPropagation();
               setOpen(!open);
             }}
             className="md:text-4xl text-2xl cursor-pointer lg:hidden z-10"
@@ -87,7 +87,7 @@ const NavBar = () => {
         {/* Login or User Initials */}
         <div className="absolute top-4 right-4 md:right-8 lg:hidden">
           {auth?.user ? (
-            <div className="flex items-center text-[14px] md:text-[18px] bg-[#028A4C] text-white p-[6px] md:p-2 rounded-full h-[30px] w-[30px] md:h-[40px] md:w-[40px]">
+            <div className="flex items-center text-[14px] md:text-[18px] bg-[#028A4C] font-bold text-white p-[0.65rem] md:p-[0.9rem] rounded-full h-[30px] w-[30px] md:h-[40px] md:w-[40px]">
               {getUserInitials(auth.user.fullname)}
             </div>
           ) : (
@@ -103,20 +103,18 @@ const NavBar = () => {
 
         {/* NavLinks */}
         <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${
-            open ? "top-full opacity-100" : "top-[90%] opacity-0"
-          } lg:opacity-100`}
+          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "top-[90%] opacity-0"
+            } lg:opacity-100`}
         >
           {NavLinks.map((link) => (
             <li key={link.name} className="lg:ml-8 text-xl lg:my-0 my-4">
               <Link
                 to={link.link}
                 onClick={() => setOpen(false)}
-                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${
-                  location.pathname === link.link
-                    ? "text-[#028A4C]"
-                    : "text-[#171717]"
-                } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
+                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${location.pathname === link.link
+                  ? "text-[#028A4C]"
+                  : "text-[#171717]"
+                  } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
               >
                 {link.name}
               </Link>
@@ -147,7 +145,7 @@ const NavBar = () => {
           <div className="lg:flex gap-2 xl:text-[18px] hidden h-[61px] mt-2">
             <div
               className="bg-white border-2 border-[#028A4C] rounded-full w-[50px] h-[50px]"
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
             >
               <img src={user} alt="User Icon" className="p-3" />
             </div>
@@ -156,7 +154,7 @@ const NavBar = () => {
               className="text-2xl pt-3"
               role="button"
               onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 handleDrop();
               }}
             >
