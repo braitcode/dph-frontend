@@ -92,7 +92,7 @@ const SignUp = () => {
       <main className="bg-white h-screen w-full lg:flex font-spaceGrotesk">
   {/* left section */}     
      <section className="lg:w-1/2 p-4 flex flex-col justify-center items-center h-full ">
-     <div className="overflow-y-auto container mx-auto lg:p-12 " style={{
+     <div className="overflow-y-auto container mx-auto lg:py-12 lg:px-16 " style={{
             ...customScrollbarStyle,
             WebkitOverflowScrolling: 'touch', 
           }}>
@@ -107,7 +107,7 @@ const SignUp = () => {
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
             Get Started
             </h2>
-            <p className="lg:text-[18px] pb-1 text-center lg:text-start text-[16px]">
+            <p className="lg:text-[18px]  text-center lg:text-start text-[16px]">
             Join us now by filling your details below
             </p>
 
