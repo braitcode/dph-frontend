@@ -85,7 +85,7 @@ const Login = () => {
               <img
                 src={logo2}
                 alt="Dph Logo"
-                className=" w-[100px] mx-auto pb-[8px]"
+                className=" w-[100px] mx-auto pb-[8px] "
               />
             </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
@@ -95,7 +95,7 @@ const Login = () => {
               Welcome back! Please enter your details
             </p>
             <form onSubmit={handleSubmit}>
-              <label className="block font-[500px] text-[16px] lg:text-[18pxpx]">
+              <label className="block font-[500px] text-[18px] lg:text-[23px]">
                 Email
                 <input
                   type="email"
@@ -112,7 +112,7 @@ const Login = () => {
                 )}
               </label>
               <br />
-              <label className="block relative font-[500px] text-[16px] lg:text-[18px]">
+              <label className="block relative font-[500px] text-[18px] lg:text-[23px]">
                 Password
                 <input
                   type={showPassword ? "text" : "password"}
@@ -149,8 +149,9 @@ const Login = () => {
               >
                 {loading ? "Please wait..." : "Login"}
               </button>
-
-              <div className="flex items-center my-3 px-[2rem]">
+            </form>
+            {/* google */}
+            <div className="flex items-center my-3 px-[2rem]">
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />
                 <span className="px-4 font-bold">Or</span>
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />
@@ -161,7 +162,7 @@ const Login = () => {
                   Continue With Google
                 </button>
               </a>
-            </form>
+              {/* new user prompt */}
             <h3 className="font-[500px] text-[16px] text-center mt-5">
               New User?{" "}
               <span className="text-[#028A4C]">
