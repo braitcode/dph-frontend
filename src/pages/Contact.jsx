@@ -127,7 +127,7 @@ const handleError = () => {
             </div>
             </div>
               {/* circle pattern */}
-        <div className="absolute z-0 lg:top-[22rem] lg:left-[10rem] xl:top-[25rem] xl:left-[18rem]  top-[16rem] left-[13rem] md:top-[12rem] md:left-[27rem] ">
+        <div className="absolute z-0 lg:top-[22rem] lg:left-[9rem] xl:top-[25rem] xl:left-[12rem]  top-[16rem] left-[13rem] md:top-[12rem] md:left-[27rem] ">
           <div className="p-10 rounded-full h-[352px] w-[352px] lg:h-[452px] lg:w-[452px] border-[4rem]  lg:border-[6rem] border-[#034527] bg-[#033e23] flex justify-center"></div>
         </div>
           </div>

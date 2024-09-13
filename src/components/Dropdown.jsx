@@ -1,19 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {useAuth} from "../components/contexts/Auth"
 // import logout from '../assets/logout.svg'
 // import dashboard from '../assets/dashboard.svg'
 import { MdSpaceDashboard } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
+import LogoutModal from "./LogoutModal";
 
 
 const Dropdown = () => {
-  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const {logout} =useAuth();
   const handleLogOut = () => {
     logout();
-    navigate("/");
+    setIsModalOpen(true); // Open the modal instead of logging out directly
   };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
   return (
     <>
       <section className="bg-white rounded-md border  shadow-lg  font-spaceGrotesk ">
@@ -40,7 +46,9 @@ const Dropdown = () => {
           </div>
           </Link>
         </div>
-        
+        {isModalOpen && (
+        <LogoutModal onClose={handleCloseModal} />
+      )}
       </section>
     </>
   );

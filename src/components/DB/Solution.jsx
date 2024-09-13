@@ -14,9 +14,9 @@ const solution = [
     {
         _id: 2,
         image: img2,
-        title: "Product Design",
+        title: "Consultation",
         description:
-            "Our designs combines of stunning visuals with seamless functionality, ensuring a consistent and enjoyable experience across all devices",
+            "Need professional advice or tailored support? Book a consultation with our experts to explore customized solutions for your specific challenges",
     },
     {
         _id: 3,

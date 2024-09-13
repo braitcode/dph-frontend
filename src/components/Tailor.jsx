@@ -12,9 +12,9 @@ const Tailor = () => {
                 `}
             </style>
             <section
-                className='w-full pt-[2rem] pb-[4rem]'>
+                className='w-full pt-[2rem] pb-[0.7rem]'>
                 <h2
-                    className='font-bold text-[30px] leading-normal text-center pt-7 md:text-[38px] lg:text-[48px]'>
+                    className='font-bold text-[28px] leading-normal text-center pt-7 md:text-[38px] lg:text-[48px]'>
                     Tailored Solution For Your Needs
                 </h2>
                 <h5
@@ -22,13 +22,13 @@ const Tailor = () => {
                     Our team of experts crafts intuitive digital experience, from mobile interfaces to <br /> user-friendly websites, delivering functional solutions that impress.
                 </h5>
                 <div
-                    className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] lg:px-[70px] xl:px-[120px]'>
+                    className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] px-2 lg:px-[70px] xl:px-[120px]'>
                     {
                         solution.map((sol) => {
                             const { id, title, image, description } = sol;
                             return (
                                 <div key={id}
-                                    className='bg-[#EFEFEF] px-3 py-4 rounded shadow-[0_1px_0_0] shadow-[#000000] lg:px-4 group hover:bg-[#028A4C]'>
+                                    className='bg-[#EFEFEF] px-3 py-4 rounded-lg shadow-[0_1px_0_0] shadow-[#000000] lg:px-4 group hover:bg-[#028A4C]'>
                                     <img
                                         src={image}
                                         alt=""
@@ -38,7 +38,7 @@ const Tailor = () => {
                                         {title}
                                     </h2>
                                     <p
-                                        className='text-[10px] font-medium group-hover:text-white md:text-[12px] lg:text-[16px]'>
+                                        className='text-[14px] font-medium group-hover:text-white md:text-[12px] lg:text-[16px]'>
                                         {description} <br />
                                     </p>
                                 </div>
