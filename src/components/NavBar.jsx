@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SlMenu } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
@@ -7,7 +7,8 @@ import Button from "./Button";
 import { useAuth } from "../components/contexts/Auth";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import Dropdown from "./Dropdown";
-import user from '../assets/icons/user.svg'
+import user from "../assets/icons/user.svg";
+import LogoutModal from "./LogoutModal";
 
 const NavBar = () => {
   const NavLinks = [
@@ -21,19 +22,24 @@ const NavBar = () => {
   const [open, setOpen] = useState(false); // Hamburger menu state
   const [dropdown, setDropDown] = useState(false); // Dropdown state
   const location = useLocation();
-  const navigate = useNavigate();
+  const menuRef = useRef(null); // Reference for menu elements
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleDrop() {
     setDropDown(!dropdown);
   }
 
   const handleLogOut = () => {
-    logout();
-    navigate("/");
+    setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
-  //  get user's initials
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
+  //  Get user's initials safely
   const getUserInitials = (fullname) => {
+    if (!fullname) return ""; // Check if fullname is undefined or null
     const names = fullname.split(" ");
     return names.map((name) => name[0]).join("");
   };
@@ -41,10 +47,12 @@ const NavBar = () => {
   // Close the dropdown and hamburger when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Close dropdown and hamburger if they're open
-      if (open || dropdown) {
-        setDropDown(false);
-        setOpen(false);
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        // Close dropdown and hamburger if they're open
+        if (open || dropdown) {
+          setDropDown(false);
+          setOpen(false);
+        }
       }
     };
 
@@ -58,13 +66,13 @@ const NavBar = () => {
   }, [open, dropdown]);
 
   return (
-    <div className="bg-white top-0 w-full fixed border-b z-[20] font-spaceGrotesk">
+    <div ref={menuRef} className="bg-white top-0 w-full fixed border-b z-[20] font-spaceGrotesk">
       <nav className="container lg:w-11/12 m-auto flex justify-between py-5 relative">
         <div className="flex mx-4 lg:mx-0 md:mx-8 gap-2">
           {/* Mobile Hamburger Menu */}
           <div
             onClick={(e) => {
-              e.stopPropagation(); 
+              e.stopPropagation();
               setOpen(!open);
             }}
             className="md:text-4xl text-2xl cursor-pointer lg:hidden z-10"
@@ -87,7 +95,7 @@ const NavBar = () => {
         {/* Login or User Initials */}
         <div className="absolute top-4 right-4 md:right-8 lg:hidden">
           {auth?.user ? (
-            <div className="flex items-center text-[14px] md:text-[18px] bg-[#028A4C] text-white p-[6px] md:p-2 rounded-full h-[30px] w-[30px] md:h-[40px] md:w-[40px]">
+            <div className="flex items-center justify-center text-[14px] md:text-[18px] bg-[#028A4C] font-bold text-white p-[0.65rem] md:p-[0.9rem] rounded-full h-[30px] w-[30px] md:h-[40px] md:w-[40px]">
               {getUserInitials(auth.user.fullname)}
             </div>
           ) : (
@@ -103,20 +111,18 @@ const NavBar = () => {
 
         {/* NavLinks */}
         <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${
-            open ? "top-full opacity-100" : "top-[90%] opacity-0"
-          } lg:opacity-100`}
+          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "top-[90%] opacity-0"
+            } lg:opacity-100`}
         >
           {NavLinks.map((link) => (
             <li key={link.name} className="lg:ml-8 text-xl lg:my-0 my-4">
               <Link
                 to={link.link}
                 onClick={() => setOpen(false)}
-                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${
-                  location.pathname === link.link
-                    ? "text-[#028A4C]"
-                    : "text-[#171717]"
-                } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
+                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${location.pathname === link.link
+                  ? "text-[#028A4C]"
+                  : "text-[#171717]"
+                  } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
               >
                 {link.name}
               </Link>
@@ -126,8 +132,8 @@ const NavBar = () => {
           {/* Logout on small screens */}
           {auth?.user ? (
             <div className="text-[16px] lg:hidden flex flex-col">
-              <span className="mb-4 font-[600px] cursor-not-allowed hover:text-gray-400"> Dashboard</span>
-              <span className="text-[#FF0000]" onClick={handleLogOut}>
+              <span className="mb-4 font-[600]"> Dashboard</span>
+              <span className="text-[#FF0000] cursor-pointer" onClick={handleLogOut}>
                 Log Out
               </span>
             </div>
@@ -147,16 +153,16 @@ const NavBar = () => {
           <div className="lg:flex gap-2 xl:text-[18px] hidden h-[61px] mt-2">
             <div
               className="bg-white border-2 border-[#028A4C] rounded-full w-[50px] h-[50px]"
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
             >
               <img src={user} alt="User Icon" className="p-3" />
             </div>
             <span className="pt-3">{auth.user.fullname}</span>
             <span
-              className="text-2xl pt-3"
+              className="text-2xl pt-3 cursor-pointer"
               role="button"
               onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 handleDrop();
               }}
             >
@@ -189,6 +195,9 @@ const NavBar = () => {
           </div>
         )}
       </nav>
+      {isModalOpen && (
+        <LogoutModal onClose={handleCloseModal} />
+      )}
     </div>
   );
 };

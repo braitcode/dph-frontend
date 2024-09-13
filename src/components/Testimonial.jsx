@@ -7,6 +7,11 @@ const Testimonial = () => {
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
   const [activeButton, setActiveButton] = useState("next");
 
+  const customScrollbarStyle = {
+    scrollbarWidth: 'none', 
+    msOverflowStyle: 'none', 
+  };
+
   // Adjust the number of items per slide based on screen width
   useEffect(() => {
     const updateItemsPerSlide = () => {
@@ -46,7 +51,7 @@ const Testimonial = () => {
 
   return (
     <>
-      <main className="bg-[#F2F2F2] py-7">
+      <main className="bg-[#F2F2F2] py-6">
         <section className="w-11/12 mx-auto container">
           <h1 className="text-3xl lg:text-5xl text-center font-semibold font-spaceGrotesk mt-5">
             Testimonials
@@ -66,7 +71,7 @@ const Testimonial = () => {
                         : "border-[#B3B3B3] text-[#4B4B4B]"
                     }`}
                   >
-                    <div className="flex gap-3 items-center transition-all duration-100 ease-linear delay-150">
+                    <div className="flex gap-3 items-center">
                       <img src={slide.image} alt="profile-image" className="h-fit" />
                       <div>
                         <h2 className="font-semibold">{slide.title}</h2>
@@ -75,7 +80,8 @@ const Testimonial = () => {
                     </div>
                     <p
                       className="my-3 flex-grow overflow-hidden hover:overflow-auto text-sm xl:text-xl"
-                      style={{ maxHeight: "9rem" }}
+                      style={{ maxHeight: "9rem", ...customScrollbarStyle,
+                      WebkitOverflowScrolling: 'touch' }}
                     >
                       {slide.testimony}
                     </p>
@@ -87,20 +93,16 @@ const Testimonial = () => {
               })}
           </section>
           {/* Slide button section */}
-          <div className="flex gap-5 justify-center my-5 py-5">
+          <div className="flex gap-5 justify-center my-5">
             <button
               onClick={handlePrevClick}
-              className={`border p-2 rounded-lg ${
-                activeButton === "prev" ? "bg-[#028A4C] text-white" : ""
-              }`}
+              className={`border p-2 rounded-lg hover:bg-[#028A4C] hover:text-white `}
             >
               <SlArrowLeft />
             </button>
             <button
               onClick={handleNextClick}
-              className={`border p-2 rounded-lg ${
-                activeButton === "next" ? "bg-[#028A4C] text-white" : ""
-              }`}
+              className={`border p-2 rounded-lg  hover:bg-[#028A4C] hover:text-white `}
             >
               <SlArrowRight />
             </button>

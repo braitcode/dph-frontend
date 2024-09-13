@@ -52,7 +52,7 @@ const Hero = () => {
                 <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
                   <Link to='/contact'>
                     <Button size="medium" color="white">
-                      <span className="text-[15px]">Book a consultant</span>
+                      <span className="text-[15px]">Get in Touch</span>
                     </Button>
                   </Link>
 
@@ -116,7 +116,7 @@ const Hero = () => {
               <Link to='/contact'>
                 <Button size="small" color="white">
                   <span className="md:text-[15px] text-[10px]">
-                    Book a consultant
+                  Get in Touch
                   </span>
                 </Button>
               </Link>
