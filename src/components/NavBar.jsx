@@ -126,7 +126,7 @@ const NavBar = () => {
           {/* Logout on small screens */}
           {auth?.user ? (
             <div className="text-[16px] lg:hidden flex flex-col">
-              <span className="mb-4 font-[600px]"> Dashboard</span>
+              <span className="mb-4 font-[600px] cursor-not-allowed hover:text-gray-400"> Dashboard</span>
               <span className="text-[#FF0000]" onClick={handleLogOut}>
                 Log Out
               </span>

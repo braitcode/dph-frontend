@@ -83,7 +83,7 @@ const SignUp = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://dph-backend.onrender.com/api/auth/google"; 
+    window.location.href = "https://dph-backend.onrender.com/api/auth/google/callback"; 
   };
   console.log(fullname);
 
@@ -217,6 +217,7 @@ const SignUp = () => {
               </button>
 
               <br />
+              </form>
               <div className="flex items-center my-5 px-[2rem]">
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />
                 <span className="px-4 font-bold">0r</span>
@@ -230,7 +231,7 @@ const SignUp = () => {
                 <img className="inline w-6 h-6 mr-2 " src={google} alt="" />
                 Continue With Google
               </button>
-            </form>
+            
             <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5">
               Already a user?{" "}
               <span className="text-[#028A4C]">
