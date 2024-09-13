@@ -15,6 +15,7 @@ import CheckEmail from "./components/CheckEmail";
 import toast, { Toaster } from 'react-hot-toast';
 import Reset from "./components/Reset";
 import OAuthCallback from "./components/contexts/OAuthCallback";
+import LogoutModal from "./components/LogoutModal";
 
 
 

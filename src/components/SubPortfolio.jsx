@@ -25,11 +25,11 @@ const SubPortfolio= () => {
 
   return (
     <main className="w-11/12 mx-auto container ">
-      <section className="flex flex-col items-center gap-3 py-5">
+      <section className="flex flex-col items-center gap-3 py-7">
         <h2 className="lg:text-2xl xl:text-[28px] md:text-xl text-[#02864A] font-spaceGrotesk font-semibold">
           Our Projects
         </h2>
-        <h1 className="lg:text-3xl xl:text-[45px] text-2xl md:text-3xl font-bold font-spaceGrotesk">
+        <h1 className="lg:text-3xl xl:text-[45px] text-xl md:text-3xl font-bold font-spaceGrotesk">
           Some of our finest works!
         </h1>
 
@@ -55,7 +55,7 @@ const SubPortfolio= () => {
           <div className="w-12 h-12 border-4 border-t-4 border-[#02864A] border-solid rounded-full animate-spin"></div>
         </div>
       ) : (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 xl:gap-12 my-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 xl:gap-12 my-7 lg:my-8">
           {filteredData.length > 0 ? (
             filteredData.map((project) => (
               <div key={project.id} className="overflow-hidden">
@@ -86,7 +86,7 @@ const SubPortfolio= () => {
 
       <Link to="/portfolio">
       
-      <div className="flex items-center gap-3 justify-center mb-9 font-spaceGrotesk">
+      <div className="flex items-center gap-3 justify-center mb-7 lg:mb-9 font-spaceGrotesk">
         <p className="text-[#02864A] font-semibold cursor-pointer">View all</p>
         <FaArrowRightLong className="text-sm text-[#02864A] mt-[2px] cursor-pointer" />
       </div>
