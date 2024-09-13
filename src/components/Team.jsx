@@ -9,24 +9,24 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Team = () => {
     return (
-        <div className='font-spaceGrotesk pt-5 xl:pt-[80px]'>
-            <h2 className='container mx-auto font-bold text-[24px] sm:text-[32px] sm:w-10/12 text-center leading-[1.8rem] xl:text-[50px] lg:pb-[62px]'>
+        <div className='font-spaceGrotesk pt-5 lg:pt-[40px] xl:pt-[80px]'>
+            <h2 className='container mx-auto font-bold text-[24px] sm:text-[32px] sm:w-10/12 text-center leading-[1.8rem] xl:text-[50px] lg:pb-[20px] xl:pb-[62px]'>
                 The Right Expertise, The Right Team
             </h2>
-            <div className='container mx-auto w-11/12 grid grid-cols-1 sm:grid-cols-2 sm:gap-[1rem] lg:grid-cols-3 mt-5 gap-[20px] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[5rem]'>
+            <div className='container mx-auto w-11/12 grid grid-cols-1 sm:grid-cols-2 sm:gap-[1rem] lg:grid-cols-3 mt-5 gap-[20px] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[4rem]'>
                 {
                     team.map((t) => {
                         const { id, image, name, skill } = t
                         return (
                             <div key={id}>
-                                <img className='rounded-xl w-full mb-3' src={image} alt="" />
-                                <h3 className='font-bold xl:text-[26px]' >
+                                <img className='rounded-xl w-full mb-6' src={image} alt="" />
+                                <h3 className='font-bold xl:text-[26px] text-center' >
                                     {name}
                                 </h3>
-                                <p className='xl:text-[20px] text-[#5A5A5A]'>
+                                <p className='xl:text-[20px] text-[#5A5A5A] text-center'>
                                     {skill}
                                 </p>
-                                <div className='flex gap-[10px] mt-5'>
+                                <div className='flex gap-[15px] mt-4 justify-center'>
                                     <div className='bg-gray-200 w-[42.15px] rounded-3xl p-[0.6rem]'>
                                         <RiFacebookCircleFill className='' size={24} />
                                     </div>
