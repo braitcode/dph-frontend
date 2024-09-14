@@ -76,10 +76,10 @@ const handleError = () => {
                     <div className="xl:w-[50%] flex flex-col gap-[36px] ">
                         <div className="flex flex-col gap-[20px] text-center xl:text-left">
                             <h1 className='text-white xl:text-[45px] text-[24px] font-bold w-[80%] mx-auto xl:mx-0 font-spaceGrotesk'>
-                                Book A Complimentary Consultation
+                                Send Us A Message!
                             </h1>
-                            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>
-                                Book a no-cost consultation to discuss your brand, our team of experienced professionals are ready to give you maximum and professional advice.
+                            <p className='text-white text-[18px] xl:w-[571px] font-medium font-spaceGrotesk'>
+                                Do you have any enquiries or need assistance? Fill out the form below and our team will respond to you as quickly as possible to help you address your needs.
                             </p>
                         </div>
 

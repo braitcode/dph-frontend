@@ -83,7 +83,7 @@ const SignUp = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://dph-backend.onrender.com/api/auth/google"; 
+    window.location.href = "https://dph-backend.onrender.com/api/auth/google/callback"; 
   };
   console.log(fullname);
 
@@ -91,24 +91,29 @@ const SignUp = () => {
     <>
       <main className="bg-white h-screen w-full lg:flex font-spaceGrotesk">
   {/* left section */}     
-     <section className="lg:w-1/2 p-4 lg:p-12 flex flex-col justify-center items-center h-full overflow-y-auto">
-     <div className="overflow-y-auto container mx-auto mt-5 lg:mt-5" style={{
+     <section className="lg:w-1/2 p-4 flex flex-col justify-center items-center h-full ">
+     <div className="overflow-y-auto container mx-auto lg:py-12 lg:px-16 " style={{
             ...customScrollbarStyle,
             WebkitOverflowScrolling: 'touch', 
           }}>
+       
             <Link to="/" className=" lg:hidden  ">
-              <img src={logo2} alt="Dph Logo" className=" w-[100px]  lg:my-[20px]  lg:hidden mx-auto" />
+              <img
+                src={logo2}
+                alt="Dph Logo"
+                className=" w-[100px] mx-auto pb-[6px]"
+              />
             </Link>
-            <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px] lg:pb-[0px] ">
-              Get Started
+            <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
+            Get Started
             </h2>
-            <p className="lg:text-[18px]  lg:pb-[20px] pb-[18px] text-center lg:text-start text-[16px] ">
-              Join us now by filling your details below
+            <p className="lg:text-[18px]  text-center lg:text-start text-[16px]">
+            Join us now by filling your details below
             </p>
 
            {/* form starts here */}
-            <form onSubmit={handleSubmit}  className="space-y-5 mt-6  px-1">
-              <label className="block font-[500px] text-[18px] lg:text-[23px] ">
+            <form onSubmit={handleSubmit}  className="space-y-5 mt-3  px-1">
+              <label className="block font-[500px] text-[18px] lg:text-[23px]">
                 Full Name
                 <input
                   type="text"
@@ -127,7 +132,6 @@ const SignUp = () => {
                   </p>
                 )}
               </label>
-              <br />
               <label className="block font-[500px] text-[18px] lg:text-[23px] ">
                 Email
                 <input
@@ -147,8 +151,8 @@ const SignUp = () => {
                   </p>
                 )}
               </label>
-              <br />
-              <label className="block relative font-[500px] text-[18px] lg:text-[23px] pb-0">
+           
+              <label className="block relative font-[500px] text-[18px] lg:text-[23px] ">
                 Password
                 <input
                   type={showPassword ? "text" : "password"}
@@ -174,7 +178,7 @@ const SignUp = () => {
                 )}
               </label>
 
-              <div className="flex  pb-[24px] xl:text-[16px]">
+              <div className="flex items-center  pb-[24px] xl:text-[16px]">
                 <input
                   type="checkbox"
                   checked={Agree}
@@ -210,27 +214,26 @@ const SignUp = () => {
               )}
               <button
                 type="submit"
-                className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold py-3 px-3 lg:text-[18px] text-[14px]"
+                className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold p-2  lg:text-[18px] text-[14px]"
                 disabled={loading}
               >
                 {loading ? "Please wait..." : "Sign Up"}
               </button>
-
-              <br />
-              <div className="flex items-center my-5 px-[2rem]">
+             
+            </form>
+             <div className="flex items-center my-5 px-[2rem]">
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />
                 <span className="px-4 font-bold">0r</span>
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />
               </div>
 
               <button
-                className="w-full h-[55px]  font-bold py-2 px-2 rounded-[5px] border-[1px] border-[#9A9696] lg:text-[18px] text-[16px] text-[#212429]"
+                className="w-full h-[55px]  font-bold  p-2 rounded-[5px] border-[1px] border-[#9A9696] lg:text-[18px] text-[16px] text-[#212429]"
                 onClick={handleGoogleLogin}
               >
                 <img className="inline w-6 h-6 mr-2 " src={google} alt="" />
                 Continue With Google
               </button>
-            </form>
             <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5">
               Already a user?{" "}
               <span className="text-[#028A4C]">
@@ -242,7 +245,8 @@ const SignUp = () => {
 
         </section>
 {/* right section */}
-        <section className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage:` url(${signupimg})` }}>
+        <section className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage:` url(${signupimg})`, borderTopLeftRadius:
+      "10px", borderBottomLeftRadius: "10px"}}>
     <Link to='/' className="absolute right-[2rem] top-[2.5rem] ">
        <img src={logo} alt="" />
       </Link>

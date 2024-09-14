@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
+        zenDots: ["Zen Dots", "sans-serif"],
       },
     },
   },

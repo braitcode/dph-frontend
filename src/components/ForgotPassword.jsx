@@ -65,8 +65,8 @@ const ForgotPassword = () => {
   return (
     <>
       <main className='w-full max-h-fit font-spaceGrotesk '>
-        <section className='grid lg:grid-cols-2 py-[50px] lg:py-0'>
-          <div className='flex flex-col justify-center p-10 space-y-7'>
+        <section className='grid lg:grid-cols-2 py-[50px] lg:py-0 '>
+          <div className='flex flex-col justify-center p-10 space-y-7 lg:px-20 container mx-auto '>
             <Link to="/" className=" lg:hidden">
               <img src={logo2} alt="Dph Logo" className=" w-[100px] mx-auto" />
             </Link>

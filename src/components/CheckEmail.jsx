@@ -3,6 +3,7 @@ import image from '../assets/login.png'
 import logo from '../assets/signuplogo.svg'
 import { Link } from 'react-router-dom';
 import logo2 from "../assets/icons/logo.svg";
+import { GoArrowLeft } from "react-icons/go";
 
 
 
@@ -16,7 +17,7 @@ const CheckEmail = () => {
     <>
     <main className='w-full max-h-fit font-spaceGrotesk '>
         <section className='grid lg:grid-cols-2 py-[50px] lg:py-0'>
-            <div className='flex flex-col justify-center p-10 space-y-7'>
+            <div className='flex flex-col justify-center p-10 space-y-7 lg:px-20 container mx-auto'>
                 <Link to="/" className=" lg:hidden">
                     <img src={logo2} alt="Dph Logo" className=" w-[100px] mx-auto" />
                 </Link>
@@ -26,8 +27,8 @@ const CheckEmail = () => {
                 </div>
                 <div>
                 <button onClick={openEmail} className='bg-[#02864A] text-white p-3 w-full rounded-md font-bold '>Open Email</button>
-                <Link to="/forgot">
-                <p className='flex items-center justify-center mt-2'>Try another email address</p>
+                <Link to="/login">
+                <p className='flex items-center justify-center mt-2 font-semibold'><GoArrowLeft />Back to Login</p>
                 </Link>
                 </div>
             </div>

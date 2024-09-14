@@ -66,9 +66,9 @@ const Contact = () => {
   return (
     <div>
       <NavBar />
-      <div className="text-center pt-[100px] pb-[35px]">
-        <h1 className="font-bold text-[30px] lg:font-bold lg:text-[55px]">Contact Us</h1>
-        <p className="hidden lg:block lg:font-medium lg:text-[24px]">Get in touch with us</p>
+      <div className="pb-5 pt-20 text-center xl:pt-[100px] xl:pb-[35px]">
+        <h1 className="font-bold text-[30px] lg:font-bold lg:text-[55px] xl:pt-10">Contact Us</h1>
+        <p className="hidden lg:block lg:font-medium lg:text-[24px] xl:pb-5">Get in touch with us</p>
       </div>
       <div className="container m-auto xl:w-11/12 lg:w-11/12 lg:border-2 lg:rounded-3xl xl:border-2 xl:rounded-3xl mb-[71px]">
         <div className="flex flex-col lg:flex-row lg:w-11/12 lg:h-[660px] lg:gap-[32px] lg:items-center xl:flex-row xl:w-11/12 xl:h-[660px] xl:gap-[62px] xl:items-center m-auto">
@@ -83,7 +83,7 @@ const Contact = () => {
                 </p>
               </div>
               {/* list */}
-              <div className="m-auto w-4/6 md:w-[500px] lg:w-[320px] xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+              <div className="m-auto w-[230px] md:w-[500px] lg:w-[320px] xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
                 <div className="one pb-3 flex gap-4 items-center md:justify-center lg:justify-start lg:pl-10 xl:pl-0 xl:justify-start xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                   <img src={PhoneIcon} alt=""/>
                   <p>+91 98765 43210</p>
@@ -103,7 +103,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-              <div className="justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[240px] lg:justify-start xl:pt-6  xl:m-auto xl:w-[340px]">
+              <div className="w-[230px] justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[240px] lg:justify-start xl:pt-6  xl:m-auto xl:w-[340px]">
                 <img src={TwitIcon} alt="" />
                 <img src={YoutubeIcon} alt="" />
                 <img src={InstaIcon} alt="" />
