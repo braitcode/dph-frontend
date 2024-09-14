@@ -12,6 +12,7 @@ const ContactForm = () => {
    const [modalType, setModalType] = useState('success');
    const [modalTitle, setModalTitle] = useState('');  
    const [modalMessage, setModalMessage] = useState('');
+   const [loading, setLoading] = useState(false);
  
   // Function to handle success scenario
 const handleSuccess = () => {
@@ -19,6 +20,7 @@ const handleSuccess = () => {
   setModalTitle('Consultation booked');
   setModalMessage('Kindly check your email for confirmation!');
   setIsModalOpen(true);
+  setLoading(false);
   reset(); // Clear the form fields
 };
 
@@ -28,6 +30,7 @@ const handleError = () => {
   setModalTitle('Booking failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
+  setLoading(false);
 };
 
  
@@ -36,8 +39,6 @@ const handleError = () => {
      setIsModalOpen(false);
      
    };
-
-
  
     //  validation
   const {
@@ -48,6 +49,7 @@ const handleError = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true)
     console.log("Form submitted with data: ", data);
     try {
       const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
@@ -63,6 +65,7 @@ const handleError = () => {
     } catch (err) {
       console.log(err);
       handleError()
+      setLoading(false)
     }
   };
 
@@ -187,7 +190,7 @@ const handleError = () => {
 
                             <div className="flex justify-center xl:justify-start">
                                 <Button size="large" color="success" type="submit">
-                                    Send a message
+                                    {loading ? "Submiting...." : "Send a Message"}
                                 </Button>
                             </div>
                         </form>
