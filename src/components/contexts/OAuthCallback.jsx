@@ -27,7 +27,7 @@ const OAuthCallback = () => {
         token: token,
         user: user
       }));
-      navigate('/home');
+      navigate('/');
     } else {
       navigate('/');
     }
