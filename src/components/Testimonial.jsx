@@ -97,16 +97,12 @@ const Testimonial = () => {
           <div className="flex gap-5 justify-center my-5">
             <button
               onClick={handlePrevClick}
-              className={`border p-2 rounded-lg ${activeButton === "prev" ? "bg-[#028A4C] text-white" : ""
-                }`}
               className={`border p-2 rounded-lg hover:bg-[#028A4C] hover:text-white `}
             >
               <SlArrowLeft />
             </button>
             <button
               onClick={handleNextClick}
-              className={`border p-2 rounded-lg ${activeButton === "next" ? "bg-[#028A4C] text-white" : ""
-                }`}
               className={`border p-2 rounded-lg  hover:bg-[#028A4C] hover:text-white `}
             >
               <SlArrowRight />
