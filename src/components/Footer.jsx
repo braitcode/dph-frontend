@@ -12,6 +12,11 @@ import sms from "../assets/icons/sms.png";
 import location from "../assets/icons/location.png";
 import MessageModal from './MessageModal';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import sendIcon from "../assets/icons/send icon.png"
+import { FaHourglassStart } from 'react-icons/fa';
+
+
 
 const Footer = () => {
   // State for modal visibility and type
@@ -90,11 +95,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
           <div className="xl:w-[250px] flex flex-col items-center md:items-start gap-[23px]">
             <div>
-              <div className="flex items-center justify-center md:justify-start text-[32.14px] gap-2">
-                <img src={logodph} alt="Logo" />
-                <p className='text-white font-bold'>DPH</p>
+              <div className="flex items-center h-[34px] justify-center md:justify-start ">
+                <img src={logodph} alt="Logo" className='w-[30px] h-[30px]' />
+                <p className='text-white font-zenDots text-[32.14px]'>DPH</p>
               </div>
-              <p className='text-white font-spaceGrotesk text-[12px]'>Digital Presence Hub</p>
+              <p className='text-white w-[124px] flex justify-center font-spaceGrotesk text-[10px]'>DIGITAL PRESENCE HUB</p>
             </div>
 
             <div className="flex flex-col gap-4">
@@ -117,26 +122,30 @@ const Footer = () => {
 
           <div className="flex flex-col items-center md:items-start gap-[20px]">
             <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Company</h2>
+            <Link to="/about">
             <p className='text-white text-[18px] font-medium font-spaceGrotesk'>About</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Press</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Blog</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Careers</p>
+            </Link>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Press</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Blog</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Careers</p>
           </div>
 
           <div className="flex flex-col items-center md:items-start gap-[20px]">
             <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Locations</h2>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Africa</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Asia</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>South America</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Europe</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Africa</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Asia</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>South America</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Europe</p>
           </div>
 
           <div className="flex flex-col items-center md:items-start gap-[20px]">
             <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Support</h2>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Help Center</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Help Center</p>
+            <Link to="/contact">
             <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Contact Us</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Terms of Use</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Privacy</p>
+            </Link>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Terms of Use</p>
+            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Privacy</p>
           </div>
 
           {/* Newsletter Signup */}
@@ -156,7 +165,7 @@ const Footer = () => {
                   type="submit"
                   className="absolute right-0 top-0 h-full px-4 bg-white rounded-r-lg"
                 >
-                 {isLoading ? 'Submitting...' : 'Submit'} {/* Text loader */}
+                 {isLoading ? <FaHourglassStart/> : <img src={sendIcon} alt='Send Icon' /> } {/* Text loader */}
                 </button>
               </div>
             </form>

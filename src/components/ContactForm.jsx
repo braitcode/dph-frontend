@@ -12,6 +12,7 @@ const ContactForm = () => {
    const [modalType, setModalType] = useState('success');
    const [modalTitle, setModalTitle] = useState('');  
    const [modalMessage, setModalMessage] = useState('');
+   const [loading, setLoading] = useState(false);
  
   // Function to handle success scenario
 const handleSuccess = () => {
@@ -19,6 +20,7 @@ const handleSuccess = () => {
   setModalTitle('Consultation booked');
   setModalMessage('Kindly check your email for confirmation!');
   setIsModalOpen(true);
+  setLoading(false);
   reset(); // Clear the form fields
 };
 
@@ -28,6 +30,7 @@ const handleError = () => {
   setModalTitle('Booking failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
+  setLoading(false);
 };
 
  
@@ -36,8 +39,6 @@ const handleError = () => {
      setIsModalOpen(false);
      
    };
-
-
  
     //  validation
   const {
@@ -48,6 +49,7 @@ const handleError = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true)
     console.log("Form submitted with data: ", data);
     try {
       const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
@@ -63,6 +65,7 @@ const handleError = () => {
     } catch (err) {
       console.log(err);
       handleError()
+      setLoading(false)
     }
   };
 
@@ -73,10 +76,10 @@ const handleError = () => {
                     <div className="xl:w-[50%] flex flex-col gap-[36px] ">
                         <div className="flex flex-col gap-[20px] text-center xl:text-left">
                             <h1 className='text-white xl:text-[45px] text-[24px] font-bold w-[80%] mx-auto xl:mx-0 font-spaceGrotesk'>
-                                Book A Complimentary Consultation
+                                Send Us A Message!
                             </h1>
-                            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>
-                                Book a no-cost consultation to discuss your brand, our team of experienced professionals are ready to give you maximum and professional advice.
+                            <p className='text-white text-[18px] xl:w-[571px] font-medium font-spaceGrotesk'>
+                                Do you have any enquiries or need assistance? Fill out the form below and our team will respond to you as quickly as possible to help you address your needs.
                             </p>
                         </div>
 
@@ -187,7 +190,7 @@ const handleError = () => {
 
                             <div className="flex justify-center xl:justify-start">
                                 <Button size="large" color="success" type="submit">
-                                    Send a message
+                                    {loading ? "Submiting...." : "Send a Message"}
                                 </Button>
                             </div>
                         </form>
