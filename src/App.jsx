@@ -42,7 +42,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/check" element={<CheckEmail />} />
           <Route path="/reset-password/:token" element={<Reset />} />
-          <Route path="/oauth-callback" element={<OAuthCallback/>}/>
+          <Route path="/google/callback" element={<OAuthCallback/>}/>
         </Routes>
       </Router>
     </>
