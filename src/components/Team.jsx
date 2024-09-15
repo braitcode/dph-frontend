@@ -20,13 +20,13 @@ const Team = () => {
                         return (
                             <div key={id}>
                                 <img className='rounded-xl w-full mb-6' src={image} alt="" />
-                                <h3 className='font-bold xl:text-[26px] text-center' >
+                                <h3 className='font-bold xl:text-[26px]' >
                                     {name}
                                 </h3>
-                                <p className='xl:text-[20px] text-[#5A5A5A] text-center'>
+                                <p className='xl:text-[20px] text-[#5A5A5A]'>
                                     {skill}
                                 </p>
-                                <div className='flex gap-[15px] mt-4 justify-center'>
+                                <div className='flex gap-[15px] mt-4'>
                                     <div className='bg-gray-200 w-[42.15px] rounded-3xl p-[0.6rem]'>
                                         <RiFacebookCircleFill className='' size={24} />
                                     </div>

@@ -60,11 +60,10 @@ const Testimonial = () => {
                 return (
                   <div
                     key={slide.id}
-                    className={`p-3 border-2 rounded-lg font-spaceGrotesk mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${
-                      isMiddleItem
+                    className={`p-3 border-2 rounded-lg font-spaceGrotesk mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${isMiddleItem
                         ? "lg:scale-[115%] md:scale-[110%] text-white bg-[#028A4C]"
                         : "border-[#B3B3B3] text-[#4B4B4B]"
-                    }`}
+                      }`}
                   >
                     <div className="flex gap-3 items-center transition-all duration-100 ease-linear delay-150">
                       <img src={slide.image} alt="profile-image" className="h-fit" />
@@ -90,17 +89,15 @@ const Testimonial = () => {
           <div className="flex gap-5 justify-center my-5 py-5">
             <button
               onClick={handlePrevClick}
-              className={`border p-2 rounded-lg ${
-                activeButton === "prev" ? "bg-[#028A4C] text-white" : ""
-              }`}
+              className={`border p-2 rounded-lg ${activeButton === "prev" ? "bg-[#028A4C] text-white" : ""
+                }`}
             >
               <SlArrowLeft />
             </button>
             <button
               onClick={handleNextClick}
-              className={`border p-2 rounded-lg ${
-                activeButton === "next" ? "bg-[#028A4C] text-white" : ""
-              }`}
+              className={`border p-2 rounded-lg ${activeButton === "next" ? "bg-[#028A4C] text-white" : ""
+                }`}
             >
               <SlArrowRight />
             </button>
