@@ -10,9 +10,10 @@ import LogoutModal from "./LogoutModal";
 
 const Dropdown = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const {logout} =useAuth();
+  const [isDropdownOpen,setIsDropDownOpen] =useState(true);
   const handleLogOut = () => {
-    logout();
+    // logout();
+    setIsDropDownOpen(false)
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 

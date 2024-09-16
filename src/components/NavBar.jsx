@@ -30,6 +30,7 @@ const NavBar = () => {
   }
 
   const handleLogOut = () => {
+    setOpen(false);
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
@@ -53,6 +54,7 @@ const NavBar = () => {
           setDropDown(false);
           setOpen(false);
         }
+        
       }
     };
 
@@ -111,7 +113,7 @@ const NavBar = () => {
 
         {/* NavLinks */}
         <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "top-[90%] opacity-0"
+          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "hidden"
             } lg:opacity-100`}
         >
           {NavLinks.map((link) => (
