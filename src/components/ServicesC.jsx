@@ -31,7 +31,7 @@ const ServicesC = () => {
                             <Button size="medium">
                                 <span className="md:text-[15px] text-[10px]">Book a consultant</span>
                             </Button>
-                        </div>``
+                        </div>
                     </Link>
                 </div>
             </div>
