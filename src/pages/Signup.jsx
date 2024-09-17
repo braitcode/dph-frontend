@@ -10,6 +10,8 @@ import toast from 'react-hot-toast';
 
 
 const SignUp = () => {
+
+  
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
