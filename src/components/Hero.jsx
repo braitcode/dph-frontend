@@ -44,7 +44,7 @@ const Hero = () => {
               <div className="lg:flex lg:gap-3 hidden">
                 <Link to='/signup'> <Button size="medium" color="success">
                   <div className="flex gap-2">
-                    <span className="text-[15px] p-[0.1rem]">Get Started</span>
+                    <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.1rem]">Get Started</span>
                     <FaArrowRightLong className="mt-[0.4rem]" />
                   </div>
                 </Button></Link>
@@ -52,7 +52,7 @@ const Hero = () => {
                 <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
                   <Link to='/contact'>
                     <Button size="medium" color="white">
-                      <span className="text-[15px]">Get in Touch</span>
+                      <span className="md:text-[16px] text-[14px] lg:text-[18px]">Get in Touch</span>
                     </Button>
                   </Link>
 
@@ -107,7 +107,7 @@ const Hero = () => {
             <Link to='/signup'>
               <Button size="small" color="success">
                 <div className="flex gap-2">
-                  <span className="md:text-[15px] text-[10px] p-[0.2rem]">Get Started</span>
+                  <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.2rem]">Get Started</span>
                   <FaArrowRightLong className="mt-[0.4rem]" />
                 </div>
               </Button></Link>
@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
               <Link to='/contact'>
                 <Button size="small" color="white">
-                  <span className="md:text-[15px] text-[10px]">
+                  <span className="md:text-[16px] text-[14px] lg:text-[18px]">
                   Get in Touch
                   </span>
                 </Button>
