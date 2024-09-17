@@ -62,19 +62,19 @@ const Portfolio = () => {
         <section className="lg:flex justify-between items-center mt-[70px] lg:mt-[100px] py-[42px]">
           <div className="lg:w-[582px]">
             <h1 className="xl:text-[55px] lg:text-[35px] text-[25px] md:text-[40px] font-bold leading-tight lg:text-start text-center">Explore Our Impressive Portfolio </h1>
-            <p className="text-lg lg:mr-[96px] xl:text-[24px] text-[12px] md:text-[18px] font-medium text-pretty my-3 text-[#575253] lg:text-start text-center">In the past, we have worked on dozens of developments and cutting-edge Web & Digital projects</p>
+            <p className="text-lg lg:mr-[96px] xl:text-[24px] text-[12px] md:text-[18px] font-medium text-pretty my-3 text-[#575253] lg:text-start text-center ">In the past, we have worked on dozens of developments and cutting-edge Web & Digital projects</p>
             <div className="flex gap-3 my-5 lg:justify-start justify-center">
               <Link to="/signup">
                 <Button size="small" color="success">
                   <div className="flex gap-2">
-                    <span className="md:text-[15px] text-[12px] p-[0.1rem]">Get Started</span><FaArrowRightLong className='mt-1' />
+                    <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.1rem]">Get Started</span><FaArrowRightLong className='mt-1' />
                   </div>
                 </Button>
               </Link>
               <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
                 <Link to='/contact'>
                   <Button size="small" color="white">
-                    <span className="md:text-[15px] text-[12px] font-spaceGrotesk">Get in Touch</span>
+                    <span className="md:text-[16px] text-[14px] lg:text-[18px] font-spaceGrotesk">Get in Touch</span>
                   </Button>
                 </Link>
               </div>
