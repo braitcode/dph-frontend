@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useAuth} from "../components/contexts/Auth"
 import Button from "../components/Button";
 import { IoWarningOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import {useAuth} from "../components/contexts/Auth"
+
+
+
 const LogoutModal = ({ onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
   const {logout} =useAuth();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
-    logout();
     setIsLoading(true); // Start loading
   };
-
+  
   useEffect(() => {
     if (isLoading) {
       // Simulate a delay (e.g., network request)
       const timer = setTimeout(() => {
+        logout();
         setIsLoading(false);
         navigate("/"); // Navigate to the login page after loading
         onClose(); // Close the modal after navigating
-      }, 2000); // 2 seconds delay for demonstration
+      }, 1000); // 2 seconds delay for demonstration
 
       // Cleanup timer on component unmount
       return () => clearTimeout(timer);

@@ -31,6 +31,7 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     setOpen(false);
+    setDropDown(false); 
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
@@ -193,7 +194,7 @@ const NavBar = () => {
         {/* Dropdown for large screens */}
         {dropdown && (
           <div className="absolute right-0 top-[5rem] hidden lg:block">
-            <Dropdown />
+            <Dropdown onLogOut={handleLogOut}/>
           </div>
         )}
       </nav>
