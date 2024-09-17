@@ -8,8 +8,8 @@ const Testimonial = () => {
   const [activeButton, setActiveButton] = useState("next");
 
   const customScrollbarStyle = {
-    scrollbarWidth: 'none', 
-    msOverflowStyle: 'none', 
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
   };
 
   // Adjust the number of items per slide based on screen width
@@ -65,11 +65,10 @@ const Testimonial = () => {
                 return (
                   <div
                     key={slide.id}
-                    className={`p-3 border-2 rounded-lg font-spaceGrotesk mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${
-                      isMiddleItem
-                        ? "lg:scale-[115%] md:scale-[110%] text-white bg-[#028A4C]"
-                        : "border-[#B3B3B3] text-[#4B4B4B]"
-                    }`}
+                    className={`p-3 border-2 rounded-lg font-spaceGrotesk mt-5 flex flex-col justify-between lg:h-[13rem] xl:h-[18rem] xl:p-5 ${isMiddleItem
+                      ? "lg:scale-[115%] md:scale-[110%] text-white bg-[#028A4C]"
+                      : "border-[#B3B3B3] text-[#4B4B4B]"
+                      }`}
                   >
                     <div className="flex gap-3 items-center">
                       <img src={slide.image} alt="profile-image" className="h-fit" />
@@ -80,8 +79,10 @@ const Testimonial = () => {
                     </div>
                     <p
                       className="my-3 flex-grow overflow-hidden hover:overflow-auto text-sm xl:text-xl"
-                      style={{ maxHeight: "9rem", ...customScrollbarStyle,
-                      WebkitOverflowScrolling: 'touch' }}
+                      style={{
+                        maxHeight: "9rem", ...customScrollbarStyle,
+                        WebkitOverflowScrolling: 'touch'
+                      }}
                     >
                       {slide.testimony}
                     </p>

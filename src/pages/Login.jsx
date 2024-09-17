@@ -40,8 +40,8 @@ const Login = () => {
       newErrors.password = "Password is required";
     } else {
       const pwdTrim = password.trim();
-      if (pwdTrim.length < 6) {
-        newErrors.password = "Password must be at least 6 characters";
+      if (pwdTrim.length < 8) {
+        newErrors.password = "Password must be at least 8 characters";
       }
     }
 
@@ -49,28 +49,51 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) return;
+
+  //   try {
+  //     setLoading(true);
+  //     const data = await login(email, password);
+
+  //     if (!data?.error) {
+  //       setLoading(false);
+  //       navigate("/");
+  //     } else {
+  //       setErrors({ form: "Login failed" });
+  //       setLoading(false);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrors({ form: err.message });
+  //     setLoading(false);
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!validateForm()) return;
-
+  
     try {
       setLoading(true);
       const data = await login(email, password);
-
+  
       if (!data?.error) {
         setLoading(false);
         navigate("/");
       } else {
-        setErrors({ form: "Login failed" });
+        // If an error occurs during login, display the specific error message
+        setErrors({ form: data.error || "Login failed. Please try again." });
         setLoading(false);
       }
     } catch (err) {
-      console.log(err);
-      setErrors({ form: err.message });
+      console.error(err);
+      setErrors({ form: err.message || "An unexpected error occurred. Please try again." });
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     document.title = "Digital Presence Hub-Log In";
   }, []);
@@ -149,6 +172,11 @@ const Login = () => {
               >
                 {loading ? "Please wait..." : "Login"}
               </button>
+              {errors.form && (
+    <p className="text-red-500 text-center mt-4">
+      {errors.form}
+    </p>
+  )}
             </form>
             {/* google */}
             <div className="flex items-center my-3 px-[2rem]">

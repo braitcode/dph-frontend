@@ -5,6 +5,9 @@ import sms from "../assets/icons/sms.png";
 import location from "../assets/icons/location.png";
 import MessageModal from './MessageModal';
 import { useForm } from 'react-hook-form';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const ContactForm = () => {
        // State for modal visibility and type
@@ -12,13 +15,15 @@ const ContactForm = () => {
    const [modalType, setModalType] = useState('success');
    const [modalTitle, setModalTitle] = useState('');  
    const [modalMessage, setModalMessage] = useState('');
+   const [loading, setLoading] = useState(false);
  
   // Function to handle success scenario
 const handleSuccess = () => {
   setModalType('success'); // Set the correct modal type
   setModalTitle('Consultation booked');
-  setModalMessage('Kindly check your email for confirmation!');
+  setModalMessage('Message sent successfully!');
   setIsModalOpen(true);
+  setLoading(false);
   reset(); // Clear the form fields
 };
 
@@ -28,6 +33,7 @@ const handleError = () => {
   setModalTitle('Booking failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
+  setLoading(false);
 };
 
  
@@ -36,20 +42,27 @@ const handleError = () => {
      setIsModalOpen(false);
      
    };
-
-
  
-    //  validation
-  const {
-    register,
-    handleSubmit: handleFormSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+    // email
+  const form = useRef();
+ 
+  const { register, handleSubmit: handleFormSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     console.log("Form submitted with data: ", data);
+  
     try {
+      // Send email using EmailJS
+      await emailjs.sendForm(
+        "service_pori0xy", 
+        "template_3xe8tgc", 
+        form.current, 
+        "ZnUpE7zWi6n_KeSea" // publicKey as the last argument
+      );
+      console.log("Email sent successfully.");
+  
+      // Optionally, send data to Google Sheets API
       const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
         method: "POST",
         headers: {
@@ -58,13 +71,16 @@ const handleError = () => {
         body: JSON.stringify([[data.firstName, data.lastName, data.email, data.phone, data.message, new Date().toLocaleString()]]),
       });
       await response.json();
-      handleSuccess()
-      reset();
+  
+      handleSuccess();
     } catch (err) {
       console.log(err);
-      handleError()
+      handleError();
+    } finally {
+      setLoading(false);
     }
   };
+  
 
     return (
         <div className="bg-[#034D2B]">
@@ -99,7 +115,7 @@ const handleError = () => {
                     </div>
 
                     <div className="bg-white xl:w-[50%] w-full h-auto rounded-xl p-6">
-                        <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col gap-6">
+                        <form ref={form} onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col gap-6">
                             <div className="flex flex-col sm:flex-row justify-between gap-4">
                                 <div className="w-full sm:w-[48%] flex flex-col gap-2">
                                     <label className="text-[18px] font-bold font-spaceGrotesk">First Name</label>
@@ -187,7 +203,7 @@ const handleError = () => {
 
                             <div className="flex justify-center xl:justify-start">
                                 <Button size="large" color="success" type="submit">
-                                    Send a message
+                                    {loading ? "Submiting...." : "Send a Message"}
                                 </Button>
                             </div>
                         </form>
