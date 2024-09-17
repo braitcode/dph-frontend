@@ -4,27 +4,31 @@ import {useAuth} from "../components/contexts/Auth"
 import Button from "../components/Button";
 import { IoWarningOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-
+import {useAuth} from "../components/contexts/Auth"
 const LogoutModal = ({ onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const {logout} =useAuth();
   const navigate = useNavigate();
+  const {logout} =useAuth();
 
-  const handleLogOut = async () => {
+  const handleLogOut = () => {
+    logout();
     setIsLoading(true); // Start loading
-    try {
-      // Attempt to log the user out
-      await logout(); // Wait for the backend response
-      setIsLoading(false); // Stop loading
-      navigate('/login'); // Navigate to the login page after logout
-      onClose(); // Close the modal after navigating
-    } catch (error) {
-      // Handle logout failure (e.g., show error message)
-      console.error('Logout failed:', error);
-      setIsLoading(false); // Stop loading on error
-    }
   };
 
+  useEffect(() => {
+    if (isLoading) {
+      // Simulate a delay (e.g., network request)
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        navigate("/"); // Navigate to the login page after loading
+        onClose(); // Close the modal after navigating
+      }, 2000); // 2 seconds delay for demonstration
+
+      // Cleanup timer on component unmount
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading, navigate, onClose]);
 
   return (
     <main className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 font-spaceGrotesk z-20">

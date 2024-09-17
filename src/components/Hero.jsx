@@ -125,13 +125,17 @@ const Hero = () => {
           </div>
         </div>
           <div className=" bg-black">
-            <div className="flex justify-between text-white   py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px]  container w-11/12 m-auto  ">
+            <marquee behavior="" direction="left">
+            <div className="flex justify-between text-white  gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[12px] md:text-[19px]  container w-11/12 m-auto  ">
               <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
               <span>Web Development</span>{" "}
               <img src={dot} alt="" className="w-[5px]" />
               <span>Consultation</span> <img src={dot} alt="" className="w-[5px]" />
               <span>Mobile Development</span>
+              
             </div>
+            </marquee>
+           
           </div>
       </div>
     </>
