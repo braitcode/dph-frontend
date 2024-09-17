@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {useAuth} from "../components/contexts/Auth"
 // import logout from '../assets/logout.svg'
 // import dashboard from '../assets/dashboard.svg'
 import { MdSpaceDashboard } from "react-icons/md";
@@ -10,9 +9,8 @@ import LogoutModal from "./LogoutModal";
 
 const Dropdown = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const {logout} =useAuth();
+
   const handleLogOut = () => {
-    logout();
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
