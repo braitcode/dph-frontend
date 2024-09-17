@@ -6,12 +6,16 @@ import WebImg from "../assets/icons/webimg.png";
 import TwitIcon from "../assets/icons/twitter.png";
 import YoutubeIcon from "../assets/icons/youtube.png";
 import InstaIcon from "../assets/icons/instagram.png";
+import facebookIcon from "../assets/icons/facebook.png"                                      
 import LinkedinIcon from "../assets/icons/linkedin.png";
 import Button from "../components/Button";
 import { useForm } from "react-hook-form";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import MessageModal from "../components/MessageModal";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const Contact = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,6 +27,7 @@ const Contact = () => {
   const handleSuccess = () => {
     setModalType('success'); 
     setModalTitle('Message sent');
+    setModalMessage('Thank you for contacting us!')
     setIsModalOpen(true);
     setLoading(false);
     reset(); // Clear the form fields
@@ -40,12 +45,26 @@ const Contact = () => {
     setIsModalOpen(false);
   };
 
+  // email
+  const form = useRef();
+ 
   const { register, handleSubmit: handleFormSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data) => {
     setLoading(true);
     console.log("Form submitted with data: ", data);
+  
     try {
+      // Send email using EmailJS
+      await emailjs.sendForm(
+        "service_pori0xy", 
+        "template_3xe8tgc", 
+        form.current, 
+        "ZnUpE7zWi6n_KeSea" // publicKey as the last argument
+      );
+      console.log("Email sent successfully.");
+  
+      // Optionally, send data to Google Sheets API
       const response = await fetch('https://v1.nocodeapi.com/peace_b/google_sheets/hrSeWiUQrDUtoEFF?tabId=Sheet1', {
         method: "POST",
         headers: {
@@ -54,6 +73,7 @@ const Contact = () => {
         body: JSON.stringify([[data.firstName, data.lastName, data.email, data.phone, data.message, new Date().toLocaleString()]]),
       });
       await response.json();
+  
       handleSuccess();
     } catch (err) {
       console.log(err);
@@ -62,6 +82,7 @@ const Contact = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <div>
@@ -72,7 +93,7 @@ const Contact = () => {
       </div>
       <div className="container m-auto xl:w-11/12 lg:w-11/12 lg:border-2 lg:rounded-3xl xl:border-2 xl:rounded-3xl mb-[71px]">
         <div className="flex flex-col lg:flex-row lg:w-11/12 lg:h-[660px] lg:gap-[32px] lg:items-center xl:flex-row xl:w-11/12 xl:h-[660px] xl:gap-[62px] xl:items-center m-auto">
-          <div className="border-2 border-yellow-500 relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-2/5 lg:h-[550px] lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
+          <div className="relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-2/5 lg:h-[550px] lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
             <div className="relative z-10">
               <div className="w-[300px] m-auto xl:w-[344px] xl:pt-[44px] xl:m-auto ">
                 <h1 className="text-[21px] font-medium text-center pt-4 lg:font-bold lg:text-[28px] xl:text-start xl:pt-0">
@@ -99,7 +120,7 @@ const Contact = () => {
                 <div className="one pb-3 flex items-center md:justify-center lg:justify-start lg:pl-10 gap-4 font-medium text-[20px] xl:pl-0 xl:justify-start xl:pb-0 xl:gap-[25px]">
                   <img src={MiniLoc} alt="" />
                   <p className="xl:w-[211px]">
-                    444 St. Yellow Street California, Usa
+                  1, Dph cresent, lagos Nigeria
                   </p>
                 </div>
               </div>
@@ -108,6 +129,7 @@ const Contact = () => {
                 <img src={YoutubeIcon} alt="" />
                 <img src={InstaIcon} alt="" />
                 <img src={LinkedinIcon} alt="" />
+                <img src={facebookIcon} alt="" />
               </div>
             </div>
             {/* circle pattern */}
@@ -118,6 +140,7 @@ const Contact = () => {
           {/* FORM */}
           <div className="bg-white xl:w-[700px] lg:w-full xl:h-[535px] w-full h-auto xl:rounded-xl">
             <form
+             ref={form}
               onSubmit={handleFormSubmit(onSubmit)}
               className="w-10/12 xl:w-full xl:h-[535px] m-auto flex flex-col gap-6 xl:m-0 relative"
             >
@@ -127,6 +150,7 @@ const Contact = () => {
                     First Name
                   </label>
                   <input
+                  name="firstName"
                     type="text"
                     placeholder="First Name"
                     {...register("firstName", {
@@ -148,6 +172,7 @@ const Contact = () => {
                     Last Name
                   </label>
                   <input
+                  name="lastName"
                     type="text"
                     placeholder="Last Name"
                     {...register("lastName", {

@@ -49,9 +49,13 @@ const SignUp = () => {
     if (password.trim() === "") {
       setPasswordError("Create a personal password");
       isValid = false;
-    } else {
+    } if (password.length < 8) {
+      setPasswordError('Password must be at least 8 characters');
+      isValid = false;
+  } else {
       setPasswordError(null);
     }
+ 
     if (!Agree) {
       setAgreeError(" Agree to continue");
       isValid = false;
@@ -83,9 +87,9 @@ const SignUp = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://dph-backend.onrender.com/api/auth/google";
+    window.location.href = "https://dph-backend.onrender.com/auth/google";
   };
-  console.log(fullname);
+  // console.log(fullname);
 
   return (
     <>
@@ -112,8 +116,8 @@ const SignUp = () => {
             </p>
 
            {/* form starts here */}
-            <form onSubmit={handleSubmit}  className="space-y-5 mt-3  px-1">
-              <label className="block font-[500px] text-[18px] lg:text-[23px]">
+            <form onSubmit={handleSubmit}  className=" mt-3  px-1">
+              <label className="block font-[500px] text-[18px] lg:text-[23px] my-5">
                 Full Name
                 <input
                   type="text"
@@ -132,7 +136,7 @@ const SignUp = () => {
                   </p>
                 )}
               </label>
-              <label className="block font-[500px] text-[18px] lg:text-[23px] ">
+              <label className="block font-[500px] text-[18px] lg:text-[23px] my-5 ">
                 Email
                 <input
                   type="email"
@@ -152,7 +156,7 @@ const SignUp = () => {
                 )}
               </label>
            
-              <label className="block relative font-[500px] text-[18px] lg:text-[23px] ">
+              <label className="block relative font-[500px] text-[18px] lg:text-[23px] mt-5 mb-2 ">
                 Password
                 <input
                   type={showPassword ? "text" : "password"}
@@ -207,11 +211,7 @@ const SignUp = () => {
                   )}
                 </div>
               </div>
-              {errors.form && (
-                <p className="text-red-500 text-[12px] lg:text-[14px]">
-                  {errors.form}
-                </p>
-              )}
+            
               <button
                 type="submit"
                 className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold p-2  lg:text-[18px] text-[14px]"
@@ -219,7 +219,11 @@ const SignUp = () => {
               >
                 {loading ? "Please wait..." : "Sign Up"}
               </button>
-             
+              {errors.form && (
+                <p className="text-red-500 text-[12px] lg:text-[14px]">
+                  {errors.form}
+                </p>
+              )}
             </form>
              <div className="flex items-center my-5 px-[2rem]">
                 <hr className="w-full border-[2px] border-[#A4ADB6]" />

@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Button from "../components/Button";
 import { IoWarningOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-
+import {useAuth} from "../components/contexts/Auth"
 const LogoutModal = ({ onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const {logout} =useAuth();
 
   const handleLogOut = () => {
+    logout();
     setIsLoading(true); // Start loading
   };
 
@@ -17,7 +19,7 @@ const LogoutModal = ({ onClose }) => {
       // Simulate a delay (e.g., network request)
       const timer = setTimeout(() => {
         setIsLoading(false);
-        navigate("/login"); // Navigate to the login page after loading
+        navigate("/"); // Navigate to the login page after loading
         onClose(); // Close the modal after navigating
       }, 2000); // 2 seconds delay for demonstration
 

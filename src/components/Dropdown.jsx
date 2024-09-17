@@ -1,8 +1,6 @@
 import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {useAuth} from "../components/contexts/Auth"
-// import logout from '../assets/logout.svg'
-// import dashboard from '../assets/dashboard.svg'
 import { MdSpaceDashboard } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
 import LogoutModal from "./LogoutModal";
@@ -10,9 +8,10 @@ import LogoutModal from "./LogoutModal";
 
 const Dropdown = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const {logout} =useAuth();
+  const [isDropdownOpen,setIsDropDownOpen] =useState(true);
   const handleLogOut = () => {
-    logout();
+    // logout();
+    setIsDropDownOpen(false)
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
@@ -23,6 +22,8 @@ const Dropdown = () => {
   return (
     <>
       <section className="bg-white rounded-md border  shadow-lg  font-spaceGrotesk ">
+            
+
        {/* DashBoard */}
         
           <div className="flex gap-3 items-center justify-start py-[20px] px-[40px] ">
@@ -36,6 +37,7 @@ const Dropdown = () => {
         <div>
            <Link to="/">
           <div className="flex gap-3 items-center justify-start py-[20px] px-[40px]">
+
             <span className="text-[#FF0000] text-2xl font-bold">
             <LuLogOut />
             </span>
