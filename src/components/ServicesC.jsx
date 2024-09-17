@@ -55,7 +55,7 @@ const ServicesC = () => {
                             </p>
                             <Link to='/signup'>
                                 <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[5rem] py-1">
+                                    <div className="flex gap-2 px-[4.5rem] py-1">
                                         <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
                                     </div>
                                 </Button>
@@ -86,7 +86,7 @@ const ServicesC = () => {
                             </p>
                             <Link to='/signup'>
                                 <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[5rem] py-1">
+                                    <div className="flex gap-2 px-[4.5rem] py-1">
                                         <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
                                     </div>
                                 </Button>
@@ -117,7 +117,7 @@ const ServicesC = () => {
                             </p>
                             <Link to='/signup'>
                                 <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[5rem] py-1">
+                                    <div className="flex gap-2 px-[4.5rem] py-1">
                                         <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.06rem]' />
                                     </div>
                                 </Button>
@@ -148,10 +148,10 @@ const ServicesC = () => {
                                 and let's explore how we can elevate your brand
                                 to new heights.
                             </p>
-                            <Link to='#'>
+                            <Link to='/contact'>
                                 <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[5rem] py-1">
-                                        <span className="text-[14px]">Book Now</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                    <div className="flex gap-2 px-[4.5rem] py-1">
+                                        <span className="text-[14px]">Get in Touch</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
                                     </div>
                                 </Button>
                             </Link>
