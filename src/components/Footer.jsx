@@ -15,6 +15,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import sendIcon from "../assets/icons/send icon.png"
 import { FaHourglassStart } from 'react-icons/fa';
+import Hourglass from "../assets/hourglass.svg"
 
 
 
@@ -167,7 +168,7 @@ const Footer = () => {
                   type="submit"
                   className="absolute right-0 top-0 h-full px-4 bg-white rounded-r-lg"
                 >
-                 {isLoading ? <FaHourglassStart/> : <img src={sendIcon} alt='Send Icon' /> } {/* Text loader */}
+                 {isLoading ? <img src={Hourglass} alt="" className='w-[24px] h-[24px]' /> : <img src={sendIcon} alt='Send Icon' /> } {/* Text loader */}
                 </button>
               </div>
             </form>
