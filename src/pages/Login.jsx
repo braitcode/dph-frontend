@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { toast, Toaster } from "react-hot-toast"; 
+import { toast, Toaster } from "react-hot-toast";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
 import logo from "../assets/signuplogo.svg";
@@ -52,13 +52,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!validateForm()) return;
-  
+
     try {
       setIsSubmitting(true);
       const data = await login(email, password);
-  
+
       if (data && !data.error) {
         toast.success("Login successful!");
         navigate("/");
@@ -66,14 +66,14 @@ const Login = () => {
         toast.error("Invalid credentials. Please try again.");
       }
     } catch (err) {
-   
+
       toast.error(err.message || "An unexpected error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-  
-  
+
+
   useEffect(() => {
     document.title = "DPH-Log-in";
   }, []);
@@ -103,7 +103,7 @@ const Login = () => {
                 <input
                   type="email"
                   value={email}
-                  placeholder="johndoe@gmail.com"
+                  placeholder="example@mail.com"
                   onChange={handleEmailChange}
                   className="w-full p-3 h-[55px] text-sm lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
@@ -120,7 +120,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  placeholder="Password"
+                  placeholder="password"
                   onChange={handlePasswordChange}
                   className="w-full p-2 h-[55px] rounded-[5px] border-[1px] border-[#9A9696] text-sm lg:text-[16px] text-gray-700 focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
@@ -151,7 +151,7 @@ const Login = () => {
                 disabled={isSubmitting}
               >
 
-                {isSubmitting? "Please wait..." : "Login"}
+                {isSubmitting ? "Please wait..." : "Login"}
               </button>
             </form>
 
