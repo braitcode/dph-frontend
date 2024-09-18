@@ -14,7 +14,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import CheckEmail from "./components/CheckEmail";
 import toast, { Toaster } from 'react-hot-toast';
 import Reset from "./components/Reset";
-import OAuthCallback from "./components/contexts/OAuthCallback";
+import GoogleAuthCallback from "./components/contexts/OAuthCallback";
 import LogoutModal from "./components/LogoutModal";
 
 
@@ -42,7 +42,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/check" element={<CheckEmail />} />
           <Route path="/reset-password/:token" element={<Reset />} />
-          <Route path="/oauth-callback" element={<OAuthCallback/>}/>
+          <Route path="/google/callback" element={<GoogleAuthCallback/>}/>
         </Routes>
       </Router>
     </>
