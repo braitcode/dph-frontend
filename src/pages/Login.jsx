@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { toast, Toaster } from "react-hot-toast";
 import google from "../assets/google.svg";
 import signinimg from "../assets/login.png";
 import logo from "../assets/signuplogo.svg";
 import logo2 from "../assets/icons/logo.svg";
-import { useAuth } from "../components/contexts/Auth"; //context hook 
+import { useAuth } from "../components/contexts/Auth"; //context hook
 
 const Login = () => {
   const { login } = useAuth(); // Destructure the login function from context
@@ -13,8 +14,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
-
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate(); // Initialize navigate
 
   const handleEmailChange = (e) => {
@@ -49,66 +50,45 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!validateForm()) return;
-
-  //   try {
-  //     setLoading(true);
-  //     const data = await login(email, password);
-
-  //     if (!data?.error) {
-  //       setLoading(false);
-  //       navigate("/");
-  //     } else {
-  //       setErrors({ form: "Login failed" });
-  //       setLoading(false);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //     setErrors({ form: err.message });
-  //     setLoading(false);
-  //   }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
     try {
-      setLoading(true);
+      setIsSubmitting(true);
       const data = await login(email, password);
 
-      if (!data?.error) {
-        setLoading(false);
+      if (data && !data.error) {
+        toast.success("Login successful!");
         navigate("/");
       } else {
-        // If an error occurs during login, display the specific error message
-        setErrors({ form: data.error || "Login failed. Please try again." });
-        setLoading(false);
+        toast.error("Invalid credentials. Please try again.");
       }
     } catch (err) {
-      console.error(err);
-      setErrors({ form: err.message || "An unexpected error occurred. Please try again." });
-      setLoading(false);
+
+      toast.error(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+
   useEffect(() => {
-    document.title = "Digital Presence Hub-Log In";
+    document.title = "DPH-Log-in";
   }, []);
 
   return (
     <>
       <main className="font-spaceGrotesk py-5 lg:py-0 ">
         <div className="bg-white w-full h-screen flex">
-          {/* left section */}
+          <Toaster />
           <section className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-            <Link to="/" className=" lg:hidden  ">
+            <Link to="/" className="lg:hidden">
               <img
                 src={logo2}
                 alt="Dph Logo"
-                className=" w-[100px] mx-auto pb-[8px] "
+                className="w-[100px] mx-auto pb-[8px]"
               />
             </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
@@ -158,27 +138,23 @@ const Login = () => {
                 )}
               </label>
 
-              <div className=" mb-4 text-end">
+              <div className="mb-4 text-end">
                 <Link to="/forgot">
-                  <span className="text-sm text-red-500 font-semibold hover:text-red-700 ">
+                  <span className="text-sm text-red-500 font-semibold hover:text-red-700">
                     Forgot password?
                   </span>
                 </Link>
               </div>
               <button
                 type="submit"
-                className="bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px]"
-                disabled={loading}
+                className={`bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px] ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'}`}
+                disabled={isSubmitting}
               >
-                {loading ? "Please wait..." : "Login"}
+
+                {isSubmitting ? "Please wait..." : "Login"}
               </button>
-              {errors.form && (
-                <p className="text-red-500 text-center mt-4">
-                  {errors.form}
-                </p>
-              )}
             </form>
-            {/* google */}
+
             <div className="flex items-center my-3 px-[2rem]">
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
               <span className="px-4 font-bold">Or</span>
@@ -190,7 +166,7 @@ const Login = () => {
                 Continue With Google
               </button>
             </a>
-            {/* new user prompt */}
+
             <h3 className="font-[500px] text-[16px] text-center mt-5">
               New User?{" "}
               <span className="text-[#028A4C]">
@@ -198,7 +174,7 @@ const Login = () => {
               </span>
             </h3>
           </section>
-          {/* right section */}
+
           <section
             className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative"
             style={{ backgroundImage: `url(${signinimg}) ` }}

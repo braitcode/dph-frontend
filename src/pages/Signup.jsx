@@ -6,230 +6,197 @@ import logo from "../assets/signuplogo.svg";
 import { useAuth } from "../components/contexts/Auth";
 import { useNavigate, Link } from "react-router-dom";
 import logo2 from "../assets/icons/logo.svg";
+import toast from 'react-hot-toast';
+
 
 const SignUp = () => {
 
-  const customScrollbarStyle = {
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-  };
 
   const [fullname, setFullName] = useState("");
-  const [fullNameError, setFullNameError] = useState(null);
   const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState(null);
   const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState(null);
-  const [Agree, setAgree] = useState("");
-  const [AgreeError, setAgreeError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [Agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
-  useEffect(() => {
-    document.title = " Digital Presence Hub-Sign Up ";
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { signup } = useAuth();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Digital Presence Hub - Sign Up";
+  });
+
   const validateForm = () => {
-    let isValid = true;
-    if (fullname.trim() === "") {
-      setFullNameError("Please enter your Full name");
-      isValid = false;
-    } else {
-      setFullNameError(null);
+    const newErrors = {};
+    if (!fullname.trim()) {
+      newErrors.fullname = "Please enter your full name";
     }
-    if (email.trim() === "") {
-      setEmailError("Please enter your email");
-      isValid = false;
-    } else {
-      setEmailError(null);
+
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!email) {
+      newErrors.email = "Please enter your email";
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = "Invalid email format";
     }
-    if (password.trim() === "") {
-      setPasswordError("Create a personal password");
-      isValid = false;
-    } if (password.length < 8) {
-      setPasswordError('Password must be at least 8 characters');
-      isValid = false;
+
+    if (!password) {
+      newErrors.password = "Create a personal password";
     } else {
-      setPasswordError(null);
+      const pwdTrim = password.trim();
+      const hasUpperCase = /[A-Z]/.test(pwdTrim);
+      const hasLowerCase = /[a-z]/.test(pwdTrim);
+      const hasNumber = /\d/.test(pwdTrim);
+      const hasSpecialChar = /[!@#$%^&*]/.test(pwdTrim);
+
+      if (pwdTrim.length < 8) {
+        newErrors.password = "Password must be at least 8 characters";
+      } else if (!hasUpperCase || !hasLowerCase || !hasNumber || !hasSpecialChar) {
+        newErrors.password =
+          "Password must include uppercase, lowercase, number, and special characters";
+      }
     }
 
     if (!Agree) {
-      setAgreeError(" Agree to continue");
-      isValid = false;
-    } else {
-      setAgreeError(null);
+      newErrors.agree = "You must agree to the terms and privacy policy";
     }
-    return isValid;
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!validateForm()) return;
 
     try {
-      setLoading(true);
+      setIsSubmitting(true);
       const data = await signup(fullname, email, password);
 
       if (!data?.error) {
-        setLoading(false);
+        setIsSubmitting(false);
+        toast.success("Registration successful! Please log in.");
         navigate("/login");
       } else {
         setErrors({ form: "Registration failed" });
-        setLoading(false);
+        toast.error("Registration failed. Please try again.");
+        setIsSubmitting(false);
       }
     } catch (err) {
       console.log(err);
+      toast.error(err.message || "An unexpected error occurred. Please try again.");
       setErrors({ form: err.message });
-      setLoading(false);
+      setIsSubmitting(false);
     }
   };
+
 
   const handleGoogleLogin = () => {
     window.location.href = "https://dph-backend.onrender.com/api/auth/google/callback";
   };
-  // console.log(fullname);
 
   return (
-    <>
-      <main className="bg-white h-screen w-full lg:flex font-spaceGrotesk">
-        {/* left section */}
-        <section className="lg:w-1/2 p-4 flex flex-col justify-center items-center h-full ">
-          <div className="overflow-y-auto container mx-auto lg:py-12 lg:px-16 " style={{
-            ...customScrollbarStyle,
-            WebkitOverflowScrolling: 'touch',
-          }}>
 
-            <Link to="/" className=" lg:hidden  ">
-              <img
-                src={logo2}
-                alt="Dph Logo"
-                className=" w-[100px] mx-auto pb-[6px]"
-              />
+    <>
+
+      <main className="bg-white h-screen w-full lg:flex font-spaceGrotesk">
+        {/* Left section */}
+        <section className="lg:w-1/2 p-4 flex flex-col justify-center items-center h-full">
+          <div className="overflow-y-auto container mx-auto lg:py-12 lg:px-16" style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          }}>
+            <Link to="/" className="lg:hidden">
+              <img src={logo2} alt="Dph Logo" className="w-[100px] mx-auto pb-[6px]" />
             </Link>
             <h2 className="lg:text-[28px] font-semibold text-center lg:text-start text-[23px]">
               Get Started
             </h2>
-            <p className="lg:text-[18px]  text-center lg:text-start text-[16px]">
+            <p className="lg:text-[18px] text-center lg:text-start text-[16px]">
               Join us now by filling your details below
             </p>
 
-            {/* form starts here */}
-            <form onSubmit={handleSubmit} className=" mt-3  px-1">
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="mt-3 px-1">
               <label className="block font-[500px] text-[18px] lg:text-[23px] my-5">
                 Full Name
                 <input
                   type="text"
                   value={fullname}
-                  placeholder="Enter Full Name"
+                  placeholder="Full Name"
                   onChange={(event) => setFullName(event.target.value)}
-                  className="w-full p-3 h-[55px] text-sm text-[14px] lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
-                  style={{
-                    outline: "none",
-                    boxShadow: "none",
-                  }}
+                  className="w-full p-3 h-[55px] text-sm lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
+                  style={{ outline: "none", boxShadow: "none" }}
                 />
-                {fullNameError && (
-                  <p className="text-red-500 text-[12px] lg:text-[14px]">
-                    {fullNameError}
-                  </p>
-                )}
+                {errors.fullname && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.fullname}</p>}
               </label>
-              <label className="block font-[500px] text-[18px] lg:text-[23px] my-5 ">
+
+              <label className="block font-[500px] text-[18px] lg:text-[23px] my-5">
                 Email
                 <input
                   type="email"
                   value={email}
                   placeholder="example@mail.com"
                   onChange={(event) => setEmail(event.target.value)}
-                  className="w-full p-3 h-[55px] text-sm lg:text-[18px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
-                  style={{
-                    outline: "none",
-                    boxShadow: "none",
-                  }}
+                  className="w-full p-3 h-[55px] text-sm lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
+                  style={{ outline: "none", boxShadow: "none" }}
                 />
-                {emailError && (
-                  <p className="text-red-500 xl:text-[14px] text-[12px]">
-                    {emailError}
-                  </p>
-                )}
+                {errors.email && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.email}</p>}
               </label>
 
-              <label className="block relative font-[500px] text-[18px] lg:text-[23px] mt-5 mb-2 ">
+              <label className="block relative font-[500px] text-[18px] lg:text-[23px] mt-5 mb-2">
                 Password
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  placeholder="password"
+                  placeholder="Password"
                   onChange={(event) => setPassword(event.target.value)}
-                  className="w-full p-3 h-[55px] rounded-[5px] border-[1px] border-[#9A9696] text-sm lg:text-[18px] text-gray-700  focus:border-[#02864A]"
-                  style={{
-                    outline: "none",
-                    boxShadow: "none",
-                  }}
+                  className="w-full p-3 h-[55px] rounded-[5px] border-[1px] border-[#9A9696] text-sm lg:text-[16px] text-gray-700 focus:border-[#02864A]"
+                  style={{ outline: "none", boxShadow: "none" }}
                 />
-                <span
-                  className="absolute right-3 top-12 cursor-pointer"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
+                <span className="absolute right-3 top-12 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
                 </span>
-                {passwordError && (
-                  <p className="text-red-500 xl:text-[14px] text-[12px]">
-                    {passwordError}
-                  </p>
+                {errors.password && (
+                  <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.password}</p>
                 )}
               </label>
-
-              <div className="flex items-center  pb-[24px] xl:text-[16px]">
+              <label className="lg:text-[16px] text-[12px] flex items-center gap-1">
                 <input
                   type="checkbox"
                   checked={Agree}
                   onChange={(event) => setAgree(event.target.checked)}
                   className="mr-2"
-                  style={{
-                    accentColor: "#02864A ",
-                    width: "18px",
-                    height: "18px",
-                  }}
+                  style={{ accentColor: "#02864A ", width: "18px", height: "18px" }}
                 />
-                <div className="flex flex-col">
-                  <label className="lg:text-[16px] text-[12px]">
-                    I agree to the{" "}
-                    <a href="#" className="decoration-none text-[#02864A]">
-                      {" "}
-                      terms of Services
-                    </a>{" "}
-                    and{" "}
-                    <a href="#" className="decoration-none text-[#02864A]">
-                      privacy Policies
-                    </a>{" "}
-                  </label>
-                  {AgreeError && (
-                    <p className="text-red-500 text-[12px]">{AgreeError}</p>
-                  )}
-                </div>
-              </div>
+                I agree to the{" "}
+                <a href="#" className="decoration-none text-[#02864A]">
+                  terms of Services
+                </a>{" "}
+                and{" "}
+                <a href="#" className="decoration-none text-[#02864A]">
+                  privacy Policies
+                </a>
+              </label>
 
+              {errors.agree && <p className="text-red-500 text-[12px]">{errors.agree}</p>}
+              <br />
               <button
                 type="submit"
-                className="bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold p-2  lg:text-[18px] text-[14px]"
-                disabled={loading}
+                className={`bg-[#02864A] w-full h-[55px] rounded-[5px] text-white font-bold p-2 lg:text-[18px] text-[14px]${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'}`}
+                disabled={isSubmitting}
               >
-                {loading ? "Please wait..." : "Sign Up"}
+                {isSubmitting ? "Please wait..." : "Sign Up"}
               </button>
-              {errors.form && (
-                <p className="text-red-500 text-[12px] lg:text-[14px]">
-                  {errors.form}
-                </p>
-              )}
+              {errors.form && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.form}</p>}
             </form>
+
             <div className="flex items-center my-5 px-[2rem]">
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
-              <span className="px-4 font-bold">0r</span>
+              <span className="px-4 font-bold">Or</span>
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
             </div>
+
 
             <button
               className="w-full h-[55px]  font-bold  p-2 rounded-[5px] border-[1px] border-[#9A9696] lg:text-[18px] text-[16px] text-[#212429]"
@@ -263,9 +230,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-
-
-
-
-

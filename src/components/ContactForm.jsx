@@ -20,8 +20,8 @@ const ContactForm = () => {
   // Function to handle success scenario
 const handleSuccess = () => {
   setModalType('success'); // Set the correct modal type
-  setModalTitle('Consultation booked');
-  setModalMessage('Message sent successfully!');
+  setModalTitle('Message Sent');
+  setModalMessage('Kindly check your email, our team will reach out to you!');
   setIsModalOpen(true);
   setLoading(false);
   reset(); // Clear the form fields
@@ -30,7 +30,7 @@ const handleSuccess = () => {
 // Function to handle error scenario
 const handleError = () => {
   setModalType('fail'); // Set the correct modal type
-  setModalTitle('Booking failed');
+  setModalTitle('Message Failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
   setLoading(false);
