@@ -116,7 +116,7 @@ const Hero = () => {
               <Link to='/contact'>
                 <Button size="small" color="white">
                   <span className="md:text-[15px] text-[10px]">
-                  Get in Touch
+                    Get in Touch
                   </span>
                 </Button>
               </Link>
@@ -124,19 +124,19 @@ const Hero = () => {
             </div>
           </div>
         </div>
-          <div className=" bg-black">
-            <marquee behavior="" direction="left">
+        <div className=" bg-black">
+          <marquee behavior="scroll" direction="left" onfinish="this.start()">
             <div className="flex justify-between text-white  gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[12px] md:text-[19px]  container w-11/12 m-auto  ">
               <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
               <span>Web Development</span>{" "}
               <img src={dot} alt="" className="w-[5px]" />
               <span>Consultation</span> <img src={dot} alt="" className="w-[5px]" />
               <span>Mobile Development</span>
-              
+
             </div>
-            </marquee>
-           
-          </div>
+          </marquee>
+
+        </div>
       </div>
     </>
   );

@@ -12,13 +12,13 @@ const ServicesC = () => {
     return (
         <div className='font-spaceGrotesk'>
             <div className=' py-5 lg:px-[10rem] xl:px-[20rem] mt-20'>
-                <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[55px] xl:leading-[70px] sm:w-11/12 text-center leading-[1.8rem] py-2 '>
+                <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[55px] xl:leading-[70px] sm:w-11/12 text-center leading-[1.8rem] pt-[4rem] '>
                     Optimized  services to elevate your business
                 </h1>
-                <p className='mx-auto sm:w-11/12 text-center leading-[1.2rem] text-[#575253] font-light px-1 text-[14px] xl:text-[24px] xl:leading-[30.62px]'>
+                <p className='mx-auto sm:w-11/12 text-center leading-[1.2rem] text-[#575253] font-light px-1 text-[14px] xl:text-[24px] xl:leading-[30.62px] pt-4'>
                     We provide innovative solutions that streamline operations, enhance productivity, and drive growth
                 </p>
-                <div className="flex gap-2 justify-center mt-[2rem] mb-[2rem]">
+                <div className="flex gap-2 md:gap-4 lg:gap-[30px] justify-center mt-[2rem] mb-[2rem]">
                     <Link to='/signup'>
                         <Button size="medium" color="success" className=''>
                             <div className="flex gap-2 p-[0.1rem] px-2">
@@ -46,9 +46,9 @@ const ServicesC = () => {
                                 alt="Branding Service"
                                 className="rounded-lg mb-2 w-[100%]" />
                         </div>
-                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[1.5rem] xl:py-[6rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">Branding</h3>
-                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[20px]">
+                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[26px]">
                                 Our branding service crafts distinctive logos,
                                 visual identities, and taglines that capture your
                                 brand's essence and resonate with your audience.
@@ -74,11 +74,11 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[6rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Web Development
                             </h3>
-                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[20px]">
+                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[26px]">
                                 At Digital Presence Hub, we understand that your
                                 website is the digital face of your brand. Our web
                                 design services are focused on creating visually
@@ -105,11 +105,11 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[6rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Mobile Design
                             </h3>
-                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[20px]">
+                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[26px]">
                                 We specialize in bringing your product ideas to
                                 life. Our product design services are
                                 comprehensive, covering everything from initial
@@ -136,11 +136,11 @@ const ServicesC = () => {
                                 className="rounded-lg mb-2 w-[100%]"
                             />
                         </div>
-                        <div className='py-[2rem] md:py-[3rem] xl:py-[10rem]'>
+                        <div className='py-[2rem] md:py-[3rem] xl:py-[6rem]'>
                             <h3 className="text-2xl font-bold mb-4 lg:text-[32px]">
                                 Consultation
                             </h3>
-                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[20px]">
+                            <p className="text-gray-600 mb-4 text-[14px] lg:text-[26px]">
                                 Take the first step toward transforming your
                                 brand. Our experienced team is ready to offer
                                 tailored insights and strategic guidance at no

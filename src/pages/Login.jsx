@@ -72,13 +72,13 @@ const Login = () => {
   // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-  
+
     try {
       setLoading(true);
       const data = await login(email, password);
-  
+
       if (!data?.error) {
         setLoading(false);
         navigate("/");
@@ -93,7 +93,7 @@ const Login = () => {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     document.title = "Digital Presence Hub-Log In";
   }, []);
@@ -123,7 +123,7 @@ const Login = () => {
                 <input
                   type="email"
                   value={email}
-                  placeholder="johndoe@gmail.com"
+                  placeholder="example@mail.com"
                   onChange={handleEmailChange}
                   className="w-full p-3 h-[55px] text-sm lg:text-[16px] text-gray-700 rounded-[5px] border-[1px] border-[#9A9696] focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
@@ -140,7 +140,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  placeholder="Password"
+                  placeholder="password"
                   onChange={handlePasswordChange}
                   className="w-full p-2 h-[55px] rounded-[5px] border-[1px] border-[#9A9696] text-sm lg:text-[16px] text-gray-700 focus:border-[#02864A]"
                   style={{ outline: "none", boxShadow: "none" }}
@@ -173,24 +173,24 @@ const Login = () => {
                 {loading ? "Please wait..." : "Login"}
               </button>
               {errors.form && (
-    <p className="text-red-500 text-center mt-4">
-      {errors.form}
-    </p>
-  )}
+                <p className="text-red-500 text-center mt-4">
+                  {errors.form}
+                </p>
+              )}
             </form>
             {/* google */}
             <div className="flex items-center my-3 px-[2rem]">
-                <hr className="w-full border-[2px] border-[#A4ADB6]" />
-                <span className="px-4 font-bold">Or</span>
-                <hr className="w-full border-[2px] border-[#A4ADB6]" />
-              </div>
-              <a href="https://www.google.com">
-                <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] border-[1px] border-[#9A9696]">
-                  <img className="inline w-6 h-6 mr-2" src={google} alt="" />
-                  Continue With Google
-                </button>
-              </a>
-              {/* new user prompt */}
+              <hr className="w-full border-[2px] border-[#A4ADB6]" />
+              <span className="px-4 font-bold">Or</span>
+              <hr className="w-full border-[2px] border-[#A4ADB6]" />
+            </div>
+            <a href="https://www.google.com">
+              <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] border-[1px] border-[#9A9696]">
+                <img className="inline w-6 h-6 mr-2" src={google} alt="" />
+                Continue With Google
+              </button>
+            </a>
+            {/* new user prompt */}
             <h3 className="font-[500px] text-[16px] text-center mt-5">
               New User?{" "}
               <span className="text-[#028A4C]">

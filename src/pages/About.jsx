@@ -16,7 +16,7 @@ const About = () => {
       <div>
         <NavBar />
         <div className='pt-[4rem] lg:pt-[8rem] font-spaceGrotesk'>
-          <div className='pt-[2rem] pb-[1.5rem]'>
+          <div className='pt-[2rem] pb-[2rem]'>
             <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] lg:text-[55px] text-center leading-[1.8rem] lg:mb-7 '>
               Your Partner In Digital Success
             </h1>
@@ -57,6 +57,7 @@ const About = () => {
               <span>Mobile Development</span>
             </div>
           </div>
+
 
           <div className="w-full bg-[#034D2B] text-white m-auto">
             <h1 className="pt-10 pb-5 text-center font-semibold text-3xl pt[71px] md:text-5xl md:pt-[71px] md:pb-8 xl:font-bold xl:text-[55px] xl:pt-[71px]">Why Choose Us ?</h1>
