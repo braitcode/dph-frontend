@@ -121,12 +121,15 @@ const Portfolio = () => {
                     alt="project-images"
                     className="w-full h-64 lg:w-full lg:h-[371px] rounded-t-xl"
                   />
-                  <div className="lg:px-9 xl:px-12 px-6 py-3 border border-b-4 rounded-b-lg font-spaceGrotesk">
+                  <div className="lg:px-9 xl:px-12 px-6 py-6 border border-b-4 rounded-b-lg font-spaceGrotesk flex justify-between items-center">
+                    <div>
+                      
                     <h3 className="text-xl font-bold mt-3">{project.title}</h3>
                     <p className="text-gray-600 text-sm">{project.type}</p>
+                    </div>
                     <div className="flex items-center gap-1 mt-3">
                       <p className="text-[#02864A] font-semibold cursor-pointer font-spaceGrotesk text-[14px] lg:text-[16px]">
-                        See more
+                        View Project
                       </p>
                       <FaArrowRightLong className="text-[12px] lg:text-[16px] text-[#02864A] mt-[2px] cursor-pointer" />
                     </div>
