@@ -58,25 +58,24 @@ const Footer = () => {
   // Handle the form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form behavior
-
+  
     // Reset feedback messages
     setError('');
-
+  
     // Check if the email is empty
     if (!email) {
       setError('Please enter a valid email');
       return;
     }
-
+  
     setIsLoading(true); // Start loading
     
     try {
       // Send the email to the backend API for newsletter subscription using Axios
       const response = await axios.post('/newsletter/subscribe', {
         email, // Send email data
-        fullname: 'User' // Optionally, send fullname or other data
       });
-
+  
       if (response.status === 200) {
         handleSuccess(); // Show success modal
       } else {
@@ -84,9 +83,20 @@ const Footer = () => {
         handleError();
       }
     } catch (err) {
-      // Handle any errors
-      setError('An error occurred. Please try again.');
-      handleError();
+      // Check if the error is due to duplicate subscription
+      if (err.response && err.response.status === 409) { // 409 Conflict for duplicate email
+        setError('This email is already subscribed.');
+        setModalType('fail'); 
+        setModalTitle('Already Subscribed');
+        setModalMessage('This email is already subscribed to the newsletter.');
+        setIsModalOpen(true);
+      } else {
+        // Handle any other errors
+        setError('An error occurred. Please try again.');
+        handleError();
+      }
+    } finally {
+      setIsLoading(false); // Stop loading
     }
   };
 

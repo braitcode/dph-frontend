@@ -92,7 +92,7 @@ const SignUp = () => {
 
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://dph-backend.onrender.com/api/auth/google/callback";
+    window.location.href = "https://dph-backend.onrender.com/auth/google";
   };
 
   return (
