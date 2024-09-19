@@ -17,7 +17,7 @@ const Info = () => {
               <Link to='/contact'>
                 <Button color="success" size="medium" className="md:mx-auto">
                   <div className="flex items-center gap-2">
-                    <span className="text-[15px]">Get in Touch Now</span>
+                    <span className="text-[15px]">Get in Touch</span>
                     <img src={arrowRight} alt="" />
                   </div>
                 </Button>
