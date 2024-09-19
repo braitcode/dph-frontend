@@ -21,7 +21,7 @@ const ContactForm = () => {
 const handleSuccess = () => {
   setModalType('success'); // Set the correct modal type
   setModalTitle('Message Sent');
-  setModalMessage('Kindly check your email, our team will reach out to you!');
+  setModalMessage('Thanks for Contacting Us!');
   setIsModalOpen(true);
   setLoading(false);
   reset(); // Clear the form fields
