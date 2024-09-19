@@ -73,6 +73,10 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = "https://dph-backend.onrender.com/auth/google";
+  };
+
 
   useEffect(() => {
     document.title = "DPH-Log-in";
@@ -160,12 +164,14 @@ const Login = () => {
               <span className="px-4 font-bold">Or</span>
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
             </div>
-            <a href="https://www.google.com">
-              <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] border-[1px] border-[#9A9696]">
+            
+              <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] border-[1px] border-[#9A9696]"
+              onClick={handleGoogleLogin}
+              >
                 <img className="inline w-6 h-6 mr-2" src={google} alt="" />
                 Continue With Google
               </button>
-            </a>
+            
 
             <h3 className="font-[500px] text-[16px] text-center mt-5">
               New User?{" "}
