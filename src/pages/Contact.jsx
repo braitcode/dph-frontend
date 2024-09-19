@@ -27,7 +27,7 @@ const Contact = () => {
   const handleSuccess = () => {
     setModalType('success'); 
     setModalTitle('Message sent');
-    setModalMessage('Thank you for contacting us!')
+    setModalMessage('Thanks for Contacting Us!');
     setIsModalOpen(true);
     setLoading(false);
     reset(); // Clear the form fields
@@ -93,9 +93,9 @@ const Contact = () => {
       </div>
       <div className="container m-auto xl:w-11/12 lg:w-11/12 lg:border-2 lg:rounded-3xl xl:border-2 xl:rounded-3xl mb-[71px]">
         <div className="flex flex-col lg:flex-row lg:w-11/12 lg:h-[660px] lg:gap-[32px] lg:items-center xl:flex-row xl:w-11/12 xl:h-[660px] xl:gap-[62px] xl:items-center m-auto">
-          <div className="relative py-3 overflow-hidden m-auto green mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-2/5 lg:h-[550px] lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
+          <div className="relative py-3 overflow-hidden m-auto mb-10 w-11/12 text-white rounded-3xl bg-[#034D2B] md:w-4/5 lg:py-5 lg:w-4/5 lg:h-[550px] lg:m-auto xl:mb-0 xl:w-2/5 xl:h-[610px] xl:m-0">
             <div className="relative z-10">
-              <div className="w-[300px] m-auto xl:w-[344px] xl:pt-[44px] xl:m-auto ">
+              <div className="w-[295px] m-auto xl:w-[344px] xl:pt-[44px] xl:m-auto ">
                 <h1 className="text-[21px] font-medium text-center pt-4 lg:font-bold lg:text-[28px] xl:text-start xl:pt-0">
                   Contact Information
                 </h1>
@@ -104,7 +104,7 @@ const Contact = () => {
                 </p>
               </div>
               {/* list */}
-              <div className="m-auto w-[230px] md:w-[500px] lg:w-[320px] xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
+              <div className="m-auto w-[240px] md:w-[500px] lg:w-[320px] xl:w-[344px] xl:m-auto xl:flex xl:flex-col xl:gap-6 xl:mt-10">
                 <div className="one pb-3 flex gap-4 items-center md:justify-center lg:justify-start lg:pl-10 xl:pl-0 xl:justify-start xl:gap-[25px] xl:pb-0 font-medium text-[20px]">
                   <img src={PhoneIcon} alt=""/>
                   <p>+91 98765 43210</p>
@@ -124,12 +124,12 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-[230px] justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[240px] lg:justify-start xl:pt-6  xl:m-auto xl:w-[340px]">
-                <img src={TwitIcon} alt="" />
-                <img src={YoutubeIcon} alt="" />
-                <img src={InstaIcon} alt="" />
-                <img src={LinkedinIcon} alt="" />
-                <img src={facebookIcon} alt="" />
+              <div className="w-[270px] justify-start pt-3 pb-6 m-auto flex gap-8 md:justify-center lg:w-[240px] lg:justify-start xl:pt-6  xl:m-auto xl:w-[345px]">
+                <img src={TwitIcon} alt="" className="cursor-not-allowed" />
+                <img src={YoutubeIcon} alt="" className="cursor-not-allowed" />
+                <img src={InstaIcon} alt="" className="cursor-not-allowed"/>
+                <img src={LinkedinIcon} alt="" className="cursor-not-allowed"/>
+                <img src={facebookIcon} alt="" className="cursor-not-allowed"/>
               </div>
             </div>
             {/* circle pattern */}
@@ -138,11 +138,11 @@ const Contact = () => {
             </div>
           </div>
           {/* FORM */}
-          <div className="bg-white xl:w-[700px] lg:w-full xl:h-[535px] w-full h-auto xl:rounded-xl">
+          <div className="bg-white xl:w-[700px] lg:w-[900px] xl:h-[535px] w-full h-auto xl:rounded-xl">
             <form
              ref={form}
               onSubmit={handleFormSubmit(onSubmit)}
-              className="w-10/12 xl:w-full xl:h-[535px] m-auto flex flex-col gap-6 xl:m-0 relative"
+              className="w-10/12 xl:w-full xl:h-[535px] lg:w-full m-auto flex flex-col gap-6 xl:m-0 relative"
             >
               <div className="flex flex-col sm:flex-row justify-between gap-4">
                 <div className="w-full sm:w-[48%] flex flex-col gap-2 relative">
