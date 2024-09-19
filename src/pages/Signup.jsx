@@ -199,8 +199,8 @@ const SignUp = () => {
 
 
             <button
-              className="w-full h-[55px]  font-bold  p-2 rounded-[5px] border-[1px] border-[#9A9696] lg:text-[18px] text-[16px] text-[#212429]"
-              onClick={handleGoogleLogin}
+              className="w-full h-[55px]  font-bold  p-2 rounded-[5px] border-[1px] border-[#9A9696] cursor-not-allowed lg:text-[18px] text-[16px] text-[#212429]"
+              // onClick={handleGoogleLogin}
             >
               <img className="inline w-6 h-6 mr-2 " src={google} alt="" />
               Continue With Google
