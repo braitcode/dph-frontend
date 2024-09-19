@@ -49,8 +49,13 @@ const Reset = () => {
             return;
         }
 
-        if (confirmPassword.length < 8) {
-            handleError('Confirm password must be at least 8 characters');
+        if (!/^[A-Z]/.test(newPassword)) {
+            handleError('Password must start with an uppercase letter');
+            return;
+        }
+
+        if (!/[!@#$%^&*()_+\-=\]{};':"\\|,.<>?]/.test(newPassword)) {
+            handleError('Password must contain at least one special character');
             return;
         }
 
@@ -76,7 +81,6 @@ const Reset = () => {
             toast.error(`Failed to reset password: ${errorMessage}`);
         }
     };
-
     useEffect(() => {
         document.title = "DPH || Reset Password";
     }, []);
@@ -111,6 +115,16 @@ const Reset = () => {
                                     Password must be at least 8 characters long
                                 </p>
                             )}
+                            {newPassword && !/^[A-Z]/.test(newPassword) && (
+                                <p className="text-red-500 text-[12px] lg:text-[14px]">
+                                    Password must start with an uppercase letter
+                                </p>
+                            )}
+                            {newPassword && !/[!@#$%^&*()_+\-=\]{};':"\\|,.<>?]/.test(newPassword) && (
+                                <p className="text-red-500 text-[12px] lg:text-[14px]">
+                                    Password must contain at least one special character
+                                </p>
+                            )}
                         </label>
                         <br />
                         <label className="block mb-2 relative font-[500px] text-[16px] lg:text-[18px]">
@@ -129,11 +143,6 @@ const Reset = () => {
                             >
                                 {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
                             </span>
-                            {confirmPassword && confirmPassword.length < 8 && (
-                                <p className="text-red-500 text-[12px] lg:text-[14px]">
-                                    Password must be at least 8 characters
-                                </p>
-                            )}
                             {confirmPassword && newPassword !== confirmPassword && (
                                 <p className="text-red-500 text-[12px] lg:text-[14px]">
                                     Passwords do not match
