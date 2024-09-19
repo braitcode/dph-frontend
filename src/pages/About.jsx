@@ -10,6 +10,8 @@ import SubFooter from '../components/SubFooter'
 import Team from '../components/Team'
 import hero from '../assets/abouthero.png'
 import { Link } from 'react-router-dom'
+import Marquee from "react-fast-marquee";
+
 const About = () => {
   return (
     <>
@@ -49,36 +51,28 @@ const About = () => {
           </div>
 
           <div className="bg-black overflow-hidden">
-            <div className="marquee">
-              <div className="flex justify-between text-white gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[12px] md:text-[19px] container w-11/12 m-auto">
-                <span>Branding</span>
-                <img src={dot} alt="" className="w-[5px]" />
-                <span>Web Development</span>
-                <img src={dot} alt="" className="w-[5px]" />
-                <span>Consultation</span>
-                <img src={dot} alt="" className="w-[5px]" />
-                <span>Mobile Development</span>
+            <Marquee>
+              <div className="flex text-white space-x-10 lg:space-x-12 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[14px] md:text-[19px]">
+                <div className="flex gap-5">
+                  <span>Branding</span>
+                  <img src={dot} alt="" className="w-[5px]" />
+                </div>
+                <div className="flex gap-5">
+                  <span>Web Development</span>
+                  <img src={dot} alt="" className="w-[5px]" />
+                </div>
+                <div className="flex gap-5">
+                  <span>Consultation</span>
+                  <img src={dot} alt="" className="w-[5px]" />
+                </div>
+                <div className="flex gap-10">
+                  <span >Mobile Development</span>
+                  <img src={dot} alt="" className="w-[5px] lg:hidden" />
+                  <div></div>
+                </div>
               </div>
-            </div>
+            </Marquee>
           </div>
-
-          <style jsx>{`
-              .marquee {
-                display: flex;
-                width: 100%;
-                animation: scroll 10s linear infinite;
-              }
-
-              @keyframes scroll {
-                0% {
-                  transform: translateX(100%);
-                }
-                100% {
-                  transform: translateX(-100%);
-                }
-              }
-            `}
-          </style>
 
           <div className="w-full bg-[#034D2B] text-white m-auto">
             <h1 className="pt-10 pb-5 text-center font-semibold text-3xl pt[71px] md:text-5xl md:pt-[71px] md:pb-8 xl:font-bold xl:text-[55px] xl:pt-[71px]">Why Choose Us ?</h1>
