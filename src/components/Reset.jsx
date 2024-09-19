@@ -16,6 +16,8 @@ const Reset = () => {
     const [modalType, setModalType] = useState('success');
     const [modalTitle, setModalTitle] = useState('');
     const [modalMessage, setModalMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
 
     const { token } = useParams();
     const navigate = useNavigate();
@@ -65,6 +67,7 @@ const Reset = () => {
         }
 
         try {
+            setIsSubmitting(true);
             const response = await axios.post(`/auth/reset-password/${token}`,
                 { newPassword }, {
                 // headers: {
@@ -79,6 +82,8 @@ const Reset = () => {
             console.error("Error resetting password:", error);
             const errorMessage = error?.response?.data?.message || error.message || "An unknown error occurred";
             toast.error(`Failed to reset password: ${errorMessage}`);
+        } finally {
+            setIsSubmitting(false);
         }
     };
     useEffect(() => {
@@ -152,13 +157,14 @@ const Reset = () => {
                         <br />
                         <button
                             type="submit"
-                            className="bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px]"
+                            className={`bg-[#02864A] w-full text-white font-bold py-3 px-4 rounded xl:text-[18px] ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'}`}
+                            disabled={isSubmitting}
                         >
-                            Click Here to Confirm
+                            {isSubmitting ? "Please wait..." : "Click to Confirm"}
                         </button>
                     </form>
                     <Link to="/login">
-                        <button className="w-full text-black font-bold px-4 rounded xl:text-[18px] mt-4">
+                        <button className="w-full text-black font-bold px-4 rounded xl:text-[18px] mt-4 ">
                             <GoArrowLeft className='inline mb-[5px]' /> Back to Login
                         </button>
                     </Link>
