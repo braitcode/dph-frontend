@@ -20,7 +20,7 @@ const Reset = () => {
 
 
     const { token } = useParams();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // const handleSuccess = () => {
     //     setModalType('success');
@@ -163,11 +163,11 @@ const Reset = () => {
                             {isSubmitting ? "Please wait..." : "Click to Confirm"}
                         </button>
                     </form>
-                    {/* <Link to="/login">
+                    <Link to="/login">
                         <button className="w-full text-black font-bold px-4 rounded xl:text-[18px] mt-4 ">
                             <GoArrowLeft className='inline mb-[5px]' /> Back to Login
                         </button>
-                    </Link> */}
+                    </Link>
                 </div>
                 <div className='hidden lg:block'
                     style={{
@@ -177,9 +177,9 @@ const Reset = () => {
                         height: '100vh'
                     }}
                 >
-                    {/* <Link to='/'>
+                    <Link to='/'>
                         <img src={signuplogo} alt="Signup Logo" className='absolute top-[40px] right-[40px]' />
-                    </Link> */}
+                    </Link>
                 </div>
                 {isModalOpen && (
                     <MessageModal
