@@ -81,7 +81,7 @@ const ForgotPassword = () => {
                 <input
                   type="text"
                   value={email}
-                  placeholder='johndoe@mail.com'
+                  placeholder='example@mail.com'
                   onChange={(event) => setEmail(event.target.value)}
                   style={{
                     outline: 'none',

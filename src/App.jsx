@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-    <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
 
       <Router>
         <ScrollToTop />
@@ -42,7 +42,7 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/check" element={<CheckEmail />} />
           <Route path="/reset-password/:token" element={<Reset />} />
-          <Route path="/google/callback" element={<GoogleAuthCallback/>}/>
+          <Route path="/google/callback" element={<GoogleAuthCallback />} />
         </Routes>
       </Router>
     </>
