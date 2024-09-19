@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Info = () => {
   return (
     <div className='w-full font-spaceGrotesk'>
-      <div className="w-full bg-white m-auto pt-4 px-4 md:w-full lg:px-0 lg:flex lg:items-center lg:justify-center lg:gap-[400px]">
+      <div className="w-full bg-white m-auto pt-4 px-4 md:w-full lg:px-0 lg:py-10 lg:flex lg:items-center lg:justify-center lg:gap-[400px]">
         <div className="container py-8 md:w-[680px] md:m-auto md:flex md:flex-col md:justify-between md:items-center md:mt-10 xl:w-11/12 xl:flex-row xl:m-auto xl:flex xl:items-center xl:justify-between">
           <div className="font-bold text-2xl text-center pb-2 md:text-start xl:text-start">
             <h1 className='md:w-[700px] md:text-3xl md:font-medium xl:w-[420px] xl:font-bold xl:text-5xl'>DPH Surpassed and Exceeded Our Expectations</h1>
@@ -17,7 +17,7 @@ const Info = () => {
               <Link to='/contact'>
                 <Button color="success" size="medium" className="md:mx-auto">
                   <div className="flex items-center gap-2">
-                    <span className="text-[15px]">Get in Touch Now</span>
+                    <span className="text-[15px]">Get in Touch</span>
                     <img src={arrowRight} alt="" />
                   </div>
                 </Button>
