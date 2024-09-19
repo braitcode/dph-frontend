@@ -127,7 +127,7 @@ const Hero = () => {
         </div>
         <div className="bg-black overflow-hidden">
           <Marquee>
-            <div className="flex text-white gap-12 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[14px] md:text-[19px] ">
+            <div className="flex text-white space-x-10 lg:space-x-12 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[14px] md:text-[19px]">
               <div className="flex gap-5">
               <span>Branding</span>
                 <img src={dot} alt="" className="w-[5px]" />
@@ -140,7 +140,11 @@ const Hero = () => {
                 <span>Consultation</span>
                 <img src={dot} alt="" className="w-[5px]" />
               </div>
-              <span>Mobile Development</span>
+              <div className="flex gap-10">
+              <span >Mobile Development</span>
+              <img src={dot} alt="" className="w-[5px] lg:hidden" />
+              <div></div>
+              </div>
             </div>
           </Marquee>
         </div>
