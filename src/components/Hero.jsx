@@ -126,7 +126,7 @@ const Hero = () => {
         </div>
         <div className="bg-black overflow-hidden">
           <div className="marquee">
-            <div className="flex justify-between text-white gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[12px] md:text-[19px] container w-11/12 m-auto">
+            <div className="flex justify-between text-white gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[14px] md:text-[19px] container w-11/12 m-auto">
               <span>Branding</span>
               <img src={dot} alt="" className="w-[5px]" />
               <span>Web Development</span>
@@ -141,6 +141,7 @@ const Hero = () => {
         <style jsx>{`
               .marquee {
                 display: flex;
+                white-space: nowrap;
                 width: 100%;
                 animation: scroll 10s linear infinite;
               }
