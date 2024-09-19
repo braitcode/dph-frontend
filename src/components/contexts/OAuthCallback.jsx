@@ -1,59 +1,52 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useAuth } from '../../components/contexts/Auth'; 
+import Cookies from 'js-cookie';
 
-const OAuthCallback = () => {
-  const navigate = useNavigate();
-  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
-
-  const loadingMessages = [
-    "Please wait a moment...",
-    "We're logging you in...",
-    "Just a second...",
-    "Hang tight, almost there...",
-    "Processing your login...",
-    "Loading your account..."
-  ];
+const GoogleAuthCallback = () => {
+  const { setAuth } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [countdown, setCountdown] = useState(3);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const token = params.get('token');
-    const user = JSON.parse(params.get('user'));
+    const user = params.get('user');
 
     if (token && user) {
-      localStorage.setItem('auth', JSON.stringify({
+      // Save token and user to context and cookies
+      setAuth({
+        user: JSON.parse(user),
+        token,
         success: true,
-        message: "Login successful",
-        token: token,
-        user: user
-      }));
-      navigate('/');
-    } else {
-      navigate('/');
+        message: 'Google login successful',
+      });
+      Cookies.set('auth', JSON.stringify({ user: JSON.parse(user), token, success: true }), { expires: 7 });
     }
-  }, [navigate]);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setLoadingMessageIndex(prevIndex => (prevIndex + 1) % loadingMessages.length);
-    }, 5000); // Change message every 5 seconds
+    // Start the countdown timer
+    const interval = setInterval(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, [loadingMessages.length]);
+    if (countdown === 0) {
+      clearInterval(interval);
+      setLoading(false);
+      window.location.href = '/';
+    }
 
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <div className="mt-4">
-          <svg className="animate-spin h-10 w-10 text-green-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C6.476 0 0 6.476 0 12h4z"></path>
-          </svg>
-        </div>
-        <div className="text-xl font-semibold text-gray-700">{loadingMessages[loadingMessageIndex]}</div>
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
+  }, [setAuth, countdown]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen w-full">
+          <p className="text-lg">Redirecting in {countdown} seconds...</p>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return null;
 };
 
-export default OAuthCallback;
+export default GoogleAuthCallback;

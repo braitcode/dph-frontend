@@ -30,6 +30,8 @@ const NavBar = () => {
   }
 
   const handleLogOut = () => {
+    setOpen(false);
+    setDropDown(false); 
     setIsModalOpen(true); // Open the modal instead of logging out directly
   };
 
@@ -53,6 +55,7 @@ const NavBar = () => {
           setDropDown(false);
           setOpen(false);
         }
+        
       }
     };
 
@@ -111,7 +114,7 @@ const NavBar = () => {
 
         {/* NavLinks */}
         <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "top-[90%] opacity-0"
+          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "hidden"
             } lg:opacity-100`}
         >
           {NavLinks.map((link) => (
@@ -132,7 +135,7 @@ const NavBar = () => {
           {/* Logout on small screens */}
           {auth?.user ? (
             <div className="text-[16px] lg:hidden flex flex-col">
-              <span className="mb-4 font-[600]"> Dashboard</span>
+              <span className="mb-4 cursor-not-allowed text-gray-500"> Dashboard</span>
               <span className="text-[#FF0000] cursor-pointer" onClick={handleLogOut}>
                 Log Out
               </span>
@@ -150,7 +153,7 @@ const NavBar = () => {
 
         {/* Large Screens - Auth section */}
         {auth?.user ? (
-          <div className="lg:flex gap-2 xl:text-[18px] hidden h-[61px] mt-2">
+          <div className="lg:flex gap-2 xl:text-[18px] hidden h-[61px] ">
             <div
               className="bg-white border-2 border-[#028A4C] rounded-full w-[50px] h-[50px]"
               onClick={(e) => e.stopPropagation()}
@@ -174,7 +177,7 @@ const NavBar = () => {
             </span>
           </div>
         ) : (
-          <div className="lg:flex justify-end gap-2 hidden">
+          <div className="lg:flex justify-end gap-2 hidden mt-2 ">
             <Link to="/signup" className="text-[16px] text-white">
               <Button size="medium" color="success">
                 Sign Up
@@ -191,7 +194,7 @@ const NavBar = () => {
         {/* Dropdown for large screens */}
         {dropdown && (
           <div className="absolute right-0 top-[5rem] hidden lg:block">
-            <Dropdown />
+            <Dropdown onLogOut={handleLogOut}/>
           </div>
         )}
       </nav>

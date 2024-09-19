@@ -30,7 +30,7 @@ const handleSuccess = () => {
 // Function to handle error scenario
 const handleError = () => {
   setModalType('fail'); // Set the correct modal type
-  setModalTitle('Booking failed');
+  setModalTitle('Message Failed');
   setModalMessage('Something went wrong. Please try again.');
   setIsModalOpen(true);
   setLoading(false);
