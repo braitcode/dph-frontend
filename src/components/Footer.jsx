@@ -74,7 +74,7 @@ const Footer = () => {
       // Send the email to the backend API for newsletter subscription using Axios
       const response = await axios.post('/newsletter/subscribe', {
         email, // Send email data
-        fullname: 'User' // Optionally, send fullname or other data
+        // fullname: 'User' // Optionally, send fullname or other data
       });
 
       if (response.status === 200) {
