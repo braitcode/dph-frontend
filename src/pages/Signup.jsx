@@ -191,7 +191,7 @@ const SignUp = () => {
               {errors.form && <p className="text-red-500 text-[12px] lg:text-[14px]">{errors.form}</p>}
             </form>
 
-            <div className="flex items-center my-5 px-[2rem]">
+            {/* <div className="flex items-center my-5 px-[2rem]">
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
               <span className="px-4 font-bold">Or</span>
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
@@ -204,7 +204,7 @@ const SignUp = () => {
             >
               <img className="inline w-6 h-6 mr-2 " src={google} alt="" />
               Continue With Google
-            </button>
+            </button> */}
             <h3 className="font-normal lg:text-[16px] text-14px text-center text-[#090A0B] mt-5">
               Already a user?{" "}
               <span className="text-[#028A4C]">
