@@ -28,8 +28,8 @@ const Reset = () => {
     //     setModalMessage('Password Reset Successful!');
     //     setIsModalOpen(true);
     //     setTimeout(() => {
-    //         setIsModalOpen(false);
-    //         navigate('/login');
+    //     setIsModalOpen(false);
+    //     navigate('/login');
     //     }, 700);
     // };
 
