@@ -16,7 +16,7 @@ const About = () => {
       <div>
         <NavBar />
         <div className='pt-[4rem] lg:pt-[8rem] font-spaceGrotesk'>
-          <div className='pt-[2rem] pb-[1.5rem]'>
+          <div className='pt-[2rem] pb-[2rem]'>
             <h1 className='mx-auto font-bold text-[24px] sm:text-[32px] lg:text-[55px] text-center leading-[1.8rem] lg:mb-7 '>
               Your Partner In Digital Success
             </h1>
@@ -48,15 +48,37 @@ const About = () => {
             </div>
           </div>
 
-          <div className=" bg-black">
-            <div className="flex justify-between text-white   py-6 md:py-5 font-spaceGrotesk xl:text-[32px]  text-[8px] md:text-[19px]  container w-11/12 m-auto  ">
-              <span>Branding</span> <img src={dot} alt="" className="w-[5px]" />
-              <span>Web Development</span>{" "}
-              <img src={dot} alt="" className="w-[5px]" />
-              <span>Consultation</span> <img src={dot} alt="" className="w-[5px]" />
-              <span>Mobile Development</span>
+          <div className="bg-black overflow-hidden">
+            <div className="marquee">
+              <div className="flex justify-between text-white gap-3 py-3 md:py-5 font-spaceGrotesk xl:text-[32px] text-[12px] md:text-[19px] container w-11/12 m-auto">
+                <span>Branding</span>
+                <img src={dot} alt="" className="w-[5px]" />
+                <span>Web Development</span>
+                <img src={dot} alt="" className="w-[5px]" />
+                <span>Consultation</span>
+                <img src={dot} alt="" className="w-[5px]" />
+                <span>Mobile Development</span>
+              </div>
             </div>
           </div>
+
+          <style jsx>{`
+              .marquee {
+                display: flex;
+                width: 100%;
+                animation: scroll 10s linear infinite;
+              }
+
+              @keyframes scroll {
+                0% {
+                  transform: translateX(100%);
+                }
+                100% {
+                  transform: translateX(-100%);
+                }
+              }
+            `}
+          </style>
 
           <div className="w-full bg-[#034D2B] text-white m-auto">
             <h1 className="pt-10 pb-5 text-center font-semibold text-3xl pt[71px] md:text-5xl md:pt-[71px] md:pb-8 xl:font-bold xl:text-[55px] xl:pt-[71px]">Why Choose Us ?</h1>
