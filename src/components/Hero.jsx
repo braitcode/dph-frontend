@@ -9,11 +9,11 @@ import elevate from "../assets/icons/elevate.svg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import LazyLoad from 'react-lazyload';
-
+import { useAuth } from "../components/contexts/Auth";
 
 const Hero = () => {
   const [count, setCount] = useState(1);
-
+  const { auth } = useAuth();
   useEffect(() => {
     let timer = setInterval(() => {
       setCount((prevCount) => {
@@ -42,13 +42,27 @@ const Hero = () => {
                 Driven by a passion for innovative designs, we craft mobile and
                 web designs that captivate and resonate with users.
               </p>
-              <div className="lg:flex lg:gap-3 hidden">
-                <Link to='/signup'> <Button size="medium" color="success">
-                  <div className="flex gap-2">
-                    <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.1rem]">Get Started</span>
-                    <FaArrowRightLong className="mt-[0.4rem]" />
-                  </div>
-                </Button></Link>
+              {/* states */}
+              {auth?.user?(
+                   <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C] hidden lg:block xl:w-[23.8%] w-[35%] ">
+                 
+                   < Link to="/contact" className=''>
+                            <Button
+                                size="medium"
+                                color="white"
+                            >
+                              Get in Touch
+                            </Button>
+                        </Link>
+                 </div>
+              ):(
+                <div className="lg:flex lg:gap-3 hidden">
+                <Link to='/signup' className="">  <Button size="small" color="success">
+              <div className="flex gap-2">
+                <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.3rem]">Get Started</span>
+                <FaArrowRightLong className="mt-[0.5rem]" />
+              </div>
+            </Button></Link>
 
                 <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
                   <Link to='/contact'>
@@ -59,6 +73,8 @@ const Hero = () => {
 
                 </div>
               </div>
+              )}
+             
             </div>
           </div>
           {/* right div */}
@@ -104,26 +120,39 @@ const Hero = () => {
             Driven by a passion for innovative designs, we craft mobile and web
             designs that captivate and resonate with users.
           </p>
-          <div className="flex  lg:hidden gap-3  justify-center mb-[2rem] ">
-            <Link to='/signup'>
-              <Button size="small" color="success">
-                <div className="flex gap-2">
-                  <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.2rem]">Get Started</span>
-                  <FaArrowRightLong className="mt-[0.4rem]" />
-                </div>
-              </Button></Link>
+          {auth?.user?(
+           
+             <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]  flex justify-center mb-[2rem] md:w-[30%] w-[50%] mx-auto lg:hidden">
+             <Link to='/contact' className="">
+               <Button size="small" color="white">
+                 <span className="md:text-[16px] text-[14px] lg:text-[18px] ">
+                   Get in Touch
+                 </span>
+               </Button>
+             </Link>
 
-            <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
-              <Link to='/contact'>
-                <Button size="small" color="white">
-                  <span className="md:text-[16px] text-[14px] lg:text-[18px]">
-                    Get in Touch
-                  </span>
-                </Button>
-              </Link>
+           </div>
+          ): <div className="flex  lg:hidden gap-3  justify-center mb-[2rem] ">
+          <Link to='/signup'>
+            <Button size="small" color="success">
+              <div className="flex gap-2">
+                <span className="md:text-[16px] text-[14px] lg:text-[18px] p-[0.2rem]">Get Started</span>
+                <FaArrowRightLong className="mt-[0.4rem]" />
+              </div>
+            </Button></Link>
 
-            </div>
+          <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C]">
+            <Link to='/contact'>
+              <Button size="small" color="white">
+                <span className="md:text-[16px] text-[14px] lg:text-[18px]">
+                  Get in Touch
+                </span>
+              </Button>
+            </Link>
+
           </div>
+        </div>}
+         
         </div>
         <div className="bg-black overflow-hidden">
           <Marquee>
