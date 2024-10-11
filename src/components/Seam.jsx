@@ -22,14 +22,6 @@ const Seam = () => {
                         <p className=' text-[14px] mt-2 mb-5 font-normal lg:text-[20px] xl:text-[24px] text-[#565353] w-[100%]'>
                             Our user-friendly design make budgeting a breeze empowering you to track expense and make better decision.
                         </p>
-                        {/* < Link to="/signup" className=''>
-                            <Button
-                                size="medium"
-                                color="success"
-                            >
-                                <span className='text-[12px]font-medium'>Get Started<FaArrowRightLong className='inline mb-1 ml-2' /></span>
-                            </Button>
-                        </Link> */}
                         {auth?.user ? (
                             <Link to='/contact'>
                                 <Button size="medium" color="success" className=''>
@@ -49,17 +41,7 @@ const Seam = () => {
 
                         )}
                     </div>
-                    {/* <p className=' md:block lg:hidden text-[14px] font-normal md:text-[18px] lg:text-[20px] xl:text-[24px] text-[#565353] w-[100%] text-center'>
-                        Our user-friendly design make budgeting a breeze empowering you to track expense and make better decision.
-                    </p>
-                    <Link to="/signup" className='md:block lg:hidden text-center' >
-                        <Button
-                            size="medium"
-                            color="success"
-                        >
-                            <span className='text-[12px]font-medium'>Get Started<FaArrowRightLong className='inline mb-1 ml-2' /></span>
-                        </Button>
-                    </Link> */}
+
                 </div>
             </section>
         </div>
