@@ -159,18 +159,18 @@ const Login = () => {
               </button>
             </form>
 
-            <div className="flex items-center my-3 px-[2rem]">
+            {/* <div className="flex items-center my-3 px-[2rem]">
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
               <span className="px-4 font-bold">Or</span>
               <hr className="w-full border-[2px] border-[#A4ADB6]" />
-            </div>
+            </div> */}
             
-              <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] border-[1px] border-[#9A9696]"
-              onClick={handleGoogleLogin}
+              {/* <button className="w-full h-[55px] font-bold py-3 px-4 rounded-[5px] cursor-not-allowed border-[1px] border-[#9A9696]"
+              // onClick={handleGoogleLogin}
               >
                 <img className="inline w-6 h-6 mr-2" src={google} alt="" />
                 Continue With Google
-              </button>
+              </button> */}
             
 
             <h3 className="font-[500px] text-[16px] text-center mt-5">
