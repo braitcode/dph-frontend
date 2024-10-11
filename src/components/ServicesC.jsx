@@ -6,9 +6,10 @@ import img2 from '../assets/web.png'
 import img3 from '../assets/mobiled.png'
 import img4 from '../assets/consult.png'
 import { Link } from 'react-router-dom';
+import { useAuth } from "../components/contexts/Auth";
 
 const ServicesC = () => {
-
+    const { auth } = useAuth();
     return (
         <div className='font-spaceGrotesk'>
             <div className=' py-5 lg:px-[10rem] xl:px-[20rem] mt-20'>
@@ -19,13 +20,19 @@ const ServicesC = () => {
                     We provide innovative solutions that streamline operations, enhance productivity, and drive growth
                 </p>
                 <div className="flex gap-2 md:gap-4 lg:gap-[30px] justify-center mt-[2rem] mb-[2rem]">
-                    <Link to='/signup'>
-                        <Button size="medium" color="success" className=''>
-                            <div className="flex gap-2 p-[0.1rem] px-2">
-                                <span className="md:text-[15px] text-[12px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
-                            </div>
-                        </Button>
-                    </Link>
+                    {auth?.user ? (
+                        null
+
+                    ) : (
+                        <Link to='/contact'>
+                            <Button size="medium" color="success" className=''>
+                                <div className="flex gap-2 p-[0.1rem] px-2">
+                                    <span className="md:text-[15px] text-[12px]">Get Started</span><FaArrowRightLong className='mt-[3px]' />
+                                </div>
+                            </Button>
+                        </Link>
+                    )}
+
                     <Link to='/contact'>
                         <div className="border-2 border-[#028A4C] rounded-md text-[#028A4C] px-4">
                             <Button size="medium">
@@ -53,13 +60,25 @@ const ServicesC = () => {
                                 visual identities, and taglines that capture your
                                 brand's essence and resonate with your audience.
                             </p>
-                            <Link to='/signup'>
-                                <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[4.5rem] py-1">
-                                        <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                    </div>
-                                </Button>
-                            </Link>
+                            {auth?.user ? (
+                                <Link to='/contact'>
+                                    <Button size="medium" color="success" className=''>
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get In Touch</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Link to='/signup'>
+                                    <Button size="medium" color="success">
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+
+                            )}
+
                         </div>
                     </div>
                 </section>
@@ -84,13 +103,24 @@ const ServicesC = () => {
                                 design services are focused on creating visually
                                 user-friendly, and fully responsive websites
                             </p>
-                            <Link to='/signup'>
-                                <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[4.5rem] py-1">
-                                        <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
-                                    </div>
-                                </Button>
-                            </Link>
+                            {auth?.user ? (
+                                <Link to='/contact'>
+                                    <Button size="medium" color="success" className=''>
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get In Touch</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Link to='/signup'>
+                                    <Button size="medium" color="success">
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+
+                            )}
                         </div>
                     </div>
                 </section>
@@ -115,13 +145,24 @@ const ServicesC = () => {
                                 comprehensive, covering everything from initial
                                 concept development to final design.
                             </p>
-                            <Link to='/signup'>
-                                <Button size="medium" color="success">
-                                    <div className="flex gap-2 px-[4.5rem] py-1">
-                                        <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.06rem]' />
-                                    </div>
-                                </Button>
-                            </Link>
+                            {auth?.user ? (
+                                <Link to='/contact'>
+                                    <Button size="medium" color="success" className=''>
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get In Touch</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Link to='/signup'>
+                                    <Button size="medium" color="success">
+                                        <div className="flex gap-2 px-[4.5rem] py-1">
+                                            <span className="text-[14px]">Get Started</span><FaArrowRightLong className='mt-[4px] p-[0.05rem]' />
+                                        </div>
+                                    </Button>
+                                </Link>
+
+                            )}
                         </div>
                     </div>
                 </section>
